@@ -12,7 +12,6 @@ abandonments_barren_color_map = {0.1,0.1,0.1,1}
 
 -- Vehicles
 
--- Vehicles aren't turrets than can be spammed, so give them a little compared to them.
 damage_modifier_vehicle_bonus = 1.25
 range_modifier_vehicle_bonus = 1.25
 attack_speed_vehicle_bonus = 1.25
@@ -31,13 +30,14 @@ atv_resistances =
 	percent = -25
   },
 }
-atv_effectivity = 0.6
+atv_effectivity = 0.8 -- It's slow, beginner vehicle
 atv_braking = "100kW"
 atv_consumption = "60kW"
-atv_friction = 0.004
-atv_turnrate = 0.022
+atv_friction = 0.005
+atv_turnrate = 0.024 -- turns on a dime
 atv_weight = 225
-atv_inventory_size = 0
+atv_inventory_size = 1 -- a tiny boot or rack like most ATVs have
+atv_friction_terrain_modifier = 0.2 -- it's literally called an All-Terrain-Vehicle
 
 
 car_health = 400
@@ -58,13 +58,14 @@ car_resistances =
 	percent = -25
   },
 }
-car_effectivity = 0.8
+car_effectivity = 1.8 -- Good power
 car_braking = "250kW"
 car_consumption = "175kW"
-car_friction = 0.004
+car_friction = 0.009 -- low friction
 car_turnrate =0.015
-car_weight = 500
+car_weight = 500 -- and light means it's fast on pavement
 car_inventory_size = 5
+car_friction_terrain_modifier = 0.7 -- but it's slow off-road
 
 
 truck_health = 900
@@ -85,16 +86,17 @@ truck_resistances =
 	percent = -25
   },
 }
-truck_effectivity = 0.7
-truck_braking = "920kW"
+truck_effectivity = 2.2 -- Decent amount of power
+truck_braking = "320kW"
 truck_consumption = "250kW"
-truck_friction = 0.003
+truck_friction = 0.012 -- higher friction
 truck_turnrate = 0.01
-truck_weight = 1200
-truck_inventory_size = 100
+truck_weight = 1200 -- heavier than the car
+truck_inventory_size = 150
+truck_friction_terrain_modifier = 1.0 -- ...and it's terrible off-road
 
 
-apc_health = 1600
+apc_health = 1600 -- half track
 apc_ephp = 0.7 
 apc_resistances = 
 {
@@ -122,18 +124,18 @@ apc_resistances =
 	percent = -25
   },
 }
-apc_effectivity = 0.7
-apc_braking = "1520kW"
-apc_consumption = "475kW"
-apc_friction = 0.003
-apc_turnrate = 0.01
-apc_weight = 2700
-apc_inventory_size = 20
-apc_friction_terrain_modifier =  0.4
+apc_effectivity = 3.5 -- Goal for this vehicle: make it the fastest for OFF ROAD specifically
+apc_braking = "720kW" -- so it has a distinct purpose beyond just attack vehicle 
+apc_consumption = "475kW" -- a role which is soon better handled by a flametank or spidertron anyway
+apc_friction = 0.009 
+apc_turnrate = 0.008 
+apc_weight = 2700 
+apc_inventory_size = 20 
+apc_friction_terrain_modifier =  0.1 -- It winds up being great offroad but just okay on pavement
 
 -- FLAME TANK --
 
-flametank_health = 2000
+flametank_health = 3000
 flametank_ephp = 0.4 
 flametank_resistances = 
  {
@@ -162,14 +164,14 @@ flametank_resistances =
 	percent = -25
   }
 }
-flametank_effectivity = 0.8
-flametank_braking = "1400kW"
-flametank_consumption = "600kW"
-flametank_friction_terrain_modifier =  0.3
-flametank_friction = 0.002
-flametank_turnrate = 0.0035
-flametank_weight = 12000
-flametank_inventory_size = 5
+flametank_effectivity = 0.75 -- it's slightly slower
+flametank_braking = "2400kW"
+flametank_consumption = "1600kW"
+flametank_friction = 0.0045
+flametank_turnrate = 0.0030 -- and a bit less nimble
+flametank_weight = 25000 -- than the lighter Tank
+flametank_inventory_size = 10
+flametank_friction_terrain_modifier =  0.1 -- Tanks do not care whether they're on pavement or mud.
 
 -- TANK --
 
@@ -203,14 +205,14 @@ tank_resistances =
 	percent = -25
   }
 }
-tank_effectivity = 0.7
+tank_effectivity = 0.8 -- It's slightly faster
 tank_braking = "2650kW"
 tank_consumption = "1600kW"
-tank_friction_terrain_modifier =  0.2
-tank_friction = 0.002
-tank_turnrate = 0.0030
-tank_weight = 22000
-tank_inventory_size = 5
+tank_friction = 0.004
+tank_turnrate = 0.0035 -- and slightly more nimble 
+tank_weight = 22000 -- than the heavier flametank
+tank_inventory_size = 10
+tank_friction_terrain_modifier = 0.1 -- Tanks do not care whether they're on pavement or mud.
 
 -- SPEEDER --
 
@@ -232,13 +234,14 @@ speeder_resistances =
 	percent = -25
   },
 }
-speeder_effectivity = 0.8
+speeder_effectivity = 3.4 -- it is very fast and light
 speeder_braking = "350kW"
 speeder_consumption = "200kW"
-speeder_friction = 0.0025
+speeder_friction = 0.025 -- but with this friction
 speeder_turnrate = 0.0125
 speeder_weight = 400
-speeder_inventory_size = 0
+speeder_friction_terrain_modifier = 1.0 -- and this modifier, you'd better pave the whole way there
+speeder_inventory_size = 0 
 
 -- Small Arms
 
