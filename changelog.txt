@@ -1,4 +1,20 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.5.2
+Date: 2025.10.31
+  Quality:
+    - Factorio+ craft/smelting machines with module slots can accept quality modules.
+  Balance:
+    - Increased Sawmill resource search radius from 8.0 -> 11.5
+    - Alien spawners overall spawn speed rescaled. Starting spawn time is faster, but 100% evolution is slightly slower.
+    - Increase boal pollution from 120% -> 130%
+    - Increased flamethrower range by +4 and the firerate by +33%
+    - Increased Ocean tile pollution absorption by +40%
+    - Basic electric furnace energy usage reduced from 420kW -> 400kW.
+    - Increased Basic electric furnace module slot count from 1 -> 2
+  Other Mods:
+    - FluidMustFlow ducts now moved to the fluid handling tab. 
+    - Flow Control pipes now are in the correct subgroup in fluid handling.
+---------------------------------------------------------------------------------------------------
 Version: 2.5.1
 Date: 2025.10.16
   Additions:
