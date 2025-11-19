@@ -544,16 +544,16 @@ data.extend({
     place_result = "floodlight-lamp",
     stack_size = 25
   },
-   -- {
-    -- type = "item",
-    -- name = "basic-explosive",
-    -- icon = "__factorioplus__/graphics/icons/basic-explosive.png",
-    -- icon_size = 64, icon_mipmaps = 4,
-    -- subgroup = "raw-material",
-    -- order = "b[chemistry]-e[explosives]",
-    -- stack_size = 100,
-	-- weight = 0.5*kg
-  -- },
+   {
+    type = "item",
+    name = "basic-explosive",
+    icon = "__factorioplus__/graphics/icons/basic-explosive.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "raw-material",
+    order = "b[chemistry]-e[explosives]",
+    stack_size = 100,
+	weight = 0.5*kg
+  },
     {
     type = "item",
     name = "aluminium-plate",

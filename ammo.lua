@@ -3200,7 +3200,7 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
 	weight = 10*kg
   },
   
-   ---- PROJ ---
+   ---- MORTAR PROJECTILE ---
   {
     type = "stream",
     name = "grenade-arc",
@@ -3223,7 +3223,7 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
     particle_spawn_interval = 1,
     particle_spawn_timeout = 1,
     particle_vertical_acceleration = 0.01 * 0.6,
-    particle_horizontal_speed = 0.45,
+    particle_horizontal_speed = 0.45 * projectile_mortar_turret_speed_modifier,
     particle_horizontal_speed_deviation = 0.0035,
     particle_start_alpha = 1,
     particle_end_alpha = 1,
@@ -3415,7 +3415,7 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
       {type="item", name="plastic-bar", amount=3},
       {type="item", name="steel-plate", amount=1}
     },
-    results = {{type="item", name="grenade-rounds", amount=1}},
+    results = {{type="item", name="grenade-rounds", amount=2}},
   },
   
    ----------------------------- NAPALM MORTAR ROUNDS -----------------------------
@@ -4785,7 +4785,7 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
         {
           type = "projectile",
           projectile = "cannon-projectile",
-          starting_speed = 1,
+          starting_speed = 1 * cannon_shell_projectile_speed_modifier,
           direction_deviation = 0.1,
           range_deviation = 0.1,
           max_range = cannon_shell_range,
@@ -4977,7 +4977,7 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
         {
           type = "projectile",
           projectile = "explosive-cannon-projectile",
-          starting_speed = 1,
+          starting_speed = 1 * cannon_shell_explosive_projectile_speed_modifier,
           direction_deviation = 0.1,
           range_deviation = 0.1,
           max_range = cannon_shell_range,
@@ -5090,7 +5090,7 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
         {
           type = "projectile",
           projectile = "piercing-cannon-projectile",
-          starting_speed = 1,
+          starting_speed = 1 * cannon_shell_piercing_projectile_speed_modifier,
           direction_deviation = 0.1,
           range_deviation = 0.1,
           max_range = cannon_shell_range,
@@ -5255,7 +5255,7 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
         {
           type = "projectile",
           projectile = "uranium-cannon-projectile",
-          starting_speed = 1,
+          starting_speed = 1 * cannon_shell_depleted_projectile_speed_modifier,
           direction_deviation = 0.1,
           range_deviation = 0.1,
           max_range = cannon_shell_range,
@@ -5324,6 +5324,7 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
     animation =
     {
       filename = "__base__/graphics/entity/bullet/bullet.png",
+	  tint = {r = 0.4, g = 1, b = 0.4},
       frame_count = 1,
       width = 3,
       height = 50,
@@ -5368,7 +5369,7 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
         {
           type = "projectile",
           projectile = "nuke-uranium-cannon-projectile",
-          starting_speed = 1,
+          starting_speed = 1 * cannon_shell_nuke_projectile_speed_modifier ,
           direction_deviation = 0.1,
           range_deviation = 0.1,
           max_range = cannon_shell_range,
@@ -5637,6 +5638,7 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
     animation =
     {
       filename = "__base__/graphics/entity/bullet/bullet.png",
+	  tint = {r = 0.2, g = 1, b = 0.2},
       frame_count = 1,
       width = 3,
       height = 50,
@@ -5659,6 +5661,199 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
     results = {{type="item", name="explosive-uranium-cannon-shell", amount=1}},
   },
   
+  
+  ----------------------------- AUTO CANNON SHELL ---------------------------- 
+  
+  {
+    type = "ammo",
+    name = "cannon-shell-auto",
+    icon = "__factorioplus__/graphics/icons/cannon-shell-auto.png",
+    icon_size = 64, icon_mipmaps = 4,
+	ammo_category = "cannon-shell",
+    ammo_type =
+    {
+      category = "cannon-shell",
+	  
+	  clamp_position = true,
+      target_type = "position",
+	  
+	  cooldown_modifier = cannon_shell_auto_cooldown_modifier,
+	  
+      action =
+      {
+        type = "direct",
+        action_delivery =
+        {
+          type = "projectile",
+          projectile = "cannon-auto-projectile",
+          starting_speed = 1 * cannon_shell_auto_projectile_speed_modifier,
+          direction_deviation = 0.1,
+          range_deviation = 0.1,
+          max_range = cannon_shell_range,
+          min_range = 5,
+          source_effects =
+          {
+            type = "create-explosion",
+            entity_name = "explosion-gunshot"
+          }
+        }
+      }
+    },
+    subgroup = "ammo",
+    order = "d[cannon-shell]-a[basic]",
+    stack_size = cannon_shell_stacksize * cannon_shell_auto_stacksize_multiplier,
+    weight = 10*kg
+  },
+  
+-------- PROJ --------  
+
+  {
+    type = "projectile",
+    name = "cannon-auto-projectile",
+    flags = {"not-on-map"},
+    collision_box = {{-0.4, -1.2}, {0.4, 1.2}},
+    acceleration = 0,
+    piercing_damage = cannon_shell_auto_damage_penetration,
+	force_condition = "not-same",
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          {
+            type = "damage",
+            damage = {amount = cannon_shell_auto_damage_physical, type = "physical"}
+          },
+          {
+            type = "create-entity",
+            entity_name = "explosion"
+          }
+        }
+      }
+    },
+	
+    final_action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          {
+            type = "create-entity",
+            entity_name = "explosion"
+          },
+          {
+            type = "nested-result",
+            action =
+            {
+              type = "area",
+              radius = cannon_shell_auto_radius,
+			  show_in_tooltip = true,
+			  force = "not-same",
+              action_delivery =
+              {
+                type = "instant",
+                target_effects =
+                {
+                  {
+                    type = "damage",
+                    damage = {amount = cannon_shell_auto_damage_explosive, type = "explosion"}
+                  },
+                  {
+                    type = "create-entity",
+                    entity_name = "explosion"
+                  }
+                }
+              }
+            }
+          },
+		  {
+            type = "nested-result",
+            action =
+            {
+              type = "area",
+              radius = cannon_shell_auto_radius/friendly_fire_radius_reduction_factor,
+			  show_in_tooltip = false,
+			  force = "same",
+              action_delivery =
+              {
+                type = "instant",
+                target_effects =
+                {
+                  {
+                    type = "damage",
+                    damage = {amount = cannon_shell_auto_damage_explosive * friendly_fire_modifier, type = "explosion"}
+                  },
+                  {
+                    type = "create-entity",
+                    entity_name = "explosion"
+                  }
+                }
+              }
+            }
+          },
+		  
+          {
+            type = "create-entity",
+            entity_name = "small-scorchmark-tintable",
+            check_buildability = true
+          },
+          {
+			  type = "invoke-tile-trigger",
+			  repeat_count = 1,
+          },
+          {
+			  type = "destroy-decoratives",
+			  from_render_layer = "decorative",
+			  to_render_layer = "object",
+			  include_soft_decoratives = true, -- soft decoratives are decoratives with grows_through_rail_path = true
+			  include_decals = false,
+			  invoke_decorative_trigger = true,
+			  decoratives_with_trigger_only = false, -- if true, destroys only decoratives that have trigger_effect set
+			  radius = 1 -- large radius for demostrative purposes
+          },
+		  {
+            type = "create-trivial-smoke",
+            smoke_name = "artillery-smoke",
+            initial_height = 0,
+            speed_from_center = 0.1,
+            speed_from_center_deviation = 0.005,
+            offset_deviation = {{-2, -2}, {2, 2}},
+            max_radius = 1.5,
+            repeat_count = 2 * 2 * 5
+          },
+        }
+      }
+    },
+    animation =
+    {
+      filename = "__base__/graphics/entity/bullet/bullet.png",
+      frame_count = 1,
+      width = 3,
+      height = 50,
+	  scale = 1.5,
+      priority = "high"
+    }
+  },
+-------- RECIPE --------    
+  
+  {
+    type = "recipe",
+    name = "cannon-shell-auto",
+    enabled = false,
+    energy_required = 6,
+    ingredients =
+  {
+	{type="item", name="cannon-shell", amount=2},
+	{type="item", name="low-density-structure", amount=4},
+  },
+  results = {{type="item", name="cannon-shell-auto", amount=5}},
+  },
   
   
   -----------------------------  PLASMA AMMO -----------------------------

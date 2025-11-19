@@ -2110,7 +2110,7 @@ data.extend({
     {
       {
         type = "fire",
-        percent = 70
+        percent = 90
       },
 	   {
         type = "physical",
@@ -2122,7 +2122,7 @@ data.extend({
       },
 	  {
         type = "acid",
-        percent = 70
+        percent = 90
       },
       {
         type = "impact",
@@ -5023,7 +5023,7 @@ data.extend({
     {
       {
         type = "fire",
-        percent = 100
+        percent = 95
       },
 	  {
         type = "impact",

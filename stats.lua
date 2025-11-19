@@ -387,10 +387,10 @@ mortar_stacksize = 25
 
 range_mortar = 6 * 32
 
-mortar_hit_physicaldamage = 100
+mortar_hit_physicaldamage = 160
 mortar_regular_explosivedamage = 100
 
-mortar_regular_damageradius = 6.0
+mortar_regular_damageradius = 7.0
 
 mortar_napalm_explosivedamage = 40
 mortar_napalm_explosivedamageradius = 4
@@ -407,7 +407,6 @@ mortar_napalm_firestickerapplyradius = 8
 -------------
 -- GRENADES --
 -------------
-
 
 firerate_grenade = 60 / 0.5
 firerate_grenade_large = 60 / 0.3333
@@ -553,13 +552,15 @@ plasmagun_reloadtime = 60 * 5
 
 -- Cannons
 
-firerate_cannon = 60 / 0.60
+firerate_cannon = 60 / 0.70
 
+cannon_shell_projectile_speed_modifier = 1.25
 cannon_shell_damage_physical = 600
 cannon_shell_damage_penetration = 300
 cannon_shell_damage_explosive = 300
 cannon_shell_radius = 4
 
+cannon_shell_explosive_projectile_speed_modifier = 1
 cannon_shell_explosive_damage_physical = 200
 cannon_shell_explosive_damage_penetration = 250
 cannon_shell_explosive_damage_explosive = 600
@@ -567,25 +568,37 @@ cannon_shell_explosive_radius = 10
 cannon_shell_explosive_cooldown_modifier = 2.0
 cannon_shell_explosive_stacksize = 25
 
+cannon_shell_piercing_projectile_speed_modifier = 1.75
 cannon_shell_piercing_damage_physical = 300
 cannon_shell_piercing_damage_piercing = 1400
 cannon_shell_piercing_damage_penetration = 1000
 cannon_shell_piercing_damage_explosive = 100
 cannon_shell_piercing_radius = 2
 
+cannon_shell_depleted_projectile_speed_modifier = 2
 cannon_shell_depleted_damage_physical = cannon_shell_piercing_damage_physical * 2
 cannon_shell_depleted_damage_piercing = cannon_shell_piercing_damage_piercing * 2
 cannon_shell_depleted_damage_penetration = cannon_shell_piercing_damage_penetration * 2
 cannon_shell_depleted_damage_explosive = cannon_shell_piercing_damage_explosive * 2
 cannon_shell_depleted_radius = cannon_shell_piercing_radius + 1
 
+cannon_shell_nuke_projectile_speed_modifier = 1
 cannon_shell_nuke_explosive_damage_penetration = cannon_shell_explosive_damage_physical * 2
 cannon_shell_nuke_explosive_damage_explosive = cannon_shell_explosive_damage_explosive * 2
 cannon_shell_nuke_explosive_damage_explosive_shockwave = 25
 cannon_shell_nuke_explosive_radius = 8
 cannon_shell_nuke_explosive_cooldown_modifier = 3.0
 
-cannon_shell_range = 100
+cannon_shell_auto_projectile_speed_modifier = 1.5
+cannon_shell_auto_damage_physical = 200
+cannon_shell_auto_damage_penetration = 50
+cannon_shell_auto_damage_explosive = 100
+cannon_shell_auto_radius = 2
+cannon_shell_auto_cooldown_modifier = 0.2
+cannon_shell_auto_stacksize_multiplier = 4
+
+
+cannon_shell_range = 80
 cannon_shell_stacksize = 50
 
 -- Red Lasers
@@ -670,10 +683,11 @@ rangemin_turret_minigun = 4
 health_turret_minigun = 1200 + health_turret_heavy_additional
 
 turnrange_mortar = 1/4
-firerate_mortar_factor = 2
+firerate_mortar_factor = 2 -- How much to multilpy the base attack speed (in frame count, higher is slower)
 range_turret_mortar = 8 * 32
 rangemin_turret_mortar = 2 * 32 
 health_turret_mortar = 200 + health_turret_medium_additional
+projectile_mortar_turret_speed_modifier = 1.5 -- for player turrets, not abandoments, which are using the base horz speed.
 
 firerate_turret_sniper = 60 * 6
 range_turret_sniper = 4 * 32

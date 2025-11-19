@@ -1015,18 +1015,18 @@ data:extend({
     },
   },
   
-   -- {
-    -- type = "recipe",
-    -- name = "grenade",
-    -- enabled = false,
-    -- energy_required = 8,
-    -- ingredients =
-    -- {
-      -- {type = "item", name = "iron-plate", amount = 2},
-      -- {type = "item", name = "basic-explosive", amount = 2}
-    -- },
-    -- results = {{type="item", name="grenade", amount=1}}
-  -- },
+   {
+    type = "recipe",
+    name = "grenade",
+    enabled = false,
+    energy_required = 4,
+    ingredients =
+    {
+      {type = "item", name = "iron-plate", amount = 1},
+      {type = "item", name = "basic-explosive", amount = 2}
+    },
+    results = {{type="item", name="grenade", amount=1}}
+  },
   
     -----------------------------  CLUSTER GRENADE  -----------------------------
   

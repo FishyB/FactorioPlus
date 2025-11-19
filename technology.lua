@@ -3325,7 +3325,7 @@ table.insert(data.raw["technology"]["oil-processing"].effects,{type = "unlock-re
   
 })
 
--- table.insert(data.raw["technology"]["military"].effects,{type = "unlock-recipe",recipe = "basic-explosive"})
+table.insert(data.raw["technology"]["military"].effects,{type = "unlock-recipe",recipe = "basic-explosive"})
 
 table.insert(data.raw["technology"]["military-2"].effects,{type = "unlock-recipe",recipe = "magnum"})
 table.insert(data.raw["technology"]["military-2"].effects,{type = "unlock-recipe",recipe = "uzi-gun"})
@@ -3408,6 +3408,10 @@ data:extend
 	  {
         type = "unlock-recipe",
         recipe = "rocket-micro"
+      },
+	    {
+        type = "unlock-recipe",
+        recipe = "cannon-shell-auto"
       },
 	   {
         type = "unlock-recipe",

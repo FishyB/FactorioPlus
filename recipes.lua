@@ -44,12 +44,12 @@ data.extend({
 
 ----------- BASIC RECIPE OVERRIDES ----------
 
--- data.raw["recipe"]["explosives"].ingredients =
-    -- {
-      -- {type = "item", name = "sulfur", amount = 1},
-      -- {type = "item", name = "basic-explosive", amount = 4},
-      -- {type = "fluid", name = "water", amount = 15}
-    -- }
+data.raw["recipe"]["explosives"].ingredients =
+    {
+      {type = "item", name = "sulfur", amount = 1},
+      {type = "item", name = "basic-explosive", amount = 2},
+      {type = "fluid", name = "water", amount = 15}
+    }
 
 data.raw["recipe"]["iron-stick"].enabled = true
   
@@ -859,20 +859,20 @@ data:extend
 	icon = "__factorioplus__/graphics/icons/steamtowater.png",
     icon_size = 64, icon_mipmaps = 4,
   },
-    -- {
-    -- type = "recipe",
-    -- name = "basic-explosive",
-	-- enabled = false,
-    -- category = "crafting",
-    -- energy_required = 2,
-    -- ingredients =  
-	-- {
-	  -- {type="item", name="coal", amount=4},
-      -- {type="item", name="iron-plate", amount=1},
-    -- },
-    -- results = {{type="item", name="basic-explosive", amount=1}},
-	-- allow_productivity = true,
-  -- },
+    {
+    type = "recipe",
+    name = "basic-explosive",
+	enabled = false,
+    category = "crafting",
+    energy_required = 2,
+    ingredients =  
+	{
+	  {type="item", name="coal", amount=4},
+      {type="item", name="iron-plate", amount=1},
+    },
+    results = {{type="item", name="basic-explosive", amount=2}},
+	allow_productivity = true,
+  },
   {
     type = "recipe",
     name = "silicon-wafer",
@@ -926,7 +926,6 @@ data:extend
 	results = {{type="item", name="waterfill-barrel", amount=10}},
   },
 }) 
-
 
  
 if (mods["space-age"]) then  
@@ -2558,7 +2557,7 @@ elseif settings.startup["settings-recipe-cost"].value == "extreme" then
 		  {type = "item", name = "engine-unit", amount = 2},
 		  {type = "item", name = "advanced-circuit", amount = 3},
 		  {type = "item", name = "silicon-wafer", amount = 2},
-		  {type = "item", name = "battery", amount = 1}
+		  {type = "item", name = "explosives", amount = 1}
 		}
 	data.raw["recipe"]["production-science-pack"].ingredients =	
 		{

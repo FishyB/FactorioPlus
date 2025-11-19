@@ -100,21 +100,24 @@ spawning_amount_stinger = 6
 
 -- SPAWN TIME
 
+spawning_time_slowest = 300
+spawning_time_fastest = 180
+
 spawning_base_pollution_cost = 4
 
 spawning_time_small = 4
 spawning_time_medium = 8
-spawning_time_big = 16
-spawning_time_behemoth = 32
-spawning_time_boss = 64
+spawning_time_big = 18
+spawning_time_behemoth = 40
+spawning_time_boss = 90
 
-spawning_time_scalar_spitter = 1.2
+spawning_time_scalar_spitter = 1.3
 spawning_time_scalar_swarmer = 0.5
-spawning_time_scalar_biter = 1
-spawning_time_scalar_blaster = 2.0
-spawning_time_scalar_tanker = 1.75
+spawning_time_scalar_biter = 1.2
+spawning_time_scalar_blaster = 2.1
+spawning_time_scalar_tanker = 1.8
 spawning_time_scalar_webber = 1.5
-spawning_time_scalar_flamer = 1.65
+spawning_time_scalar_flamer = 1.7
 spawning_time_scalar_stinger = 0.7
 
 -- TILE RESTRICTIONS
@@ -153,8 +156,8 @@ health_spawner_biter   = 250
 health_small_biter    = 30
 health_medium_biter   = 150
 health_big_biter      = 500
-health_behemoth_biter = 1600
-health_boss_biter     = 8000
+health_behemoth_biter = 1500
+health_boss_biter     = 6000
 
 health_spawner_spitter   = 200
 

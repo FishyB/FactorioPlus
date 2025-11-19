@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.6.0
+Date: 2025.11.08
+  Other Mods:
+    - Maraxsis: trench-duct now moved to the fluid handling tab. (by Tobilike)
+    - Maraxsis: Sand from Maraxsis is now Quartz sand. To avoid destroying the challenge. (by Tobilike)
+    - Add support for Maraxsis, Pangila, Moshine, and IridescentIndustry. (by Tobilike)
+    - Glass should migrate to Glass-plate. (Possible conflicts if an unknown mod accesses glass.) (by Tobilike)
+---------------------------------------------------------------------------------------------------
 Version: 2.5.2
 Date: 2025.10.31
   Quality:
@@ -12,8 +20,8 @@ Date: 2025.10.31
     - Basic electric furnace energy usage reduced from 420kW -> 400kW.
     - Increased Basic electric furnace module slot count from 1 -> 2
   Other Mods:
-    - FluidMustFlow ducts now moved to the fluid handling tab. 
-    - Flow Control pipes now are in the correct subgroup in fluid handling.
+    - FluidMustFlow ducts now moved to the fluid handling tab. (by Tobilike)
+    - Flow Control pipes now are in the correct subgroup in fluid handling. (by Tobilike)
 ---------------------------------------------------------------------------------------------------
 Version: 2.5.1
 Date: 2025.10.16

@@ -3802,7 +3802,7 @@ data:extend({
     folding_sound = sounds.gun_turret_deactivate,
     folding_speed = 0.5,
     inventory_size = 2,
-    automated_ammo_count = 10,
+    automated_ammo_count = 5,
     attacking_speed = 0.5,
     alert_when_attacking = true,
     open_sound = sounds.machine_open,

@@ -1835,7 +1835,7 @@ local res =
 					   end)(),				 
 		-- With zero evolution the spawn rate is 6 seconds, with max evolution it is 2.5 seconds
 		-- TODO link spawn cooldown to function
-		spawning_cooldown = { ((300 * spawncooldownscalar) / spawnertierfactor ) / enemy_spawntime_scale , ( (180 * (spawncooldownscalar/2)) / spawnertierfactor ) / enemy_spawntime_scale  } ,
+		spawning_cooldown = { ((spawning_time_slowest * spawncooldownscalar) / spawnertierfactor ) / enemy_spawntime_scale , ( (spawning_time_fastest * (spawncooldownscalar)) / spawnertierfactor ) / enemy_spawntime_scale  } ,
 		spawning_radius = 10 * (spawnerscale * spawnertierfactor),
 		spawning_spacing = 3 * (spawnerscale * spawnertierfactor),
 		max_spawn_shift = 0,
