@@ -2404,6 +2404,8 @@ data.extend({
     dying_trigger_effect = decorative_trigger_effects.big_rock(),
 --	remains_when_mined = "medium-rock",
 --	corpse = "medium-rock",
+
+
     minable =
     {
       mining_particle = "stone-particle",
@@ -2416,9 +2418,9 @@ data.extend({
     },
     loot =
     {
-	  {type = "item", item = "stone", amount_min = 10, amount_max = 20}, 
-	  {type = "item", item = "bauxite-ore", amount_min = 20, amount_max = 40}
-	  },
+	  {type = "item", item = "stone", probability = 1, count_min = 5, count_max = 10}, 
+	  {type = "item", item = "bauxite-ore", probability = 1, count_min = 5, count_max = 15}
+	},
     count_as_rock_for_filtered_deconstruction = true,
     mined_sound = { filename = "__base__/sound/deconstruct-bricks.ogg" },
     vehicle_impact_sound = sounds.car_stone_impact,

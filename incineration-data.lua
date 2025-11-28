@@ -128,7 +128,12 @@ incinerator.crafting_categories = {"incineration"}
 incinerator.crafting_speed = 1
 incinerator.graphics_set = incinerator_graphics
 incinerator.energy_source.smoke = incinerator_smoke
-incinerator.energy_source.emissions_per_minute = { pollution = 6 }
+if (mods["space-age"]) then
+	incinerator.energy_source.emissions_per_minute = { pollution = 6, spores = 4 }
+	else
+	incinerator.energy_source.emissions_per_minute = { pollution = 6 }
+end
+
 incinerator.icon_draw_specification = { scale = 1.5},
 data.extend({ incinerator })
 

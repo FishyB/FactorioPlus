@@ -1,6 +1,7 @@
 -- Space age overrides
 
---if (mods["space-age"]) then
+
+-- Add turret base requirements to new turrets.
 	
 data.raw["recipe"]["railgun-turret"].ingredients = {
 	{type = "item", name = "railgun", amount = 5},
@@ -21,35 +22,18 @@ data.raw["recipe"]["tesla-turret"].ingredients = {
 table.insert(data.raw["recipe"]["scrap-recycling"].results ,{type = "item", name = "explosives", amount = 1, probability = 0.01, show_details_in_recipe_tooltip = false} )
 table.insert(data.raw["recipe"]["scrap-recycling"].results ,{type = "item", name = "carbon", amount = 1, probability = 0.01, show_details_in_recipe_tooltip = false} )
 
+data.raw["furnace"]["recycler"].result_inventory_size = 14, -- Recycler needs the amount of free output slots as number of items recycled from scrap (default 12).
+
 -- this will allow aquilo to be rocket complete.
-
 table.insert(data.raw["technology"]["planet-discovery-aquilo"].effects , {type = "unlock-recipe", recipe = "ammonia-rocket-fuel-2"} )
-
-data.raw["furnace"]["recycler"].result_inventory_size = 14,
-
-data.extend({
- {
-    type = "recipe",
-    name = "process-biter-egg-to-chunks",
-    category = "crafting-with-fluid",
-    enabled = false,
-    allow_productivity = true,
-    energy_required = 6,
-    ingredients =
-    {
-      {type = "item", name = "biter-egg", amount = 1},
-      {type="fluid", name="water", amount=50}
-    },
-    results = {{type="item", name="meaty-chunks", amount=5}}
-  },
-  })
+data.raw["recipe"]["ammonia-rocket-fuel"].localised_name = {"recipe-name.ammonia-jet-fuel"}
 
 data.extend({
   {
     type = "recipe",
     name = "ammonia-rocket-fuel-2",
     localised_name = {"recipe-name.ammonia-rocket-fuel"},
-    icon = "__space-age__/graphics/icons/ammonia-rocket-fuel.png",
+    icon = "__factorioplus__/graphics/icons/ammonia-true-rocket-fuel.png",
     energy_required = 20,
     enabled = false,
     category = "chemistry-or-cryogenics",
@@ -72,10 +56,57 @@ data.extend({
   }
  })
  
-data.raw["recipe"]["ammonia-rocket-fuel"].localised_name = {"recipe-name.ammonia-rocket-fuel"}
+-- this will allow gleba to be rocket complete.
+data.raw["recipe"]["rocket-fuel-from-jelly"].localised_name = {"recipe-name.jet-fuel-from-jelly"}
 
-data.raw["recipe"]["rocket-fuel-from-jelly"].localised_name = {"recipe-name.rocket-fuel-from-jelly"}
+data.extend({
+  {
+    type = "recipe",
+    name = "bioexplosives",
+    icon = "__factorioplus__/graphics/icons/bioexplosives.png",
+    category = "organic",
+    subgroup = "agriculture-products",
+    order = "a[organic-products]-a[rocket-fuel-from-jelly]",
+    auto_recycle = false,
+    enabled = false,
+    allow_productivity = true,
+    energy_required = 8,
+    ingredients =
+    {
+      {type = "item", name = "sulfur", amount = 1},
+      {type = "item", name =  "carbon", amount = 3},
+      {type = "item", name = "bioflux", amount = 1},
+	  {type = "fluid", name = "water", amount = 15}
+    },
+    results = {{type="item", name="explosives", amount=1}},
+    crafting_machine_tint =
+    {
+      primary = {r = 250, g = 66, b = 0, a = 1.000},
+      secondary = {r = 0.8, g = 0.4, b = 0.1, a = 1.000},
+    }
+  },
+  })
   
+  
+-- Allow alien chunks to be automated in space age (potentially merge with agrisci)
+data.extend({
+ {
+    type = "recipe",
+    name = "process-biter-egg-to-chunks",
+    category = "crafting-with-fluid",
+    enabled = false,
+    allow_productivity = true,
+    energy_required = 6,
+    ingredients =
+    {
+      {type = "item", name = "biter-egg", amount = 1},
+      {type="fluid", name="water", amount=50}
+    },
+    results = {{type="item", name="meaty-chunks", amount=5}}
+  },
+  })
+
+
 -- Category updates 
 
 data.raw.recipe["solar-panel"].category = "electronics"

@@ -1,5 +1,13 @@
 -- Space age overrides
 
+-- Add bioexplosives to bioflux processing
+table.insert(data.raw["technology"]["bioflux-processing"].effects, 
+	{
+		type = "unlock-recipe",
+		recipe = "bioexplosives"
+	})
+
+-- Add biter to chunks processing when captivity is researches
 table.insert(data.raw["technology"]["captivity"].effects, 
 	{
 		type = "unlock-recipe",

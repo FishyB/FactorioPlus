@@ -3863,7 +3863,7 @@ data:extend({
 	  turn_range = turnrange_mortar,
       range = range_turret_mortar,
       min_range = rangemin_turret_mortar,
-	  lead_target_for_projectile_speed = 0.35,
+	  lead_target_for_projectile_speed = 0.375 * projectile_mortar_turret_speed_modifier,
 	  
 	  sound =
       {

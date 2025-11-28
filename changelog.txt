@@ -1,6 +1,28 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.6.0
 Date: 2025.11.08
+  Additions:
+    - Added basic explosives, which are required for making Explosives and Grenades. To create higher coal requirements late game. 
+  Fixes:
+    - Personal Roboport MK3 correctly has Computing Unit technology prerequisite.
+    - Red rocks now drop bauxite and stone on destruction.
+  Balance:
+    - Increased all cannon shell firerates by +10%
+    - Cannon shells have different speeds -> Piercing types are faster, explosives are slower.
+    - Added Autocannon shells - a faster firing bullet like cannon shell.
+    - Decreased Cannon shell range from 100 -> 80.
+    - Reduced health of Behemoth and Boss biters by about -25%
+    - Changed 'Extreme' Science Chemical Pack ingredient requirements from "1x battery", to "1x explosive".
+    - Player mortar projectile speed increased by +50%
+    - Increased Mortar physical impact damage from 100 -> 160
+    - Increased Mortar explosive radius from 6 -> 8
+    - Factory recipe ingredients now require computing units.
+    - Electric grid distributors and Huge electric pole recipes changed to require similar components to other electric poles, and no longer require their predecessors.
+    - Submachine gun recipe is now cheaper overall to not provide a large spike in material costs when running Expert science ingredient difficulty and higher.
+    - Cluster grenade bomblet count increased from 6 -> 8. (And adapted S.P.A.M grenades accordingly).
+    - Reduced HE, Flak, Molotov and Cluster grenade stack 30/50 -> 25.
+    - Reduced Flamer damage down by 20%-40% again. Most fire damage should come from multiple stacks, not one off attacks.
+    - Increased Defender health from 100 -> 150.
   Other Mods:
     - Maraxsis: trench-duct now moved to the fluid handling tab. (by Tobilike)
     - Maraxsis: Sand from Maraxsis is now Quartz sand. To avoid destroying the challenge. (by Tobilike)
@@ -14,7 +36,7 @@ Date: 2025.10.31
   Balance:
     - Increased Sawmill resource search radius from 8.0 -> 11.5
     - Alien spawners overall spawn speed rescaled. Starting spawn time is faster, but 100% evolution is slightly slower.
-    - Increase boal pollution from 120% -> 130%
+    - Increase coal pollution from 120% -> 130%
     - Increased flamethrower range by +4 and the firerate by +33%
     - Increased Ocean tile pollution absorption by +40%
     - Basic electric furnace energy usage reduced from 420kW -> 400kW.

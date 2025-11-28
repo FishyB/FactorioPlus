@@ -1618,7 +1618,7 @@ data.extend({
         recipe = "factory-large"
       }
     },
-    prerequisites = {"logistics-3","productivity-module-3", "production-science-pack"},
+    prerequisites = {"logistics-3","productivity-module-3", "production-science-pack","computing-units"},
     unit =
     {
       count = 400,
@@ -3306,7 +3306,7 @@ table.insert(data.raw["technology"]["oil-processing"].effects,{type = "unlock-re
         recipe = "personal-roboport-mk3-equipment"
       },
     },
-    prerequisites = { "personal-roboport-mk2-equipment", "production-science-pack", "construction-robotics-2"},
+    prerequisites = { "personal-roboport-mk2-equipment", "production-science-pack", "construction-robotics-2", "computing-units"},
     unit =
     {
       count = 300,

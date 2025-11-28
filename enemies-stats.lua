@@ -240,8 +240,8 @@ boss_spitter_scale      = 2.0
 
 tanker_spawner_scale = 1.2
 
-small_tanker_scale    = 0.8
-medium_tanker_scale   = 1.1
+small_tanker_scale    = 0.9
+medium_tanker_scale   = 1.2
 big_tanker_scale      = 1.5
 behemoth_tanker_scale = 1.9
 boss_tanker_scale     = 2.3
@@ -329,14 +329,14 @@ range_spitter_boss 	   = 38
 
 attack_speed_flamer_base = 200
 
-damage_modifier_flamer_small    = 20
-damage_modifier_flamer_medium   = 25
-damage_modifier_flamer_big      = 30
-damage_modifier_flamer_behemoth = 35
-damage_modifier_flamer_boss     = 50
+damage_modifier_flamer_small    = 16
+damage_modifier_flamer_medium   = 20
+damage_modifier_flamer_big      = 24
+damage_modifier_flamer_behemoth = 28
+damage_modifier_flamer_boss     = 34
 
-cluster_amount_flamer_small    = 5
-cluster_amount_flamer_medium   = 9
+cluster_amount_flamer_small    = 6
+cluster_amount_flamer_medium   = 10
 cluster_amount_flamer_big      = 14
 cluster_amount_flamer_behemoth = 24
 cluster_amount_flamer_boss     = 38

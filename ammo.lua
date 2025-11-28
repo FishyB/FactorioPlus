@@ -3552,7 +3552,7 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
     particle_spawn_interval = 1,
     particle_spawn_timeout = 1,
     particle_vertical_acceleration = 0.01 * 0.6,
-    particle_horizontal_speed = 0.45,
+    particle_horizontal_speed = 0.45 * projectile_mortar_turret_speed_modifier,
     particle_horizontal_speed_deviation = 0.0035,
     particle_start_alpha = 1,
     particle_end_alpha = 1,

@@ -112,12 +112,14 @@ local function create_entity(entity, rad, probability, amount)
 	}
 end
 
+local count_deviation_mult_base = 2
+
 function create_alien_package(data)
 	local _size = data.size
 	local _count = data.count or 1
-	local _countdeviation = data.count_deviation or 2
-	local _count_max = _count * _countdeviation
-	local _count_min = _count / _countdeviation
+	local _countdeviation_mult = data.count_deviation_mult or count_deviation_mult_base
+	local _count_max = _count * _countdeviation_mult
+	local _count_min = _count / _countdeviation_mult
 
 	return
 	{
@@ -199,27 +201,27 @@ data:extend({
 	create_alien_package(
 	{
 		size = "small",
-		count = 4
+		count = 6,
 	}),
 	create_alien_package(
 	{
 		size = "medium",
-		count = 6
-	}),
-	create_alien_package(
-	{
-		size = "big",
 		count = 10
 	}),
 	create_alien_package(
 	{
-		size = "behemoth",
+		size = "big",
 		count = 16
 	}),
 	create_alien_package(
 	{
-		size = "boss",
+		size = "behemoth",
 		count = 24
+	}),
+	create_alien_package(
+	{
+		size = "boss",
+		count = 34
 	}),
 })
 

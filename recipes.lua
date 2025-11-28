@@ -425,8 +425,9 @@ data:extend
 
       ingredients =
       {
-        {type="item", name="productivity-module-3", amount=4},
-		{type="item", name="assembling-machine-2", amount=6},
+        {type="item", name="productivity-module-3", amount=2},
+		{type="item", name="assembling-machine-2", amount=4},
+		{type="item", name="cpu-item", amount=4},
 		{type="item", name="concrete", amount=140},
       },
       results = {{type="item", name="factory-large", amount=1}},
@@ -864,10 +865,10 @@ data:extend
     name = "basic-explosive",
 	enabled = false,
     category = "crafting",
-    energy_required = 2,
+    energy_required = 1,
     ingredients =  
 	{
-	  {type="item", name="coal", amount=4},
+	  {type="item", name="coal", amount=3},
       {type="item", name="iron-plate", amount=1},
     },
     results = {{type="item", name="basic-explosive", amount=2}},
@@ -876,13 +877,29 @@ data:extend
   {
     type = "recipe",
     name = "silicon-wafer",
-	enabled = false,
-    category = "smelting",
-    energy_required = 20,
-    ingredients = {{type="item", name="glass-plate", amount=3}},
-    results = {{type="item", name="silicon-wafer", amount=1}},
+    category = "crafting-with-fluid",
+
+      enabled = false,
+      energy_required = 10,
+      ingredients =
+      { 
+		{type="item", name="glass-plate", amount=5},
+        {type = "item", name = "copper-cable", amount = 8},
+		 {type="fluid", name="sulfuric-acid", amount=10},
+      },
+      results = {{type="item", name="silicon-wafer", amount=2}},
 	allow_productivity = true,
-  },
+   },
+  -- {
+    -- type = "recipe",
+    -- name = "silicon-wafer",
+	-- enabled = false,
+    -- category = "smelting",
+    -- energy_required = 20,
+    -- ingredients = {{type="item", name="glass-plate", amount=3}},
+    -- results = {{type="item", name="silicon-wafer", amount=1}},
+	-- allow_productivity = true,
+  -- },
     {
     type = "recipe",
     name = "tarmac",
@@ -977,8 +994,8 @@ data.extend({
     ingredients =
     {
       {type="item", name="accumulator-battery", amount=2},
-	  {type="item", name="supercapacitor", amount=4},
-	  {type="item", name="advanced-circuit", amount=8},
+	  {type="item", name="supercapacitor", amount=20},
+	  {type="item", name="advanced-circuit", amount=4},
 	  {type="item", name="processing-unit", amount=4},	  
     },
     results = {{type="item", name="adv-accumulator-battery", amount=1}},
@@ -1757,7 +1774,7 @@ end
   {
     type = "recipe",
     name = "processing-unit",
-    category = "crafting-with-fluid",
+    category = "advanced-crafting",
 
       enabled = false,
       energy_required = 10,
@@ -1766,7 +1783,6 @@ end
         {type="item", name="electronic-circuit", amount=6},
         {type="item", name="advanced-circuit", amount=1},
 		{type="item", name="silicon-wafer", amount=1},
-        {type = "fluid", name = "sulfuric-acid", amount = 5}
       },
       results = {{type="item", name="processing-unit", amount=1}},
 	allow_productivity = true,
@@ -1781,7 +1797,7 @@ end
       ingredients =
       {
 		{type="item", name="advanced-circuit", amount=2},
-        {type="item", name="processing-unit", amount=2},
+        {type="item", name="processing-unit", amount=1},
 		{type="item", name="silicon-wafer", amount=2},
 		{type="item", name="aluminium-plate", amount=2},
       },
@@ -1806,9 +1822,9 @@ end
 	enabled = false,
     ingredients =
     {
-      {type="item", name="substation", amount=1},
-      {type="item", name="processing-unit", amount=8},
-      {type="item", name="accumulator", amount=2}
+	  {type="item", name="steel-plate", amount=20},
+      {type="item", name="copper-cable", amount=8},
+	  {type="item", name="processing-unit", amount=8},
     },
     results = {{type="item", name="electrical-distributor", amount=1}},
   },
@@ -1818,8 +1834,9 @@ end
 	enabled = false,
     ingredients =
     {
-      {type="item", name="big-electric-pole", amount=1},
-      {type="item", name="aluminium-plate", amount=6},
+      {type="item", name="steel-plate", amount=10},
+	  {type="item", name="iron-stick", amount=22},
+	  {type="item", name="copper-cable", amount=16},
       {type="item", name="concrete", amount=10},
     },
     results = {{type="item", name="huge-electric-pole", amount=1}},
@@ -2030,9 +2047,9 @@ end
     energy_required = 8,
     ingredients =
     {
-      {type="item", name="steel-plate", amount=2},
-	  {type="item", name="iron-gear-wheel", amount=6},
-	  {type = "item", name = "iron-plate", amount = 8},
+      {type="item", name="steel-plate", amount=1},
+	  {type="item", name="iron-gear-wheel", amount=2},
+	  {type = "item", name = "iron-plate", amount = 6},
     },
     results = {{type="item", name="uzi-gun", amount=1}},
   },
@@ -2505,8 +2522,7 @@ elseif settings.startup["settings-recipe-cost"].value == "hard" then
 	 {
 		  {type = "item", name = "engine-unit", amount = 2},
 		  {type = "item", name = "advanced-circuit", amount = 3},
-		  {type = "item", name = "silicon-wafer", amount = 2},
-		  {type = "item", name = "sulfur", amount = 1}
+		  {type = "item", name = "explosives", amount = 1},
 		}
 	data.raw["recipe"]["production-science-pack"].ingredients =	
 		{
@@ -2524,6 +2540,59 @@ elseif settings.startup["settings-recipe-cost"].value == "hard" then
 		}
 	
 elseif settings.startup["settings-recipe-cost"].value == "extreme" then
+
+	data.raw["recipe"]["automation-science-pack"].ingredients =
+		{
+			{type = "item", name = "electronic-circuit", amount = 1},
+			{type = "item", name = "stone-brick", amount = 1},
+			{type = "item", name = "iron-gear-wheel", amount = 1}
+		}
+	data.raw["recipe"]["logistic-science-pack"].ingredients =
+		{
+			{type = "item", name = "inserter", amount = 1},
+			{type = "item", name = "transport-belt", amount = 1},
+			{type = "item", name = "small-lamp", amount = 2},
+			{type = "item", name = "small-electric-pole", amount = 2}
+		}
+	data.raw["recipe"]["military-science-pack"].ingredients =	
+		{
+		  {type = "item", name = "piercing-rounds-magazine", amount = 1},
+		  {type = "item", name = "gun-turret", amount = 1},
+		  {type = "item", name = "grenade", amount = 2},
+		  {type = "item", name = "stone-wall", amount = 2}
+		}
+	data.raw["recipe"]["bio-science-pack"].ingredients =	
+		{
+			{type="item", name="charcoal", amount= 10},
+			{type="item", name="meaty-chunks", amount = 20},
+			{type="item", name="nat-gas-fuel", amount = 1},
+			{type = "item", name = "cooked-fish", amount = 1},
+		}
+	data.raw["recipe"]["chemical-science-pack"].ingredients =	
+	 {
+		  {type = "item", name = "engine-unit", amount = 2},
+		  {type = "item", name = "advanced-circuit", amount = 3},
+		  {type = "item", name = "explosives", amount = 1},
+		  {type = "item", name = "silicon-wafer", amount = 2}
+		}
+	data.raw["recipe"]["production-science-pack"].ingredients =	
+		{
+		  {type = "item", name = "electric-furnace", amount = 1},
+		  {type = "item", name = "productivity-module", amount = 1},
+		  {type = "item", name = "rail", amount = 30},
+		  {type = "item", name = "landfill-deep", amount = 6},
+		}
+	data.raw["recipe"]["utility-science-pack"].ingredients =	
+		{
+		  {type = "item", name = "low-density-structure", amount = 3},
+		  {type = "item", name = "processing-unit", amount = 2},
+		  {type = "item", name = "logistic-robot", amount = 1},
+		  {type = "item", name = "construction-robot", amount = 1},
+		  {type = "item", name = "laser", amount = 1}
+		}
+
+-- TODO make insane setting + ingredients.
+elseif settings.startup["settings-recipe-cost"].value == "insane" then
 
 	data.raw["recipe"]["automation-science-pack"].ingredients =
 		{

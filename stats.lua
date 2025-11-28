@@ -390,7 +390,7 @@ range_mortar = 6 * 32
 mortar_hit_physicaldamage = 160
 mortar_regular_explosivedamage = 100
 
-mortar_regular_damageradius = 7.0
+mortar_regular_damageradius = 8.0
 
 mortar_napalm_explosivedamage = 40
 mortar_napalm_explosivedamageradius = 4
@@ -437,12 +437,12 @@ flak_pellet_range = 12
 flak_pellet_count = 40 * 1.5
 flak_piercing_damage = 35 /1.5
 
-clustergrenade_count = 6
+clustergrenade_count = 8
 
-mirvgrenade_count = 7
+mirvgrenade_count = 6
 
 grenade_stack = 50
-grenade_stack_low = 30
+grenade_stack_low = 25
 mirv_stack = 15
 
 
@@ -712,7 +712,7 @@ robot_deploy_cooldown = 60
 robot_deploy_range = 15
 robot_stacksize = 25
 
-robot_defender_hp = 100
+robot_defender_hp = 150
 robot_defender_damage_modifier = 0.75 -- uses pistol/piercing mag stats
 robot_defender_range = 18
 robot_defender_speed = 0.012

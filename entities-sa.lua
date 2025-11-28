@@ -15,7 +15,8 @@ local decorative_trigger_effects = require("__base__.prototypes.decorative.decor
 
 data.raw["planet"]["gleba"].map_gen_settings.autoplace_settings.entity.settings["bauxite-stromatolite"] = {} 
 -- Bauxite STROMATOLITE
-local stroma_bauxite_scale = 0.75
+local stroma_bauxite_scale = 0.65
+local stroma_bauxite_scale_col = 1 + (stroma_bauxite_scale - 0.5)
 
 data:extend{
  {
@@ -37,8 +38,8 @@ data:extend{
     icon = "__space-age__/graphics/icons/iron-stromatolite.png",
     subgroup = "grass",
     order = "b[decorative]-l[rock]-a[big]",
-    collision_box = {{-0.8, -0.8}, {0.8, 0.8}},
-    selection_box = {{-0.95, -0.95}, {0.95, 0.95}},
+    collision_box = {{-0.8 * stroma_bauxite_scale_col, -0.8 * stroma_bauxite_scale_col }, {0.8 * stroma_bauxite_scale_col, 0.8 * stroma_bauxite_scale_col}},
+    selection_box = {{-0.95 * stroma_bauxite_scale_col, -0.95 * stroma_bauxite_scale_col}, {0.95 * stroma_bauxite_scale_col, 0.95 * stroma_bauxite_scale_col}},
     collision_mask = {layers={player=true, ground_tile=true, train=true, is_object=true, is_lower_object=true}},
     damaged_trigger_effect = hit_effects.rock(),
     render_layer = "object",
@@ -188,6 +189,9 @@ data:extend{
     }
   },
  }
+ 
+ -- Allow bullet projectile collision with Asteroids
+ -- Add piercing damage type resistances.
  
 for i, v in pairs(data.raw["asteroid"]) do
 	v.collision_mask = {layers={object=true, player=true}, not_colliding_with_itself=true}

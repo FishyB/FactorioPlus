@@ -226,6 +226,16 @@ data:extend({
     stack_size = 5
   },
 })
+
+-- OVERRIDE SMG RECIPE
+-- Cheaper
+
+data.raw["recipe"]["submachine-gun"].ingredients =
+{
+  {type = "item", name = "iron-gear-wheel", amount = 4},
+  {type = "item", name = "copper-plate", amount = 4},
+  {type = "item", name = "iron-plate", amount = 8}
+}
  
 data:extend({
 createnewrareweapon("submachine-gun", "uncommon"),
@@ -1082,7 +1092,7 @@ data:extend({
     },
     subgroup = "capsule",
     order = "a[grenade]-b[cluster]",
-    stack_size = grenade_stack
+    stack_size = grenade_stack_low
   },
   
   {
@@ -1115,8 +1125,8 @@ data:extend({
       {
         type = "cluster",
         cluster_count = clustergrenade_count,
-        distance = 9,
-        distance_deviation = 3,
+        distance = 6,
+        distance_deviation = 4,
         action_delivery =
         {
           type = "projectile",
@@ -1548,7 +1558,7 @@ data:extend({
               {
                 type = "projectile",
                 projectile = "mirv-grenade",
-                starting_speed = 0.3
+                starting_speed = 0.4
               }
             },
             {
@@ -1603,7 +1613,7 @@ data:extend({
       {
         type = "cluster",
         cluster_count = mirvgrenade_count,
-        distance = 10,
+        distance = 12,
         distance_deviation = 5,
         action_delivery =
         {
@@ -1611,7 +1621,7 @@ data:extend({
           projectile = "cluster-grenade",
           direction_deviation = 0.6,
           starting_speed = 0.35,
-          starting_speed_deviation = 0.4
+          starting_speed_deviation = 0.5
         }
       }
     },
@@ -1737,7 +1747,7 @@ data:extend({
     -- radius_color = { r = 0.25, g = 0.05, b = 0.25, a = 0.25 },
     subgroup = "capsule",
     order = "a[grenade]-a[normal]",
-    stack_size = grenade_stack
+    stack_size = grenade_stack_low
   },
 
   {
