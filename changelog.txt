@@ -1,4 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.6.1
+Date: 2025.11.28
+  Space Age:
+    - Added Bioexplosives to Gleba to make it a Rocket fuel complete planet.
+    - Fixed space age rocket fuel and jet fuel recipe icons and localizations.
+    - Increased Advanced accumulator battery supercapacitor recipe amount from 4 -> 20
+    - Incinerators create spores when used on Gleba.
+    - Fixed Bauxite stromatolites graphics size not matching their collision.
+  Fixes:
+    - Fixed multiple items not having the most zoomed out mipmap graphics.
+  Balance:
+    - Silicon wafer is now made in a crafting machine with fluid (glass, copper cable & sulfuric acid)
+    - Processing unit doesn't require sulfuric acid any more (part of silicon wafer production)
+    - Changed Expert science Chemical science packs to require 1x Explosives instead of 1x Silicon wafer.
+    - Increased Construction and Logistic robot speed from 0.08 -> 0.1
+    - Increased Large chunk counts from Polyps by around +60%. 
+---------------------------------------------------------------------------------------------------
 Version: 2.6.0
 Date: 2025.11.08
   Additions:

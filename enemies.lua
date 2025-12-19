@@ -937,7 +937,7 @@ data:extend({
         }
       },
     },
-    autoplace = enemy_autoplace.enemy_worm_autoplace("enemy_autoplace_base(0,"..(1.5 * powerscalingvalue )..")"),
+    autoplace = enemy_autoplace.enemy_worm_autoplace("enemy_autoplace_base("..autoplace_worm_small * powerscalingvalue..","..(autoplace_worm_small * powerscalingvalue )..")"),
     call_for_help_radius = 40,
     spawn_decorations_on_expansion = true,
     spawn_decoration =
@@ -1100,7 +1100,7 @@ data:extend({
       }
     },
     build_base_evolution_requirement = 0.3,
-    autoplace = enemy_autoplace.enemy_worm_autoplace("enemy_autoplace_base(4,"..(2.5 * powerscalingvalue )..")"),
+    autoplace = enemy_autoplace.enemy_worm_autoplace("enemy_autoplace_base("..autoplace_worm_medium * powerscalingvalue..","..(autoplace_worm_medium * powerscalingvalue )..")"),
     call_for_help_radius = 40,
     spawn_decorations_on_expansion = true,
     spawn_decoration =
@@ -1263,7 +1263,7 @@ collision_box = {{-0.9 * scale_worm_big, -0.8 * scale_worm_big }, {0.9 * scale_w
       }
     },
     build_base_evolution_requirement = 0.5,
-    autoplace = enemy_autoplace.enemy_worm_autoplace("enemy_autoplace_base(8,"..(3.5 * powerscalingvalue )..")"),
+    autoplace = enemy_autoplace.enemy_worm_autoplace("enemy_autoplace_base("..autoplace_worm_big * powerscalingvalue..","..(autoplace_worm_big * powerscalingvalue )..")"),
     call_for_help_radius = 40,
     spawn_decorations_on_expansion = true,
     spawn_decoration =
@@ -1423,7 +1423,7 @@ collision_box = {{-0.9 * scale_worm_big, -0.8 * scale_worm_big }, {0.9 * scale_w
       }
     },
     build_base_evolution_requirement = 0.9,
-    autoplace = enemy_autoplace.enemy_worm_autoplace("enemy_autoplace_base(12, "..(5 * powerscalingvalue )..")"),
+    autoplace = enemy_autoplace.enemy_worm_autoplace("enemy_autoplace_base("..autoplace_worm_behemoth * powerscalingvalue..", "..(autoplace_worm_behemoth * powerscalingvalue )..")"),
     --autoplace = enemy_autoplace.enemy_worm_autoplace(8),
     call_for_help_radius = 80,
     spawn_decorations_on_expansion = true,
@@ -1759,7 +1759,7 @@ local res =
 		icon = "__base__/graphics/icons/biter-spawner.png",
 		icon_size = 64, icon_mipmaps = 4,
 		flags = {"placeable-player", "placeable-enemy", "not-repairable"},
-		max_health = (spawnerbasehealth  * enemy_health_scale) * (spawnertier),
+		max_health = (spawnerbasehealth  * enemy_health_scale) * (1 + (spawnertier / 1.5)),
 		order="b-d-a",
 		subgroup="enemies",
 		loot = spawnerloot,
@@ -2490,159 +2490,159 @@ data.raw["planet"]["nauvis"].map_gen_settings.autoplace_settings["entity"].setti
 
 ---------------------------------------------------  ALIEN FURNACE  ------------------------------------------------------------
 
-data.extend({
-{
-    type = "recipe",
-    name = "rawfish-meat",
-	category = "alien-furnace",
-	hidden = true,
-	energy_required = 10,
-	ingredients =
-	{
-		{type="item", name="raw-fish", amount=1},
-	},
-		results = {{type="item", name="chunky-meat", amount=1}},
-},
+-- data.extend({
+-- {
+    -- type = "recipe",
+    -- name = "rawfish-meat",
+	-- category = "alien-furnace",
+	-- hidden = true,
+	-- energy_required = 10,
+	-- ingredients =
+	-- {
+		-- {type="item", name="raw-fish", amount=1},
+	-- },
+		-- results = {{type="item", name="chunky-meat", amount=1}},
+-- },
 
-{
-    type = "recipe",
-    name = "cookedfish-meat",
-	category = "alien-furnace",
-	hidden = true,
-	energy_required = 15,
-	ingredients =
-	{
-		{type="item", name="cooked-fish", amount=1},
-	},
-		results = {{type="item", name="chunky-meat", amount=2}},
-},
+-- {
+    -- type = "recipe",
+    -- name = "cookedfish-meat",
+	-- category = "alien-furnace",
+	-- hidden = true,
+	-- energy_required = 15,
+	-- ingredients =
+	-- {
+		-- {type="item", name="cooked-fish", amount=1},
+	-- },
+		-- results = {{type="item", name="chunky-meat", amount=2}},
+-- },
   
-{
-    type = "furnace",
-    name = "alien-furnace",
-    icon = "__factorioplus__/graphics/icons/big-furnace.png",
-    icon_size = 64, icon_mipmaps = 4,
-    flags = {"not-repairable"},
-    minable =
-    {
-      mining_time = 3,
-       results = 
-	  {
-	  {type = "item", name = "chunky-meat", amount_min = 10, amount_max = 20}, 
-	  },
-    },
-    max_health = 600,
-	allow_run_time_change_of_is_military_target = true,
-    --corpse = "stone-furnace-remnants",
-    --dying_explosion = "stone-furnace-explosion",
-    -- repair_sound = sounds.manual_repair,
-    --mined_sound = { filename = "__base__/sound/deconstruct-bricks.ogg",volume = 0.9},
-    -- open_sound = sounds.machine_open,
-    -- close_sound = sounds.machine_close,
-    -- vehicle_impact_sound = sounds.car_stone_impact,
-    working_sound =
-    {
-      sound =
-      {
-        {
-          filename = "__base__/sound/furnace.ogg",
-          volume = 0.9
-        }
-      },
-      fade_in_ticks = 4,
-      fade_out_ticks = 20,
-      audible_distance_modifier = 0.6,
-    },
-    resistances =
-    {
-      {
-        type = "acid",
-        percent = 95
-      },
-      {
-        type = "explosion",
-        percent = 30
-      },
-      {
-        type = "impact",
-        percent = 30
-      }
-    },
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
-    -- damaged_trigger_effect = hit_effects.rock(),
-    crafting_categories = {"alien-furnace"},
-    result_inventory_size = 1,
-    crafting_speed = 1.0,
-    source_inventory_size = 1,
-	energy_usage = "63kW",
-    energy_source = {type = "void"},
-	graphics_set =
-    {
-		animation =
-		{
-		  layers =
-		  {
-			{
-			  filename = "__factorioplus__/graphics/big-furnace.png",
-			  priority = "extra-high",
-			  width = 192,
-			  height = 256,
-			  frame_count = 1,
-			  shift = util.by_pixel(0, -18),
-			  scale = 0.5,
-			},
-			{
-			  filename = "__factorioplus__/graphics/big-furnace-shadow.png",
-			  priority = "extra-high",
-			  width = 284,
-			  height = 256,
-			  frame_count = 1,
-			  draw_as_shadow = true,
-			  shift = util.by_pixel(22, -18),
-			  scale = 0.5,
-			}
-		  }
-		},
-		working_visualisations =
-		{
-		  {
-			north_position = {0.0, 0.0},
-			east_position = {0.0, 0.0},
-			south_position = {0.0, 0.0},
-			west_position = {0.0, 0.0},
-			animation =
-			{
-			  filename = "__factorioplus__/graphics/big-furnace-on.png",
-			  priority = "extra-high",
-			  line_length = 1,
-			  width = 192,
-			  height = 256,
-			  frame_count = 1,
-			  axially_symmetrical = false,
-			  direction_count = 1,
-			  shift = util.by_pixel(0, -18),
-			  scale = 0.5,
-			},
-			light = {intensity = 1, size = 1, color = {r=1.0, g=1.0, b=1.0}}
-		  }
-		},
-	},
+-- {
+    -- type = "furnace",
+    -- name = "alien-furnace",
+    -- icon = "__factorioplus__/graphics/icons/big-furnace.png",
+    -- icon_size = 64, icon_mipmaps = 4,
+    -- flags = {"not-repairable"},
+    -- minable =
+    -- {
+      -- mining_time = 3,
+       -- results = 
+	  -- {
+	  -- {type = "item", name = "chunky-meat", amount_min = 10, amount_max = 20}, 
+	  -- },
+    -- },
+    -- max_health = 600,
+	-- allow_run_time_change_of_is_military_target = true,
+    -- --corpse = "stone-furnace-remnants",
+    -- --dying_explosion = "stone-furnace-explosion",
+    -- -- repair_sound = sounds.manual_repair,
+    -- --mined_sound = { filename = "__base__/sound/deconstruct-bricks.ogg",volume = 0.9},
+    -- -- open_sound = sounds.machine_open,
+    -- -- close_sound = sounds.machine_close,
+    -- -- vehicle_impact_sound = sounds.car_stone_impact,
+    -- working_sound =
+    -- {
+      -- sound =
+      -- {
+        -- {
+          -- filename = "__base__/sound/furnace.ogg",
+          -- volume = 0.9
+        -- }
+      -- },
+      -- fade_in_ticks = 4,
+      -- fade_out_ticks = 20,
+      -- audible_distance_modifier = 0.6,
+    -- },
+    -- resistances =
+    -- {
+      -- {
+        -- type = "acid",
+        -- percent = 95
+      -- },
+      -- {
+        -- type = "explosion",
+        -- percent = 30
+      -- },
+      -- {
+        -- type = "impact",
+        -- percent = 30
+      -- }
+    -- },
+    -- collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
+    -- selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
+    -- -- damaged_trigger_effect = hit_effects.rock(),
+    -- crafting_categories = {"alien-furnace"},
+    -- result_inventory_size = 1,
+    -- crafting_speed = 1.0,
+    -- source_inventory_size = 1,
+	-- energy_usage = "63kW",
+    -- energy_source = {type = "void"},
+	-- graphics_set =
+    -- {
+		-- animation =
+		-- {
+		  -- layers =
+		  -- {
+			-- {
+			  -- filename = "__factorioplus__/graphics/big-furnace.png",
+			  -- priority = "extra-high",
+			  -- width = 192,
+			  -- height = 256,
+			  -- frame_count = 1,
+			  -- shift = util.by_pixel(0, -18),
+			  -- scale = 0.5,
+			-- },
+			-- {
+			  -- filename = "__factorioplus__/graphics/big-furnace-shadow.png",
+			  -- priority = "extra-high",
+			  -- width = 284,
+			  -- height = 256,
+			  -- frame_count = 1,
+			  -- draw_as_shadow = true,
+			  -- shift = util.by_pixel(22, -18),
+			  -- scale = 0.5,
+			-- }
+		  -- }
+		-- },
+		-- working_visualisations =
+		-- {
+		  -- {
+			-- north_position = {0.0, 0.0},
+			-- east_position = {0.0, 0.0},
+			-- south_position = {0.0, 0.0},
+			-- west_position = {0.0, 0.0},
+			-- animation =
+			-- {
+			  -- filename = "__factorioplus__/graphics/big-furnace-on.png",
+			  -- priority = "extra-high",
+			  -- line_length = 1,
+			  -- width = 192,
+			  -- height = 256,
+			  -- frame_count = 1,
+			  -- axially_symmetrical = false,
+			  -- direction_count = 1,
+			  -- shift = util.by_pixel(0, -18),
+			  -- scale = 0.5,
+			-- },
+			-- light = {intensity = 1, size = 1, color = {r=1.0, g=1.0, b=1.0}}
+		  -- }
+		-- },
+	-- },
 
-    water_reflection =
-    {
-      pictures =
-      {
-        filename = "__base__/graphics/entity/stone-furnace/stone-furnace-reflection.png",
-        priority = "extra-high",
-        width = 16,
-        height = 16,
-        shift = util.by_pixel(0, 35),
-        variation_count = 1,
-        scale = 0.75,
-      },
-      rotate = false,
-      orientation_to_variation = false
-    }
-  },
-})
+    -- water_reflection =
+    -- {
+      -- pictures =
+      -- {
+        -- filename = "__base__/graphics/entity/stone-furnace/stone-furnace-reflection.png",
+        -- priority = "extra-high",
+        -- width = 16,
+        -- height = 16,
+        -- shift = util.by_pixel(0, 35),
+        -- variation_count = 1,
+        -- scale = 0.75,
+      -- },
+      -- rotate = false,
+      -- orientation_to_variation = false
+    -- }
+  -- },
+-- })

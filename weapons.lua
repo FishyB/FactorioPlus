@@ -47,13 +47,14 @@ local rarities =
 	uncommon = {name = "uncommon", color = {12,255,70,0.7}, scale = 1.2 }, -- green
 	rare = {name = "rare", color = {50,100,255,0.7}, scale = 1.4 }, -- blue
 	epic = {name = "epic", color = {255,14,158,0.7}, scale = 1.7 }, -- purple
-	legendary = {name = "legendary", color = {255,170,8,0.7}, scale = 2.25 }, -- orange/yellow
+	legendary = {name = "legendary", color = {255,170,8,0.7}, scale = 2.1 }, -- orange/yellow
 }
 
 function createnewrareweapon(weapon, rarity)
 	local r = rarities[rarity]
 	local nw = table.deepcopy(data.raw["gun"][weapon]) 
 	local dm = nw.attack_parameters.damage_modifier or 1.0
+	local acm = nw.attack_parameters.ammo_consumption_modifier or 1.0
 	local range_reduction = 1/4
 	nw.localised_name = { "" , string.capitalize(r.name) , " " , {"item-name." .. nw.name} }
 	nw.name = nw.name .. "-" .. r.name
@@ -63,7 +64,7 @@ function createnewrareweapon(weapon, rarity)
 	nw.attack_parameters.cooldown = nw.attack_parameters.cooldown / r.scale 
 	nw.attack_parameters.range = math.ceil( nw.attack_parameters.range * (1+((r.scale-1)*range_reduction)) )
 	nw.attack_parameters.damage_modifier = dm * r.scale
-
+	nw.attack_parameters.ammo_consumption_modifier = acm / r.scale
 	return nw
 end
 
@@ -85,7 +86,8 @@ data:extend({
       type = "projectile",
       ammo_category = "bullet",
       cooldown = firerate_pistol,
-      movement_slow_down_factor = 0.1,
+      movement_slow_down_factor = movement_slow_down_factor_pistol,
+	  ammo_consumption_modifier = ammo_consumption_modifier_pistol,
       shell_particle =
 	  
       {
@@ -101,7 +103,7 @@ data:extend({
       projectile_creation_distance = 1.125,
       range = range_pistol,
       sound = sounds.light_gunshot,
-	  damage_modifier = 1.5,
+	  damage_modifier = damage_modifier_pistol,
     },
     stack_size = 15
   },
@@ -134,7 +136,7 @@ data:extend({
       type = "projectile",
       ammo_category = "bullet",
       cooldown = firerate_magnum,
-      movement_slow_down_factor = 0.15,
+      movement_slow_down_factor = movement_slow_down_factor_magnum,
       shell_particle =
 	  
       {
@@ -149,35 +151,36 @@ data:extend({
       },
       projectile_creation_distance = 1.125,
       range = range_magnum,
-      sound = {
-  {
-    filename = "__base__/sound/fight/tank-cannon-1.ogg",
-    volume = 0.7,
-	speed = 1.7
-  },
-  {
-    filename = "__base__/sound/fight/tank-cannon-2.ogg",
-    volume = 0.7,
-	speed = 1.7
-  },
-  {
-    filename = "__base__/sound/fight/tank-cannon-3.ogg",
-    volume = 0.7,
-	speed = 1.7
-  },
-  {
-    filename = "__base__/sound/fight/tank-cannon-4.ogg",
-    volume = 0.7,
-	speed = 1.7
-  },
-  {
-    filename = "__base__/sound/fight/tank-cannon-5.ogg",
-    volume = 0.7,
-	speed = 1.7
-  }
-},
-	  damage_modifier = 10.0,
-	  ammo_consumption_modifier = 5.0,
+      sound = 
+	  {
+		  {
+			filename = "__base__/sound/fight/tank-cannon-1.ogg",
+			volume = 0.7,
+			speed = 1.7
+		  },
+		  {
+			filename = "__base__/sound/fight/tank-cannon-2.ogg",
+			volume = 0.7,
+			speed = 1.7
+		  },
+		  {
+			filename = "__base__/sound/fight/tank-cannon-3.ogg",
+			volume = 0.7,
+			speed = 1.7
+		  },
+		  {
+			filename = "__base__/sound/fight/tank-cannon-4.ogg",
+			volume = 0.7,
+			speed = 1.7
+		  },
+		  {
+			filename = "__base__/sound/fight/tank-cannon-5.ogg",
+			volume = 0.7,
+			speed = 1.7
+		  }
+	  },
+	  damage_modifier = damage_modifier_magnum,
+	  ammo_consumption_modifier = ammo_consumption_modifier_magnum,
     },
     stack_size = 10
   },
@@ -206,7 +209,7 @@ data:extend({
       type = "projectile",
       ammo_category = "bullet",
       cooldown = firerate_smg,
-      movement_slow_down_factor = 0.5,
+      movement_slow_down_factor = movement_slow_down_factor_smg,
       shell_particle =
       {
         name = "shell-particle",
@@ -257,10 +260,10 @@ data:extend({
     {
       type = "projectile",
       ammo_category = "bullet",
-      cooldown = firerate_smg / 1.75,
-	  ammo_consumption_modifier = 0.6,
-	  damage_modifier = 0.7,
-      movement_slow_down_factor = 0.2,
+      cooldown = firerate_uzi,
+	  ammo_consumption_modifier = ammo_consumption_modifier_uzi,
+	  damage_modifier = damage_modifier_uzi,
+      movement_slow_down_factor = movement_slow_down_factor_uzi,
       shell_particle =
       {
         name = "shell-particle",
@@ -273,7 +276,7 @@ data:extend({
         starting_frame_speed_deviation = 0.1
       },
       projectile_creation_distance = 1.125,
-      range = math.floor(range_smg / 1.5),
+      range = range_uzi,
       sound = soundsnew.gun_uzi
 	  
     },
@@ -349,7 +352,6 @@ data:extend({
       ammo_category = "bullet",
       cooldown = firerate_smg / attack_speed_vehicle_bonus ,
 	  damage_modifier = damage_modifier_vehicle_bonus,
-      movement_slow_down_factor = 0.7,
       shell_particle =
       {
         name = "shell-particle",
@@ -381,7 +383,6 @@ data:extend({
       type = "projectile",
       ammo_category = "bullet",
       cooldown = firerate_turret_heavysmg / attack_speed_vehicle_bonus,
-	 -- ammo_consumption_modifier = 0.5,
 	  damage_modifier = damagemodifier_turret_heavysmg * damage_modifier_vehicle_bonus,
       shell_particle =
       {
@@ -403,38 +404,37 @@ data:extend({
     stack_size = 1
   },
    -----------------------------  TANK MACHINE GUN  -----------------------------
-  {
-    type = "gun",
-    name = "tank-machine-gun",
-    icon = "__base__/graphics/icons/submachine-gun.png",
-    icon_size = 64, icon_mipmaps = 4,
-    hidden = true,
-    subgroup = "gun",
-    order = "a[basic-clips]-b[tank-machine-gun]",
-    attack_parameters =
-    {
-      type = "projectile",
-      ammo_category = "bullet",
-      cooldown = firerate_smg,
-      movement_slow_down_factor = 0.7,
-      shell_particle =
-      {
-        name = "shell-particle",
-        direction_deviation = 0.1,
-        speed = 0.1,
-        speed_deviation = 0.03,
-        center = {0, 0},
-        creation_distance = -0.6875,
-        starting_frame_speed = 0.4,
-        starting_frame_speed_deviation = 0.1
-      },
-      projectile_center = {-0.15625, -0.07812},
-      projectile_creation_distance = 1,
-      range = range_turret_smg,
-      sound = sounds.heavy_gunshot
-    },
-    stack_size = 1
-  },
+  -- {
+    -- type = "gun",
+    -- name = "tank-machine-gun",
+    -- icon = "__base__/graphics/icons/submachine-gun.png",
+    -- icon_size = 64, icon_mipmaps = 4,
+    -- hidden = true,
+    -- subgroup = "gun",
+    -- order = "a[basic-clips]-b[tank-machine-gun]",
+    -- attack_parameters =
+    -- {
+      -- type = "projectile",
+      -- ammo_category = "bullet",
+      -- cooldown = firerate_smg,
+      -- shell_particle =
+      -- {
+        -- name = "shell-particle",
+        -- direction_deviation = 0.1,
+        -- speed = 0.1,
+        -- speed_deviation = 0.03,
+        -- center = {0, 0},
+        -- creation_distance = -0.6875,
+        -- starting_frame_speed = 0.4,
+        -- starting_frame_speed_deviation = 0.1
+      -- },
+      -- projectile_center = {-0.15625, -0.07812},
+      -- projectile_creation_distance = 1,
+      -- range = range_turret_smg,
+      -- sound = sounds.heavy_gunshot
+    -- },
+    -- stack_size = 1
+  -- },
   -----------------------------  SHOTGUN  -----------------------------
   {
     type = "gun",
@@ -450,7 +450,7 @@ data:extend({
       cooldown = firerate_shotgun,
 	  damage_modifier = shotgun_damage_modifier,
 	  movement_slow_down_cooldown = firerate_shotgun/4,
-      movement_slow_down_factor = 0.5,
+      movement_slow_down_factor = movement_slow_down_factor_shotgun,
       projectile_creation_distance = 1.125,
       range = range_shotgun,
       min_range = 1,
@@ -474,8 +474,6 @@ data:extend({
       ammo_category = "shotgun-shell",
       cooldown = firerate_shotgun / attack_speed_vehicle_bonus,
 	  damage_modifier = shotgun_damage_modifier * damage_modifier_vehicle_bonus,
-	  movement_slow_down_cooldown = firerate_shotgun/4,
-      movement_slow_down_factor = 0.5,
       projectile_creation_distance = 1.125,
       range = range_shotgun * range_modifier_vehicle_bonus,
       min_range = 1,
@@ -498,8 +496,8 @@ data:extend({
       cooldown = firerate_blunderbuss,
 	  ammo_consumption_modifier = ammo_consumption_rate_blunderbuss,
 	  damage_modifier = damage_modifier_blunderbuss,
-	  movement_slow_down_cooldown = firerate_shotgun/1.5,
-      movement_slow_down_factor = 0.8,
+	  movement_slow_down_cooldown = movement_slow_down_cooldown_blunderbuss ,
+      movement_slow_down_factor = movement_slow_down_factor_blunderbuss,
       projectile_creation_distance = 1.125,
       range = range_shotgun,
       min_range = 1,
@@ -521,9 +519,9 @@ data:extend({
       ammo_category = "shotgun-shell",
       cooldown = firerate_combatshotgun,
 	  ammo_consumption_modifier = ammo_consumption_rate_combatshotgun,
-      movement_slow_down_factor = 0.8,
-	  movement_slow_down_cooldown = firerate_shotgun/2,
-      damage_modifier = 1,
+      movement_slow_down_factor = movement_slow_down_factor_combatshotgun,
+	  movement_slow_down_cooldown = movement_slow_down_cooldown_combatshotgun,
+      damage_modifier = damage_modifier_combatshotgun,
       projectile_creation_distance = 1.125,
       range = range_combatshotgun,
       sound = soundsnew.gun_autoshotgun
@@ -569,8 +567,6 @@ data:extend({
       ammo_category = "shotgun-shell",
       cooldown = firerate_combatshotgun / attack_speed_vehicle_bonus,
       ammo_consumption_modifier = ammo_consumption_rate_combatshotgun,
-      movement_slow_down_factor = 0.75,
-	  movement_slow_down_cooldown = firerate_shotgun/4,
       damage_modifier = damage_modifier_vehicle_bonus,
       projectile_creation_distance = 1.125,
       range = range_combatshotgun * range_modifier_vehicle_bonus,
@@ -2980,7 +2976,7 @@ data:extend({
     {
       type = "projectile",
       ammo_categories = rocketlauncher_ammo_categories,
-      movement_slow_down_factor = 0.75,
+      movement_slow_down_factor = movement_slow_down_factor_rocketlauncher,
       cooldown =  firerate_rocketlauncher,
       projectile_creation_distance = 0.6,
       range = range_rocketlauncher,
@@ -3021,7 +3017,7 @@ data:extend({
       type = "projectile",
       ammo_categories = rocketlauncher_ammo_categories,
       movement_slow_down_factor = 0.75,
-      cooldown =  firerate_rocketlauncher * attack_speed_vehicle_bonus,
+      cooldown =  firerate_rocketlauncher / attack_speed_vehicle_bonus,
       projectile_creation_distance = 0.6,
 	  damage_modifier = damage_modifier_vehicle_bonus,
       range = range_rocketlauncher * range_modifier_vehicle_bonus,
@@ -3207,7 +3203,7 @@ data:extend({
       type = "projectile",
       ammo_category = "beltfed-bullet",
       cooldown =  firerate_minigun,
-	  damage_modifier = 1 + damage_modifier_minigun,
+	  damage_modifier = damage_modifier_minigun,
       movement_slow_down_factor = 0.9,
 	  --warmup = 60.0 * 1.0,
       shell_particle =

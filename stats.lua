@@ -12,10 +12,10 @@ abandonments_barren_color_map = {0.1,0.1,0.1,1}
 
 -- Vehicles
 
--- Vehicles aren't turrets than can be spammed, so give them a little compared to them.
-damage_modifier_vehicle_bonus = 1.25
-range_modifier_vehicle_bonus = 1.25
-attack_speed_vehicle_bonus = 1.25
+-- Vehicles aren't turrets than can be spammed, so give them a little more benifits compared to them.
+damage_modifier_vehicle_bonus = 1.4
+range_modifier_vehicle_bonus = 1.4
+attack_speed_vehicle_bonus = 1.4
 
 atv_health = 150
 atv_ephp = 2 
@@ -244,12 +244,29 @@ speeder_inventory_size = 0
 
 firerate_pistol = 60 / 3
 range_pistol = 25
+ammo_consumption_modifier_pistol = 2.0
+damage_modifier_pistol = 2.0
+movement_slow_down_factor_pistol =  0.1
 
-firerate_magnum = 60 / 0.8
+firerate_magnum = 60 / 0.6
 range_magnum = 20
+damage_modifier_magnum = 10.0
+ammo_consumption_modifier_magnum = 5.0
+movement_slow_down_factor_magnum = 0.25
 
 firerate_smg = 60 / 9
+movement_slow_down_factor_smg = 0.5
 range_smg = 22
+
+firerate_uzi = firerate_smg / 1.75
+ammo_consumption_modifier_uzi = 0.6
+damage_modifier_uzi = 0.7
+movement_slow_down_factor_uzi = 0.2
+range_uzi = math.floor(range_smg / 1.5)
+
+bullet_magazinesize = 40
+bullet_stacksize = 50
+bullet_reloadtime = 1 * 60
 
 bullet_regular_physical = 8
 
@@ -281,10 +298,6 @@ bullet_nuke_magazinesize = 25
 bullet_nuke_stacksize = 25
 bullet_nuke_cooldown_modifier = 2
 
-bullet_magazinesize = 40
-bullet_stacksize = 50
-bullet_reloadtime = 1 * 60
-
 -- Sniper
 
 firerate_sniper = 60 / 0.25
@@ -306,17 +319,23 @@ sniperbullet_reloadtime = 0 --60 * 3
 
 firerate_shotgun = 60 / 0.75
 shotgun_damage_modifier = 1.5
+movement_slow_down_factor_shotgun = 0.5
 range_shotgun = 24
 
 firerate_blunderbuss = 60 / 40
 ammo_consumption_rate_blunderbuss = 4
-damage_modifier_blunderbuss = 3
+damage_modifier_blunderbuss = 2.5
+movement_slow_down_cooldown_blunderbuss = firerate_shotgun/1.5
+movement_slow_down_factor_blunderbuss = 0.8
 
 firerate_combatshotgun = 60 / 1.85
 range_combatshotgun = 28
+movement_slow_down_factor_combatshotgun = 0.8
+movement_slow_down_cooldown_combatshotgun = firerate_shotgun/2
+damage_modifier_combatshotgun = 1.0
 ammo_consumption_rate_combatshotgun = 0.5
 
-shell_arc_wide = 0.55
+shell_arc_wide = 0.6
 shell_arc_tight = 0.3
 
 shell_range = 24
@@ -362,7 +381,7 @@ shell_reloadtime = 2.5 * 60
  
 firerate_minigun = 60 / 30
 range_minigun = 50
-damage_modifier_minigun = 0.25
+damage_modifier_minigun = 1.25
  
 beltfed_regular_physical = 16
 beltfed_regular_piercing = 4
@@ -451,7 +470,7 @@ mirv_stack = 15
 -------------
 
 firerate_flamethrower = 60 / 20
-range_flamethrower = 24
+range_flamethrower = 26
 
 -------------
 -- ROCKETS --
@@ -460,6 +479,8 @@ range_flamethrower = 24
 firerate_rocketlauncher = 60 / 1
 firerate_rocketlauncher_spidertron = firerate_rocketlauncher
 firerate_rocketlauncher_multi = firerate_rocketlauncher / 3
+
+movement_slow_down_factor_rocketlauncher =  0.75
 
 range_rocketlauncher = 42
 range_rocketlauncher_spidertron = range_rocketlauncher + 4 -- Because it's higher up.
@@ -701,11 +722,15 @@ artillery_turret_range = 8 * 32
 artillery_turret_min_range = 2 * 32
 health_turret_artillery = 1500 + health_turret_heavy_additional
 
-artillery_shell_radius = 8.0
+artillery_shell_radius = 10.0
 artillery_shell_damage_physical = 500
 artillery_shell_damage_explosion = 500
 
 -- Roborts
+
+robot_costruction_speed_base = 0.15
+robot_logistic_speed_base = 0.15
+robot_speed_per_tech_level = 0.4
 
 robot_lifetime = 10 * 60 * 60 * 60
 robot_deploy_cooldown = 60
@@ -713,7 +738,7 @@ robot_deploy_range = 15
 robot_stacksize = 25
 
 robot_defender_hp = 150
-robot_defender_damage_modifier = 0.75 -- uses pistol/piercing mag stats
+robot_defender_damage_modifier = 1 -- uses pistol/piercing mag stats
 robot_defender_range = 18
 robot_defender_speed = 0.012
 
@@ -722,10 +747,10 @@ robot_distractor_damage_modifier = 1.75 -- uses laser stats
 robot_distractor_range = 26
 robot_distractor_speed = 0.011
 
-robot_disruptor_damage_modifier = 0.5 
+robot_disruptor_damage_modifier = 0.6 
 robot_disruptor_range = 36
 
-robot_denier_damage_modifier = 0.85 
+robot_denier_damage_modifier = 1 
 robot_denier_range = 20
 
 

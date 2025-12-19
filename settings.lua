@@ -154,7 +154,7 @@ data:extend({
         name = "settings-recipe-cost",
         setting_type = "startup",
 		default_value = "normal",
-		allowed_values = {"easy", "normal", "hard", "extreme"},
+		allowed_values = {"easy", "normal", "hard", "extreme", "insane"},
     },	
 	
 	

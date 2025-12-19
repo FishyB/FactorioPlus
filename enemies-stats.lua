@@ -24,10 +24,15 @@ stinger_spawner_tint = {r=0.10, g=0.4, b=0.02, a=0.3} -- poisoning, slowing bite
 -- WORMS
 
 scale_worm_small     = 0.7
-scale_worm_medium    = 1.0
-scale_worm_big       = 1.3
-scale_worm_behemoth  = 1.6
-scale_worm_boss  	=	1.9
+scale_worm_medium    = 1.1
+scale_worm_big       = 1.5
+scale_worm_behemoth  = 1.9
+--scale_worm_boss  	= 1.9
+
+autoplace_worm_small     = 0.0
+autoplace_worm_medium    = 1.5
+autoplace_worm_big       = 3.5
+autoplace_worm_behemoth  = 8.0
 
 tint_worm_small      = spitter_spawner_tint
 tint_worm_medium     = spitter_spawner_tint
@@ -39,38 +44,38 @@ damage_modifier_worm_small    = 20
 damage_modifier_worm_medium   = 40
 damage_modifier_worm_big      = 60
 damage_modifier_worm_behemoth = 100
-damage_modifier_worm_boss 	= 160
+-- damage_modifier_worm_boss 	= 160
 
 range_worm_small_min	= 4
-range_worm_small    	= 25
+range_worm_small    	= 24
 range_worm_medium_min  	= 6
-range_worm_medium   	= 35
+range_worm_medium   	= 36
 range_worm_big_min     	= 8
-range_worm_big      	= 50
+range_worm_big      	= 52
 range_worm_behemoth_min	= 10
-range_worm_behemoth 	= 80
+range_worm_behemoth 	= 74
 
 prepare_range_worm_small    = 8
 prepare_range_worm_medium   = 12
 prepare_range_worm_big      = 16
 prepare_range_worm_behemoth = 20
-prepare_range_worm_boss 	= 24
+-- prepare_range_worm_boss 	= 24
 
-health_small_worm    	= 200
-health_medium_worm   	= 600
-health_big_worm  		= 1600
-health_behemoth_worm   =  3200
-health_boss_worm  		 =  6000
+health_small_worm    	= 400
+health_medium_worm   	= 1000
+health_big_worm  		= 2200
+health_behemoth_worm 	= 4800
+-- health_boss_worm  		= 8800
 
 damage_splash_worm_small    	= damage_modifier_worm_small / 60 / 2
 damage_splash_worm_medium   	= damage_modifier_worm_medium / 60 / 3
 damage_splash_worm_big      	= damage_modifier_worm_big / 60 / 4
 damage_splash_worm_behemoth 	= damage_modifier_worm_behemoth / 60 / 8
-damage_splash_worm_boss 		= damage_modifier_worm_boss / 60 / 12
+--damage_splash_worm_boss 		= damage_modifier_worm_boss / 60 / 12
 
-worm_attack_speed_base = 110
+worm_attack_speed_base = 100
 
-worm_collision_map_scale_base = 3.25 -- autoplace bounding box multiplier for worm scale
+worm_collision_map_scale_base = 3.0 -- autoplace bounding box multiplier for worm scale
 worm_collision_map_scale_addition = 3.0 -- autoplace total + this amount
 
 
@@ -82,17 +87,17 @@ worm_collision_map_scale_addition = 3.0 -- autoplace total + this amount
 autoplace_spacing_biter    = {0.25, 6.0}
 autoplace_spacing_spitter  	= {0.5, 5.0}
 autoplace_spacing_swarmer	= {0.40, 4.75}
-autoplace_spacing_blaster = {1.1, 11}
-autoplace_spacing_tanker  ={1.0, 9.0}
-autoplace_spacing_webber = {0.8, 9.5}
-autoplace_spacing_flamer = {0.9, 6.2}
+autoplace_spacing_blaster = {1.0, 11}
+autoplace_spacing_tanker  ={0.9, 9.0}
+autoplace_spacing_webber = {0.7, 9.5}
+autoplace_spacing_flamer = {0.8, 6.2}
 autoplace_spacing_stinger = {0.55, 7}
 
 -- BASE SPAWN AMOUNTS
 
 spawning_amount_biter = 4
 spawning_amount_spitter = 4
-spawning_amount_swarmer = 10
+spawning_amount_swarmer = 8
 spawning_amount_blaster = 4
 spawning_amount_tanker = 3
 spawning_amount_flamer = 3
@@ -100,25 +105,25 @@ spawning_amount_stinger = 6
 
 -- SPAWN TIME
 
-spawning_time_slowest = 300
-spawning_time_fastest = 180
+spawning_time_slowest = 200
+spawning_time_fastest = 100
 
 spawning_base_pollution_cost = 4
 
 spawning_time_small = 4
-spawning_time_medium = 8
-spawning_time_big = 18
-spawning_time_behemoth = 40
-spawning_time_boss = 90
+spawning_time_medium = 10
+spawning_time_big = 20
+spawning_time_behemoth = 50
+spawning_time_boss = 120
 
 spawning_time_scalar_spitter = 1.3
-spawning_time_scalar_swarmer = 0.5
-spawning_time_scalar_biter = 1.2
+spawning_time_scalar_swarmer = 0.75
+spawning_time_scalar_biter = 1.3
 spawning_time_scalar_blaster = 2.1
 spawning_time_scalar_tanker = 1.8
-spawning_time_scalar_webber = 1.5
-spawning_time_scalar_flamer = 1.7
-spawning_time_scalar_stinger = 0.7
+spawning_time_scalar_webber = 1.4
+spawning_time_scalar_flamer = 1.8
+spawning_time_scalar_stinger = 1.0
 
 -- TILE RESTRICTIONS
 -- Restrictions state what tiles can spawners be placed on.
@@ -127,7 +132,7 @@ spawning_time_scalar_stinger = 0.7
 
 -- HEALTH
 
-health_spawner_flamer   = 200
+health_spawner_flamer   = 250
 
 health_small_flamer    = 70
 health_medium_flamer  = 250
@@ -135,7 +140,7 @@ health_big_flamer      = 400
 health_behemoth_flamer = 700
 health_boss_flamer     = 1800
 
-health_spawner_blaster   = 350
+health_spawner_blaster   = 300
 
 health_small_blaster    = 200 * 1.25
 health_medium_blaster  	= 600 * 1.25
@@ -143,7 +148,7 @@ health_big_blaster		= 1400 * 1.25
 health_behemoth_blaster = 3200 * 1.25
 health_boss_blaster     = 6500 * 1.25
 
-health_spawner_swarmer   = 125
+health_spawner_swarmer   = 150
 
 health_small_swarmer    = 6
 health_medium_swarmer  	= 15
@@ -151,7 +156,7 @@ health_big_swarmer		= 32
 health_behemoth_swarmer = 90
 health_boss_swarmer     = 220
 
-health_spawner_biter   = 250
+health_spawner_biter   = 400
 
 health_small_biter    = 30
 health_medium_biter   = 150
@@ -159,7 +164,7 @@ health_big_biter      = 500
 health_behemoth_biter = 1500
 health_boss_biter     = 6000
 
-health_spawner_spitter   = 200
+health_spawner_spitter   = 250
 
 health_small_spitter    = 15
 health_medium_spitter   = 50
@@ -167,7 +172,7 @@ health_big_spitter      = 250
 health_behemoth_spitter = 450
 health_boss_spitter     = 1900
 
-health_spawner_tanker   = 450
+health_spawner_tanker   = 500
 
 health_small_tanker    	= 300
 health_medium_tanker  	= 700
@@ -175,13 +180,13 @@ health_big_tanker		= 1300
 health_behemoth_tanker 	= 1800
 health_boss_tanker     	= 3000
 
-health_spawner_stinger   = 250
+health_spawner_stinger   = 350
 
 -- MOVEMENT
 
 movement_blaster_movement_scalar   = 0.5
 
-movement_speed_swarmer_base		=  0.15
+movement_speed_swarmer_base		=  0.16
 movement_speed_swarmer 			=  0.035
 movement_speed_biter_base 		=  0.12
 movement_speed_biter 			=  0.025
@@ -578,7 +583,7 @@ end
 function biterresistances(v)
 local ntv = v - 1
 local dinc = {2,15}
-local einc = {1,15}
+local einc = {1,10}
 local linc = {1,5}
 local pinc = {1,5}
 return 

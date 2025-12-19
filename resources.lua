@@ -1562,7 +1562,7 @@ data:extend
 	  { size = 128, filename = "__factorioplus__/graphics/icons/iron-ore-pure-1.png", scale = 0.35, mipmap_count = 3 },
     },
     subgroup = "raw-resource",
-    order = "eb[iron-ore]",
+    order = "dz[iron-ore]",
 	inventory_move_sound = item_sounds.resource_inventory_move,
     pick_sound = item_sounds.resource_inventory_pickup,
     drop_sound = item_sounds.resource_inventory_move,

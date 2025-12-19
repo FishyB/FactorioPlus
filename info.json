@@ -1,6 +1,6 @@
   {
      "name": "factorioplus",
-     "version": "2.6.1",
+     "version": "2.6.2",
      "title": "Factorio+",
      "author": "Fishbus",
      "factorio_version": "2.0",
@@ -14,7 +14,12 @@
 		"(?) Dectorio",
 		"(?) aai-industry",
 		"(?) Flow Control",
-		"(?) FluidMustFlow"
+		"(?) FluidMustFlow",
+		"(?) maraxsis",
+		"(?) panglia_planet",
+		"(?) Moshine",
+		"(?) IridescentIndustry",
+		"(?) SchallEndgameEvolution"
 	 ],
 	 "description": "A mod that builds upon the vanilla experience. With balance changes and new features"
    }

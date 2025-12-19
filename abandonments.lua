@@ -596,6 +596,25 @@ local building_pole_abandoned_connections =
   }
 }
 
+-- ABANDONMENT BUILDING VARIABLES
+
+local autoplace_loot_scale_modifier = 0.8 -- How much to scale the loot buildings autoplace value after calculation (after powerscaling)
+local autoplace_turret_scale_modifier = 0.8 -- Same as above for turrets
+
+local autoplace_turret_laser_s = 1.25
+local autoplace_turret_laser_m = 3.0
+local autoplace_turret_laser_l = 6.0
+local autoplace_turret_laser_b = 10.0
+
+-- These should line up with other turrets, so that one doesn't override the other.
+local autoplace_turret_mortar_s = autoplace_turret_laser_l
+local autoplace_turret_mortar_m = autoplace_turret_laser_b
+
+local autoplace_solar_s = 1.0
+local autoplace_solar_m = 5.0
+local autoplace_solar_l = 8.0
+
+
 -- LOOT FUNCTIONS
 local loothutboundingbox = _warehouse_spacing_scale 
 
@@ -605,10 +624,10 @@ local trvinc = 0.25
 local trvincval = 0
 local trv = 0
 
--- This is the autoplace function sared by all warehouse objects.
+-- This is the autoplace function shared by all warehouse objects.
 
 local function loot_autoplace(autoplace_dist)
-	return ("abandonments_autoplace_base(0,".. ( (((autoplace_dist + trv) * (1+(powerscalingvalue-1))) ) -trv ) ..")")
+	return ("abandonments_autoplace_base(0,".. (( (((autoplace_dist + trv) * (1+(powerscalingvalue-1))) ) -trv ) * autoplace_loot_scale_modifier ) ..")")
 end
 
 local function newtrv()
@@ -761,7 +780,7 @@ local function makeNewAbandonmentTurret(data)
 	-- add a number, which is scaled, don't scale the entire base value...
 	newturret.map_generator_bounding_box = {{ -1.1 - _nbv, -1.1 - _nbv}, {1.1 + _nbv, 1.1 + _nbv}}
 	newturret.build_base_evolution_requirement = 10 -- Make a number so big it can't ever be placed by evo factor (which is 0 - 1.0 range)
-	newturret.autoplace = abandonments_autoplace.abandonments_turrets_autoplace("abandonments_autoplace_base("..abandonmentTurretLayer..","..(_autoplacedistance * powerscalingvalue).." )")
+	newturret.autoplace = abandonments_autoplace.abandonments_turrets_autoplace("abandonments_autoplace_base("..abandonmentTurretLayer..","..((_autoplacedistance * powerscalingvalue) * autoplace_turret_scale_modifier).." )")
 	
 	newturret.enemy_map_color = abandonments_force_color_map
 	
@@ -840,7 +859,7 @@ data:extend{
 		range_modifier = 0.75,
 		damage_modifier = 0.75,
 		energy_consumption_modifier = 0.5,
-		autoplace_start_distance = 1.25,
+		autoplace_start_distance = autoplace_turret_laser_s,
 		loot =	
 		{
 		  {item = "electronic-circuit", probability = 1, count_min = 0, count_max = 3},
@@ -860,7 +879,7 @@ data:extend{
 		range_modifier = 1,
 		damage_modifier = 1.25,
 		energy_consumption_modifier = 0.75,
-		autoplace_start_distance = 4,
+		autoplace_start_distance = autoplace_turret_laser_m,
 		loot =	
 		{
 		  {item = "electronic-circuit", probability = 1, count_min = 0, count_max = 4},
@@ -883,7 +902,7 @@ data:extend{
 		range_modifier = 1.4,
 		damage_modifier = 3,
 		energy_consumption_modifier = 1,
-		autoplace_start_distance = 8,
+		autoplace_start_distance = autoplace_turret_laser_l,
 		loot =	
 		{
 		  {item = "electronic-circuit", probability = 1, count_min = 0, count_max = 6},
@@ -905,7 +924,7 @@ data:extend{
 		range_modifier = 1.8,
 		damage_modifier = 10,
 		energy_consumption_modifier = 1.5,
-		autoplace_start_distance = 12,
+		autoplace_start_distance = autoplace_turret_laser_b,
 		loot =	
 		{
 		  {item = "processing-unit", probability = 1, count_min = 0, count_max = 3},
@@ -930,7 +949,7 @@ newturret2.attack_parameters.min_range = newturret2.attack_parameters.min_range 
 newturret2.damage_modifier = 1.0
 newturret2.flags = {"placeable-off-grid",  "player-creation"}
 newturret2.max_health = newturret2.max_health * enemy_health_scale
-newturret2.autoplace = abandonments_autoplace.abandonments_turrets_autoplace("abandonments_autoplace_base(33,"..(6 * powerscalingvalue)..")")
+newturret2.autoplace = abandonments_autoplace.abandonments_turrets_autoplace("abandonments_autoplace_base(33,"..((autoplace_turret_mortar_s * powerscalingvalue) * autoplace_turret_scale_modifier)..")")
 newturret2.map_generator_bounding_box = {{ -1.70, -1.70}, {1.70, 1.70}}
 newturret2.build_base_evolution_requirement = 10
 newturret2.remove_decoratives = "false"
@@ -956,7 +975,7 @@ newturret3.attack_parameters.min_range = newturret3.attack_parameters.min_range 
 newturret3.damage_modifier = 2
 newturret3.flags = {"placeable-off-grid",  "player-creation"}
 newturret3.max_health = (newturret3.max_health * 1.5) * enemy_health_scale
-newturret3.autoplace = abandonments_autoplace.abandonments_turrets_autoplace("abandonments_autoplace_base(33, "..(12 * powerscalingvalue)..")")
+newturret3.autoplace = abandonments_autoplace.abandonments_turrets_autoplace("abandonments_autoplace_base(33, "..((autoplace_turret_mortar_m * powerscalingvalue) * autoplace_turret_scale_modifier)..")")
 newturret3.map_generator_bounding_box = {{ -1.70, -1.70}, {1.70, 1.70}}
 newturret3.build_base_evolution_requirement = 10
 newturret3.remove_decoratives = "false"
@@ -996,7 +1015,7 @@ newsolarpanel.picture = building_solararray_abandoned_1
 newsolarpanel.overlay = nil
 newsolarpanel.collision_box = solarpanel1_scale
 newsolarpanel.selection_box = solarpanel1_scale
-newsolarpanel.autoplace = abandonments_autoplace.abandonments_buildings_autoplace("abandonments_autoplace_base(44, "..(8 * powerscalingvalue)..")")
+newsolarpanel.autoplace = abandonments_autoplace.abandonments_buildings_autoplace("abandonments_autoplace_base(44, "..(autoplace_solar_l * powerscalingvalue)..")")
 newsolarpanel.map_generator_bounding_box = solarpanel1_autoplace
 newsolarpanel.enemy_map_color = abandonments_force_color_map
 newsolarpanel.remove_decoratives = "false"
@@ -1030,7 +1049,7 @@ newsolarpanel2.picture = building_solararray_abandoned_2
 newsolarpanel2.overlay = nil
 newsolarpanel2.collision_box = solarpanel2_scale
 newsolarpanel2.selection_box = solarpanel2_scale
-newsolarpanel2.autoplace = abandonments_autoplace.abandonments_buildings2_autoplace("abandonments_autoplace_base(45,"..(5 * powerscalingvalue)..")")
+newsolarpanel2.autoplace = abandonments_autoplace.abandonments_buildings2_autoplace("abandonments_autoplace_base(45,"..(autoplace_solar_m * powerscalingvalue)..")")
 newsolarpanel2.map_generator_bounding_box = solarpanel2_autoplace
 newsolarpanel2.enemy_map_color = abandonments_force_color_map
 newsolarpanel2.remove_decoratives = "false"
@@ -1063,7 +1082,7 @@ newsolarpanel3.picture = building_solararray_abandoned_3
 newsolarpanel3.overlay = nil
 newsolarpanel3.collision_box = solarpanel3_scale
 newsolarpanel3.selection_box = solarpanel3_scale
-newsolarpanel3.autoplace = abandonments_autoplace.abandonments_buildings2_autoplace("abandonments_autoplace_base(46,"..(1 * powerscalingvalue)..")")
+newsolarpanel3.autoplace = abandonments_autoplace.abandonments_buildings2_autoplace("abandonments_autoplace_base(46,"..(autoplace_solar_s * powerscalingvalue)..")")
 newsolarpanel3.map_generator_bounding_box = solarpanel3_autoplace
 newsolarpanel3.enemy_map_color = abandonments_force_color_map
 newsolarpanel3.remove_decoratives = "false"

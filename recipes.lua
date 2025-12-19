@@ -932,15 +932,15 @@ data:extend
     type = "recipe",
     name = "waterfill-barrel",
 	enabled = false,
-    energy_required = 30,
+    energy_required = 40,
     category = "crafting-with-fluid",
     ingredients =
     {
 	  {type="item", name="barrel", amount=10},
-	  {type="item", name="cliff-explosives", amount=3},
-	  {type="fluid", name="water", amount=5000}
+	  {type="item", name="cliff-explosives", amount=4},
+	  {type="fluid", name="water", amount=6000}
     },
-	results = {{type="item", name="waterfill-barrel", amount=10}},
+	results = {{type="item", name="waterfill-barrel", amount=20}},
   },
 }) 
 
@@ -2551,7 +2551,7 @@ elseif settings.startup["settings-recipe-cost"].value == "extreme" then
 		{
 			{type = "item", name = "inserter", amount = 1},
 			{type = "item", name = "transport-belt", amount = 1},
-			{type = "item", name = "small-lamp", amount = 2},
+			{type = "item", name = "small-lamp", amount = 1},
 			{type = "item", name = "small-electric-pole", amount = 2}
 		}
 	data.raw["recipe"]["military-science-pack"].ingredients =	
@@ -2598,13 +2598,15 @@ elseif settings.startup["settings-recipe-cost"].value == "insane" then
 		{
 			{type = "item", name = "electronic-circuit", amount = 1},
 			{type = "item", name = "stone-brick", amount = 1},
-			{type = "item", name = "iron-gear-wheel", amount = 1}
+			{type = "item", name = "iron-gear-wheel", amount = 1},
+			{type = "item", name = "iron-stick", amount = 1}
 		}
 	data.raw["recipe"]["logistic-science-pack"].ingredients =
 		{
 			{type = "item", name = "inserter", amount = 1},
 			{type = "item", name = "transport-belt", amount = 1},
-			{type = "item", name = "small-lamp", amount = 2},
+			{type = "item", name = "splitter", amount = 1},
+			{type = "item", name = "small-lamp", amount = 1},
 			{type = "item", name = "small-electric-pole", amount = 2}
 		}
 	data.raw["recipe"]["military-science-pack"].ingredients =	
@@ -2612,21 +2614,25 @@ elseif settings.startup["settings-recipe-cost"].value == "insane" then
 		  {type = "item", name = "piercing-rounds-magazine", amount = 1},
 		  {type = "item", name = "gun-turret", amount = 1},
 		  {type = "item", name = "grenade", amount = 2},
-		  {type = "item", name = "stone-wall", amount = 2}
+		  {type = "item", name = "stone-wall", amount = 2},
+		  {type = "item", name = "shotgun-shell", amount = 1}
 		}
+	data.raw["recipe"]["bio-science-pack"].category = "crafting-with-fluid"
 	data.raw["recipe"]["bio-science-pack"].ingredients =	
 		{
-			{type="item", name="charcoal", amount= 10},
-			{type="item", name="meaty-chunks", amount = 20},
-			{type="item", name="nat-gas-fuel", amount = 1},
-			{type = "item", name = "cooked-fish", amount = 1},
+			{type="item", name= "charcoal", amount= 10},
+			{type="item", name= "meaty-chunks", amount = 20},
+			{type="item", name= "nat-gas-fuel", amount = 1},
+			{type="item", name= "cooked-fish", amount = 1},
+			{type="fluid",name= "steam", amount = 100},
 		}
 	data.raw["recipe"]["chemical-science-pack"].ingredients =	
 	 {
 		  {type = "item", name = "engine-unit", amount = 2},
 		  {type = "item", name = "advanced-circuit", amount = 3},
 		  {type = "item", name = "silicon-wafer", amount = 2},
-		  {type = "item", name = "explosives", amount = 1}
+		  {type = "item", name = "explosives", amount = 1},
+		  {type = "item", name = "battery", amount = 1},
 		}
 	data.raw["recipe"]["production-science-pack"].ingredients =	
 		{
@@ -2634,6 +2640,7 @@ elseif settings.startup["settings-recipe-cost"].value == "insane" then
 		  {type = "item", name = "productivity-module", amount = 1},
 		  {type = "item", name = "rail", amount = 30},
 		  {type = "item", name = "landfill-deep", amount = 6},
+		  {type = "item", name = "solar-panel", amount = 1},
 		}
 	data.raw["recipe"]["utility-science-pack"].ingredients =	
 		{
@@ -2641,7 +2648,8 @@ elseif settings.startup["settings-recipe-cost"].value == "insane" then
 		  {type = "item", name = "processing-unit", amount = 2},
 		  {type = "item", name = "logistic-robot", amount = 1},
 		  {type = "item", name = "construction-robot", amount = 1},
-		  {type = "item", name = "laser", amount = 1}
+		  {type = "item", name = "laser", amount = 1},
+		  {type = "item", name = "repair-pack-advanced", amount = 1}
 		}
 	
 end

@@ -18,8 +18,8 @@ function util.insert_mini_corner_icon(main_icon, mini_icon)
   return icons
 end
 
-data.raw["construction-robot"]["construction-robot"].speed = 0.1
-data.raw["logistic-robot"]["logistic-robot"].speed = 0.1
+data.raw["construction-robot"]["construction-robot"].speed = robot_costruction_speed_base
+data.raw["logistic-robot"]["logistic-robot"].speed = robot_logistic_speed_base
 
 
 data.raw["construction-robot"]["construction-robot"].trigger_target_mask = {"flying-robot"}
@@ -1241,10 +1241,6 @@ local robots = {
 				  {
 					type = "damage",
 					damage = { amount = bullet_piercing_physical , type = "physical"}
-				  },
-				  {
-					type = "damage",
-					damage = { amount = bullet_piercing_piercing , type = "piercing"}
 				  },
 				}
 			  },

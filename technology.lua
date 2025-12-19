@@ -1,3 +1,4 @@
+require("stats")
 local physical_projectile_damage_1_icon = "__base__/graphics/technology/physical-projectile-damage-1.png"
 local physical_projectile_damage_2_icon = "__base__/graphics/technology/physical-projectile-damage-2.png"
 local stronger_explosives_1_icon = "__base__/graphics/technology/stronger-explosives-1.png"
@@ -3778,6 +3779,7 @@ table.insert(data.raw["technology"]["advanced-material-processing"].effects,{typ
     name = "logistics-basic",
      icon_size = 128, icon_mipmaps = 4,
     icon = "__factorioplus__/graphics/technology/logistics-0.png",
+	prerequisites = {"automation-science-pack"},
     effects =
     {
       {
@@ -3795,7 +3797,7 @@ table.insert(data.raw["technology"]["advanced-material-processing"].effects,{typ
     },
     unit =
     {
-      count = 20,
+      count = 25,
       ingredients = {{"automation-science-pack", 1}},
       time = 15
     },
@@ -3911,7 +3913,7 @@ data:extend
     prerequisites = {"electronics"},
     unit =
     {
-      count = 100,
+      count = 50,
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -4345,7 +4347,7 @@ data.raw["technology"]["laser-shooting-speed-1"].effects =
 	 {
         type = "gun-speed",
         ammo_category = "laser",
-        modifier = 0.1
+        modifier = 0.2
       }
  }
  
@@ -4354,7 +4356,7 @@ data.raw["technology"]["laser-shooting-speed-1"].effects =
 	 {
         type = "gun-speed",
         ammo_category = "laser",
-        modifier = 0.1
+        modifier = 0.2
       }
  }
  
@@ -4363,7 +4365,7 @@ data.raw["technology"]["laser-shooting-speed-1"].effects =
 	 {
         type = "gun-speed",
         ammo_category = "laser",
-        modifier = 0.1
+        modifier = 0.2
       },
 	  
  }
@@ -4373,17 +4375,17 @@ data.raw["technology"]["laser-shooting-speed-1"].effects =
 	 {
         type = "gun-speed",
         ammo_category = "laser",
-        modifier = 0.1
+        modifier = 0.2
       },
 	    {
         type = "gun-speed",
         ammo_category = "plasma-cell",
-        modifier = 0.1
+        modifier = 0.2
       },
 	  {
         type = "gun-speed",
         ammo_category = "beam",
-        modifier = 0.1
+        modifier = 0.2
       }
  }
  
@@ -4392,17 +4394,17 @@ data.raw["technology"]["laser-shooting-speed-1"].effects =
 	 {
         type = "gun-speed",
         ammo_category = "laser",
-        modifier = 0.1
+        modifier = 0.2
       },
 	    {
         type = "gun-speed",
         ammo_category = "plasma-cell",
-        modifier = 0.1
+        modifier = 0.2
       },
 	  {
         type = "gun-speed",
         ammo_category = "beam",
-        modifier = 0.1
+        modifier = 0.2
       }
  }
  
@@ -4411,17 +4413,17 @@ data.raw["technology"]["laser-shooting-speed-1"].effects =
 	 {
         type = "gun-speed",
         ammo_category = "laser",
-        modifier = 0.1
+        modifier = 0.2
       },
 	    {
         type = "gun-speed",
         ammo_category = "plasma-cell",
-        modifier = 0.1
+        modifier = 0.2
       },
 	  {
         type = "gun-speed",
         ammo_category = "beam",
-        modifier = 0.1
+        modifier = 0.2
       }
  }
 
@@ -4430,17 +4432,17 @@ data.raw["technology"]["laser-shooting-speed-1"].effects =
 	 {
         type = "gun-speed",
         ammo_category = "laser",
-        modifier = 0.1
+        modifier = 0.2
       },
 	    {
         type = "gun-speed",
         ammo_category = "plasma-cell",
-        modifier = 0.1
+        modifier = 0.2
       },
 	  {
         type = "gun-speed",
         ammo_category = "beam",
-        modifier = 0.1
+        modifier = 0.2
       }
  }
  
@@ -5161,10 +5163,14 @@ table.insert(data.raw["technology"]["railway"].effects,
 -- REPLACE ENTRY data.raw["electric-pole"]["big-electric-pole"].maximum_wire_distance = 32
 -- INSERT ENTRY table.insert(data.raw["technology"]["advanced-circuit"].effects,{type = "unlock-recipe",recipe = "silicon-wafer"})
 
+-- You need explosive cannon shells to make artillery shells. So make it a prereq.
 table.insert(data.raw["technology"]["artillery"].prerequisites,"explosive-ammo-3")
 
-
+-- Make the default follower count 1. This is 'initialized' on the first combat robot tech.
 data.raw["technology"]["defender"].effects[2]["modifier"] = 1
+
+-- Destroyer tech (Combat robot 3) requires utility science, add that as a prereq
+table.insert(data.raw["technology"]["destroyer"].prerequisites, "utility-science-pack")
 
   
 function create_follower_upgrade(level, pack1, pack2, pack3, military_pack, high_tech_pack, production_pack, count, addition)
@@ -5270,7 +5276,7 @@ data:extend
 })
 
 -- WORKER ROBOT SPEED
-local robot_speed_per_level = 0.5
+local robot_speed_per_level = robot_speed_per_tech_level
 
 data.raw.technology["worker-robots-speed-1"].effects[1].modifier = robot_speed_per_level
 data.raw.technology["worker-robots-speed-2"].effects[1].modifier = robot_speed_per_level

@@ -14,6 +14,10 @@ table.insert(data.raw["technology"]["captivity"].effects,
 		recipe = "process-biter-egg-to-chunks"
 	})
 
+data.raw["technology"]["turbo-transport-belt"].hidden = true
+data.raw["technology"]["turbo-transport-belt"].hidden_in_factoriopedia = true
+	
+
 data.extend({
 	{
     type = "technology",
