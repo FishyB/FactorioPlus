@@ -16,6 +16,27 @@ data.raw["recipe"]["tesla-turret"].ingredients = {
 	  {type = "item", name = "turret-base", amount = 5}
 }
 
+data.extend({
+  {
+    type = "recipe",
+    name = "glass-from-lava",
+    category = "metallurgy",
+    subgroup = "vulcanus-processes",
+    order = "b[casting]-g[glass]",
+    icon = "__factorioplus__/graphics/icons/glass-from-lava.png",
+    enabled = false,
+    ingredients =
+    {
+      {type = "fluid", name = "lava", amount = 500},
+      {type = "fluid", name = "steam", amount = 100},
+      {type = "item", name = "stone", amount = 10},
+    },
+    energy_required = 10,
+    allow_decomposition = false,
+    results = {{type = "item", name = "glass-plate", amount = 4}},
+    allow_productivity = true
+  },
+})
 
 
 -- this will allow fulgora to be rocket complete.

@@ -1,4 +1,33 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.6.2
+Date: 2025.12.19
+  Additions:
+    - Added harder 'Insane' Science pack ingredient difficulty setting. 
+    - Rare weapons now have their ammo consumption modifier improved by their rarity value.
+  Space Age:
+    - Removed SA duplicate turbo transport tech from research tree. 
+  Fixes:
+    - Fixed vehicle rocket launcher bonus from decreasing it instead of increasing it.
+  Balance:
+    - Rebalanced worms and abandonment turrets to better scale with each other.
+    - Rescaled worm scaling over distance to be faster overall.
+    - Reduced the amount of health Spawners get by tier size by 50%, but inscreased base health overall.
+    - Increased spawn rate for all spawners from 300 to 200 ticks (max) and  180 to 100 tocks (min)
+    - Worm health increased overall from around 30-100%
+    - Increased spawning time increase for medium and larger biters by around 10-40%
+    - Reduced regular biter explosive resistance increase per tier from 15% -> 10%
+    - Increased construction/logitic robot base speed from 0.1 -> 0.15, but decreased their speed upgrade increase from +50% -> +40%
+    - Defender robots use full regular bullet magazine damage instead of a reduced piercing ammo.
+    - Increased 'wide' arc of shotgun shell from 0.55 -> 0.6
+    - Reworked many weapon slowdown values when firing.
+    - Reduced Magnum firerate by 20%
+    - Reduced Blunderbuss damage increase modifier from +300% to +250%
+    - Improved Vehicle weapons bonus (range/firerate/damage) from +25% to +40%
+    - Increased Artillery shell radius from 8.0 -> 10.0
+    - All laser speed/damage upgrades increased from +10% -> +20% to match all other weapon/ammo damage type upgrades.
+  Other Mods:
+    - Schall Endgame Evolution stops crashing when used with Factorioplus and Space Age - and moved as a hidden optional dependancy.
+---------------------------------------------------------------------------------------------------
 Version: 2.6.1
 Date: 2025.11.28
   Space Age:

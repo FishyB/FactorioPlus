@@ -728,9 +728,9 @@ artillery_shell_damage_explosion = 500
 
 -- Roborts
 
-robot_costruction_speed_base = 0.15
-robot_logistic_speed_base = 0.15
-robot_speed_per_tech_level = 0.4
+robot_costruction_speed_base = 0.14
+robot_logistic_speed_base = 0.14
+robot_speed_per_tech_level = 0.2
 
 robot_lifetime = 10 * 60 * 60 * 60
 robot_deploy_cooldown = 60
@@ -740,12 +740,12 @@ robot_stacksize = 25
 robot_defender_hp = 150
 robot_defender_damage_modifier = 1 -- uses pistol/piercing mag stats
 robot_defender_range = 18
-robot_defender_speed = 0.012
+robot_defender_speed = 0.016
 
 robot_distractor_hp = 250
 robot_distractor_damage_modifier = 1.75 -- uses laser stats
 robot_distractor_range = 26
-robot_distractor_speed = 0.011
+robot_distractor_speed = 0.014
 
 robot_disruptor_damage_modifier = 0.6 
 robot_disruptor_range = 36
@@ -757,7 +757,7 @@ robot_denier_range = 20
 robot_destroyer_hp = 600
 robot_destroyer_damage_modifier = 2.5  -- uses electric beam stats
 robot_destroyer_range = 22
-robot_destroyer_speed = 0.010
+robot_destroyer_speed = 0.012
 
 -- Capsules 
 

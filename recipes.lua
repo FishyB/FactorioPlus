@@ -47,7 +47,7 @@ data.extend({
 data.raw["recipe"]["explosives"].ingredients =
     {
       {type = "item", name = "sulfur", amount = 1},
-      {type = "item", name = "basic-explosive", amount = 2},
+      {type = "item", name = "basic-explosive", amount = 4},
       {type = "fluid", name = "water", amount = 15}
     }
 
@@ -1735,10 +1735,9 @@ end
 	energy_required = 6,
 	ingredients =
 	{
-	{type="item", name="electronic-circuit", amount=2},
+	{type="item", name="electronic-circuit", amount=4},
 	{type="item", name="plastic-bar", amount=2},
 	{type="item", name="copper-cable", amount=4},
-	--{type="item", name="silicon-wafer", amount=1},
 	},
 	results = {{type="item", name="advanced-circuit", amount=1}},
 	allow_productivity = true,
@@ -1780,7 +1779,7 @@ end
       energy_required = 10,
       ingredients =
       {
-        {type="item", name="electronic-circuit", amount=6},
+        {type="item", name="electronic-circuit", amount=10},
         {type="item", name="advanced-circuit", amount=1},
 		{type="item", name="silicon-wafer", amount=1},
       },
@@ -1796,7 +1795,7 @@ end
 	  category = "advanced-crafting",
       ingredients =
       {
-		{type="item", name="advanced-circuit", amount=2},
+		{type="item", name="advanced-circuit", amount=4},
         {type="item", name="processing-unit", amount=1},
 		{type="item", name="silicon-wafer", amount=2},
 		{type="item", name="aluminium-plate", amount=2},
@@ -2605,9 +2604,9 @@ elseif settings.startup["settings-recipe-cost"].value == "insane" then
 		{
 			{type = "item", name = "inserter", amount = 1},
 			{type = "item", name = "transport-belt", amount = 1},
-			{type = "item", name = "splitter", amount = 1},
 			{type = "item", name = "small-lamp", amount = 1},
-			{type = "item", name = "small-electric-pole", amount = 2}
+			{type = "item", name = "small-electric-pole", amount = 2},
+			{type = "item", name = "steel-plate", amount = 2},
 		}
 	data.raw["recipe"]["military-science-pack"].ingredients =	
 		{

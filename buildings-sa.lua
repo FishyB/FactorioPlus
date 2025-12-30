@@ -2,6 +2,28 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 
+local containers =
+{
+	["container"] = { "singlestack-chest", "storage-hut", "warehouse" },
+	["logistic-container"] = 
+	{ 
+	"logistic-passive-provider-hut", "logistic-active-provider-hut", "logistic-storage-hut", "logistic-buffer-hut", "logistic-requester-hut",
+	"logistic-warehouse", "logistic-warehouse-passive-provider", "logistic-warehouse-active-provider", "logistic-warehouse-buffer", "logistic-warehouse-requester"  
+	},
+}
+
+for t,l in pairs(containers) do
+  for _,n in pairs(l) do
+    data.raw[t][n].surface_conditions =
+    {
+      {
+        property = "gravity",
+        min = 0.1
+      }
+    }
+  end
+end
+
 data.extend({
 {
     type = "assembling-machine",

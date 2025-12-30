@@ -349,6 +349,7 @@ local scale_transporter = 0.5
     effectivity = truck_effectivity,
     braking_power = truck_braking,
 	rotation_snap_angle = rsa,
+	trash_inventory_size = 40,
 
    energy_source =
     {
@@ -847,6 +848,9 @@ local scale_transporter = 0.5
     energy_per_hit_point = flametank_ephp,
 	has_belt_immunity = true,
 	equipment_grid = "small-equipment-grid",
+	allow_remote_driving = true,
+	trash_inventory_size = 10,
+	
     resistances = flametank_resistances,
     collision_box = {{-0.9, -1.3}, {0.9, 1.3}},
     selection_box = {{-0.9, -1.3}, {0.9, 1.3}},
@@ -2660,6 +2664,7 @@ data:extend({
     effectivity = apc_effectivity,
     braking_power = apc_braking,
 	equipment_grid = "small-equipment-grid",
+	trash_inventory_size = 10,
 	allow_passengers = true,
 	terrain_friction_modifier = apc_friction_terrain_modifier,
 	rotation_snap_angle = rsa,
@@ -2832,6 +2837,8 @@ data:extend({
     braking_power = apc_braking,
 	allow_passengers = true,
 	equipment_grid = "small-equipment-grid",
+	trash_inventory_size = 10,
+	allow_remote_driving = true,
 	terrain_friction_modifier = apc_friction_terrain_modifier,
 	rotation_snap_angle = rsa,
 
@@ -3046,6 +3053,8 @@ local twingun_turret_shift_xy = {0, -40 }
     braking_power = apc_braking,
 	allow_passengers = true,
 	equipment_grid = "small-equipment-grid",
+	trash_inventory_size = 10,
+	allow_remote_driving = true,
 	terrain_friction_modifier = apc_friction_terrain_modifier,
 	rotation_snap_angle = rsa,
 
@@ -3254,6 +3263,8 @@ local twingun_turret_shift_xy = {0, -40 }
     braking_power = apc_braking,
 	allow_passengers = true,
 	equipment_grid = "small-equipment-grid",
+		trash_inventory_size = 10,
+		allow_remote_driving = true,
 	terrain_friction_modifier = apc_friction_terrain_modifier,
 	rotation_snap_angle = rsa,
 
@@ -3460,6 +3471,9 @@ local twingun_turret_shift_xy = {0, -40 }
 	rotation_snap_angle = rsa,
 	
 	equipment_grid = "medium-equipment-grid",
+	allow_remote_driving = true,
+	trash_inventory_size = 20,
+	
     energy_source =
     {
       type = "burner",
@@ -3754,11 +3768,13 @@ local twingun_turret_shift_xy = {0, -40 }
     damaged_trigger_effect = hit_effects.entity(),
     alert_icon_shift = util.by_pixel(0, -24),
 	equipment_grid = "tiny-equipment-grid",
+	allow_remote_driving = true,
+	trash_inventory_size = 10,
+	
     weight = 500,
     max_speed = 0.75,
     max_power = "500kW",
     reversing_power_modifier = 1,
-	allow_remote_driving = true,
     braking_force = 5,
     friction_force = 0.20,
     vertical_selection_shift = -0.5,
@@ -4007,6 +4023,7 @@ local twingun_turret_shift_xy = {0, -40 }
     mined_sound = sounds.deconstruct_large(0.8),
     max_health = 3000,
 	equipment_grid = "medium-equipment-grid",
+	trash_inventory_size = 40,
     deliver_category = "vehicle",
     corpse = "cargo-wagon-remnants",
     dying_explosion = "cargo-wagon-explosion",
@@ -4175,6 +4192,7 @@ local twingun_turret_shift_xy = {0, -40 }
     effectivity = speeder_effectivity/2,
     braking_power = speeder_braking,
 	tank_driving = true,
+	trash_inventory_size = 20,
 
     energy_source =
     {

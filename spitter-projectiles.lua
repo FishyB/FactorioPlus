@@ -519,6 +519,11 @@ return
               type = "damage",
               damage = { amount = data.damage, type = damage_type },
               apply_damage_to_trees = false
+            },
+			{
+              type = "damage",
+              damage = { amount = data.damage, type = "physical" },
+              apply_damage_to_trees = true
             }
           }
         }

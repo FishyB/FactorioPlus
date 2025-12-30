@@ -733,7 +733,7 @@ data.extend({
 	circuit_connector = circuit_connector_definitions["hpmp"],
     circuit_wire_max_distance = default_circuit_wire_max_distance,
 	
-	-- allowed_effects = {"consumption", "speed", "productivity", "pollution"}
+	allowed_effects = {"consumption", "speed", "productivity", "pollution"}
 },
 
 ---------------------------------------------------  COMPRESSOR ------------------------------------------------------------
