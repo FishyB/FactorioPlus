@@ -47,7 +47,7 @@ data.extend({
 data.raw["recipe"]["explosives"].ingredients =
     {
       {type = "item", name = "sulfur", amount = 1},
-      {type = "item", name = "basic-explosive", amount = 4},
+      {type = "item", name = "basic-explosive", amount = 6},
       {type = "fluid", name = "water", amount = 15}
     }
 
@@ -868,7 +868,7 @@ data:extend
     energy_required = 1,
     ingredients =  
 	{
-	  {type="item", name="coal", amount=3},
+	  {type="item", name="coal", amount=8},
       {type="item", name="iron-plate", amount=1},
     },
     results = {{type="item", name="basic-explosive", amount=2}},

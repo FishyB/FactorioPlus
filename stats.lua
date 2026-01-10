@@ -252,19 +252,19 @@ firerate_magnum = 60 / 0.6
 range_magnum = 20
 damage_modifier_magnum = 10.0
 ammo_consumption_modifier_magnum = 5.0
-movement_slow_down_factor_magnum = 0.25
+movement_slow_down_factor_magnum = 0.3
 
 firerate_smg = 60 / 9
-movement_slow_down_factor_smg = 0.5
+movement_slow_down_factor_smg = 0.4
 range_smg = 22
 
 firerate_uzi = firerate_smg / 1.75
-ammo_consumption_modifier_uzi = 0.6
-damage_modifier_uzi = 0.7
+ammo_consumption_modifier_uzi = 0.5
+damage_modifier_uzi = 0.8
 movement_slow_down_factor_uzi = 0.2
 range_uzi = math.floor(range_smg / 1.5)
 
-bullet_magazinesize = 40
+bullet_magazinesize = 30
 bullet_stacksize = 50
 bullet_reloadtime = 1 * 60
 
@@ -273,28 +273,28 @@ bullet_regular_physical = 8
 bullet_piercing_physical = 5
 bullet_piercing_piercing = 5
 
+bullet_longrange_magazine_size = 20
 bullet_longrange_physical = 4
 bullet_longrange_piercing = 2
 bullet_longrange_range_modifier = 1.5
 bullet_longrange_cooldown_modifier = 2.0
-bullet_longrange_magazine_size_modifier = 1.0
 
+bullet_explosive_magazinesize = 15
 bullet_explosive_physical = 4
 bullet_explosive_explosive = 12
 bullet_explosive_radius = 3
-bullet_explosive_magazinesize = 30
 bullet_explosive_stacksize = 25
 bullet_explosive_cooldown_modifier = 1.5
 
+bullet_uranium_magazinesize = bullet_magazinesize
 bullet_uranium_physical = 8
 bullet_uranium_piercing = 12
-bullet_uranium_magazinesize = 40
 bullet_uranium_stacksize = 50
 
+bullet_nuke_magazinesize = 15
 bullet_nuke_physical = 12
 bullet_nuke_explosive = 55
 bullet_nuke_radius = 4
-bullet_nuke_magazinesize = 25
 bullet_nuke_stacksize = 25
 bullet_nuke_cooldown_modifier = 2
 
@@ -373,7 +373,7 @@ shell_nuke_stacksize = 25
 shell_nuke_cooldown_modifier = 2
 shell_nuke_arc = shell_arc_wide
 
-shell_magazinesize = 10
+shell_magazinesize = 8
 shell_stacksize = 50
 shell_reloadtime = 2.5 * 60
 
@@ -624,10 +624,10 @@ cannon_shell_stacksize = 50
 
 -- Red Lasers
 
-laserbeam_red_damage = 6
-laserbeam_red_firerate = 60 / 3 
-laserbeam_red_damage_interval =  60 / 3
-laserbeam_red_duration =  60 / 3
+laserbeam_red_damage = 10
+laserbeam_red_firerate = 60 / 2 
+laserbeam_red_damage_interval =  60 / 2
+laserbeam_red_duration =  60 / 2
 
 -- Big Red Laser
 

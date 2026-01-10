@@ -1,4 +1,27 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.6.3
+Date: 2025.12.30
+  Space Age:
+    - All Factorio+ storage and logistic storage buildings cannot be built on Space platforms.
+    - Added Lava to glass recipe on Vulcanus unlocked alongside all other Foundry recipes.
+    - Reduced Space Age infinite Robot speed upgrade technology from +65% to +20% to match all other earlier upgrade amounts.
+  Fixes:
+    - Fixed missing localization for Energy cell ammo speed upgrade information.
+    - Added physical damage to Flamer attacks to destroy trees and other things invulnerable to fire so they do not get locked in an infinite attack loop.
+    - Changed Robot speed upgrade technology amount from 40% -> 20% so it scales at the same to the same overall max speed as base game.
+    - Added remote driving to Tanks and weaponized APCs
+    - Added logistics trash slots to most vehicles that makes sense to have them.
+  Balance:
+    - High powered machine presses can now be affected by Beacon effects.
+    - High explosives recipe requirement of Basic explosives increased from 2 -> 4.
+    - Advanced circuit recipe requirement of Electronic circuits increased from 2 -> 4.
+    - Processing unit recipe requirement of Electronic circuits increased from 6 -> 10.
+    - Computing unit recipe requirement of Advanced circuits increased from 2 -> 4.
+    - Changed Insane science Logistics science packs to require 2x Steel plates instead of 1x Splitter.
+    - Increased all Combat robots speeds by +20%
+  Localization:
+    - Added initial German (DE) translation (by CarstenG)
+---------------------------------------------------------------------------------------------------
 Version: 2.6.2
 Date: 2025.12.19
   Additions:

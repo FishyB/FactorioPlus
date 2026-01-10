@@ -1028,7 +1028,7 @@ data:extend({
     energy_required = 4,
     ingredients =
     {
-      {type = "item", name = "iron-plate", amount = 1},
+      {type = "item", name = "iron-plate", amount = 4},
       {type = "item", name = "basic-explosive", amount = 2}
     },
     results = {{type="item", name="grenade", amount=1}}

@@ -662,7 +662,7 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
 			}
       }
     },
-    magazine_size = bullet_magazinesize * bullet_longrange_magazine_size_modifier,
+    magazine_size = bullet_longrange_magazine_size,
 	reload_time = bullet_reloadtime,
     subgroup = "ammo",
     order = "a[basic-clips]-b[piercing-rounds-magazine]",
