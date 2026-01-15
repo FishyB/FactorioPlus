@@ -28,6 +28,9 @@ data.raw["technology"]["worker-robots-speed-7"].effects =
 	
 table.insert(data.raw["technology"]["foundry"].effects, { type = "unlock-recipe", recipe = "glass-from-lava" })
 
+table.insert(data.raw["technology"]["foundry"].effects, { type = "unlock-recipe", recipe = "molten-aluminium-from-lava" })
+table.insert(data.raw["technology"]["foundry"].effects, { type = "unlock-recipe", recipe = "casting-aluminium" })
+
 data.extend({
   
 	{

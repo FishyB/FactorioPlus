@@ -57,6 +57,12 @@ data.raw["recipe"]["pistol"].enabled = true
 data.raw["recipe"]["pistol"].hidden = false
 data.raw["recipe"]["pistol"].ingredients[1].amount = 2
 
+-- bullets are now expensive, so give more science packs in the output.
+data.raw["recipe"]["military-science-pack"].results = 
+{
+	{type="item", name="military-science-pack", amount=3}
+}
+
  ---------------------------------------------------  INSERTER OVERRIDES  ------------------------------------------------------------
 
 data.raw["recipe"]["locomotive"].ingredients =   

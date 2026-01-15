@@ -85,13 +85,13 @@ worm_collision_map_scale_addition = 3.0 -- autoplace total + this amount
 -- [1] is the distance from starting area ~ in chunks
 -- [2] Is the bounding box space between others
 autoplace_spacing_biter    = {0.25, 6.0}
-autoplace_spacing_spitter  	= {0.5, 5.0}
+autoplace_spacing_spitter  	= {0.4, 5.0}
 autoplace_spacing_swarmer	= {0.40, 4.75}
-autoplace_spacing_blaster = {1.0, 11}
-autoplace_spacing_tanker  ={0.9, 9.0}
-autoplace_spacing_webber = {0.7, 9.5}
+autoplace_spacing_blaster = {0.9, 10}
+autoplace_spacing_tanker  ={0.85, 9.0}
+autoplace_spacing_webber = {0.65, 9.5}
 autoplace_spacing_flamer = {0.8, 6.2}
-autoplace_spacing_stinger = {0.55, 7}
+autoplace_spacing_stinger = {0.5, 5}
 
 -- BASE SPAWN AMOUNTS
 
@@ -158,7 +158,7 @@ health_boss_swarmer     = 220
 
 health_spawner_biter   = 400
 
-health_small_biter    = 30
+health_small_biter    = 50
 health_medium_biter   = 150
 health_big_biter      = 500
 health_behemoth_biter = 1500
@@ -166,19 +166,19 @@ health_boss_biter     = 6000
 
 health_spawner_spitter   = 250
 
-health_small_spitter    = 15
-health_medium_spitter   = 50
+health_small_spitter    = 25
+health_medium_spitter   = 60
 health_big_spitter      = 250
 health_behemoth_spitter = 450
 health_boss_spitter     = 1900
 
 health_spawner_tanker   = 500
 
-health_small_tanker    	= 300
-health_medium_tanker  	= 700
-health_big_tanker		= 1300
-health_behemoth_tanker 	= 1800
-health_boss_tanker     	= 3000
+health_small_tanker    	= 450
+health_medium_tanker  	= 800
+health_big_tanker		= 1400
+health_behemoth_tanker 	= 1900
+health_boss_tanker     	= 3200
 
 health_spawner_stinger   = 350
 
@@ -438,16 +438,16 @@ big_stinger_scale      = 0.9
 behemoth_stinger_scale  = 1.3
 boss_stinger_scale      = 1.8
 
-health_small_stinger   	= 35
-health_medium_stinger  	= 160
-health_big_stinger   	= 400
-health_behemoth_stinger = 900
-health_boss_stinger    	= 1400
+health_small_stinger   	= 45
+health_medium_stinger  	= 280
+health_big_stinger   	= 500
+health_behemoth_stinger = 1200
+health_boss_stinger    	= 2200
 
-movement_speed_stinger_base 		=  0.13
+movement_speed_stinger_base 		=  0.14
 movement_speed_stinger 				=  0.015 
 
-attack_speed_stinger_base = 60
+attack_speed_stinger_base = 80
 
 damage_stinger_small    = 5
 damage_stinger_medium   = 10
@@ -557,9 +557,9 @@ tint_2_spitter_boss = spitter_spawner_tint
 
 function tankerresistances(v)
 local ntv = v
-local dinc = {3,5}
+local dinc = {3,8}
 local pinc = {2,8}
-local einc = {0,5}
+local einc = {0,6}
 return 
 {
 	{
@@ -584,7 +584,7 @@ function biterresistances(v)
 local ntv = v - 1
 local dinc = {2,15}
 local einc = {1,10}
-local linc = {1,5}
+local linc = {1,10}
 local pinc = {1,5}
 return 
 {
@@ -615,6 +615,7 @@ function spitterresistances(v)
 local ntv = v - 1
 local dinc = {1,8}
 local ainc = {5,5}
+local linc = {0,5}
 return 
 {
 	{
@@ -625,6 +626,11 @@ return
 	{
 	type = "acid",
 	percent = 100 ,
+	},
+	{
+	type = "laser",
+	decrease = 0 + ( ntv * linc[1] ),
+	percent = 0 + ( ntv * linc[2] ),
 	},
 }
 end
@@ -663,7 +669,7 @@ end
 
 function swarmerresistances(v)
 local ntv = v - 1
-local dinc = {0,5}
+local dinc = {0,8}
 return 
 {
 	{
@@ -676,7 +682,7 @@ end
 
 function flamerresistances(v)
 local ntv = v - 1
-local dinc = {1,5}
+local dinc = {1,8}
 return 
 {
 	{

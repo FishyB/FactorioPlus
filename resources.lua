@@ -101,8 +101,8 @@ data.raw["resource"]["iron-ore"].autoplace = resource_autoplace.resource_autopla
 --data.raw["resource"]["crude-oil"].created_effect = {create_decoratives("sand-decal", 8 ,1.0, 2),create_tiles("dirt-5", 5)},
 ---------------------------------------------------  FUEL OVERRIDES  ------------------------------------------------------------
 
-
-
+-- Give all fuels in the base data Acceleration/Top Speed/Pollution(Emission) modifiers.
+-- This means all fuels have 'type' usage
 
 data.raw["item"]["wood"].fuel_acceleration_multiplier = 0.5
 data.raw["item"]["wood"].fuel_top_speed_multiplier = 0.5
@@ -210,64 +210,63 @@ data.raw["planet"]["nauvis"].map_gen_settings.autoplace_controls["geothermal-ven
 data.raw["planet"]["nauvis"].map_gen_settings.autoplace_controls["natural-gas"] = {}
 data.raw["planet"]["nauvis"].map_gen_settings.autoplace_controls["bauxite-ore"] = {}
 data.raw["planet"]["nauvis"].map_gen_settings.autoplace_controls["goblin-ore"] = {}
---data.raw["planet"]["nauvis"].map_gen_settings.autoplace_controls["iron-ore-pure"] = {}
 
  if (mods["space-age"]) then
  
-data.raw["planet"]["vulcanus"].map_gen_settings.autoplace_controls["vulcanus_geothermal"] = {}
-data.raw["planet"]["vulcanus"].map_gen_settings.autoplace_settings["entity"].settings["geothermal-vent"] = {}
+	data.raw["planet"]["vulcanus"].map_gen_settings.autoplace_controls["vulcanus_geothermal"] = {}
+	data.raw["planet"]["vulcanus"].map_gen_settings.autoplace_settings["entity"].settings["geothermal-vent"] = {}
 
-data.raw["planet"]["vulcanus"].map_gen_settings.autoplace_controls["vulcanus_bauxite"] = {}
-data.raw["planet"]["vulcanus"].map_gen_settings.autoplace_settings["entity"].settings["bauxite-ore"] = {}
+	--data.raw["planet"]["vulcanus"].map_gen_settings.autoplace_controls["vulcanus_bauxite"] = {}
+	--data.raw["planet"]["vulcanus"].map_gen_settings.autoplace_settings["entity"].settings["bauxite-ore"] = {}
 
-data.raw["planet"]["gleba"].map_gen_settings.autoplace_controls["gleba_natural_gas"] = {}
-data.raw["planet"]["gleba"].map_gen_settings.autoplace_settings["entity"].settings["natural-gas"] = {}
-	
-data.extend({
-	{
-		type = "autoplace-control",
-		name = "gleba_natural_gas",
-		localised_name = {
-			"",
-			"[fluid=natural-gas] ",
-			{
-			  "entity-name.natural-gas"
-			}
-		  },
-		richness = true,
-		order = "c-a",
-		category = "resource"
-	},
-	{
-		type = "autoplace-control",
-		name = "vulcanus_geothermal",
-		localised_name = {
-			"",
-			"[fluid=steam] ",
-			{
-			  "entity-name.geothermal-vent"
-			}
-		  },
-		richness = true,
-		order = "b-c",
-		category = "resource"
-	},
-	{
-		type = "autoplace-control",
-		name = "vulcanus_bauxite",
-		localised_name = {
-			"",
-			"[item=bauxite-ore] ",
-			{
-			  "entity-name.bauxite-ore"
-			}
-		  },
-		richness = true,
-		order = "b-c",
-		category = "resource"
-	},
+	data.raw["planet"]["gleba"].map_gen_settings.autoplace_controls["gleba_natural_gas"] = {}
+	data.raw["planet"]["gleba"].map_gen_settings.autoplace_settings["entity"].settings["natural-gas"] = {}
 		
-})
+	data.extend({
+		{
+			type = "autoplace-control",
+			name = "gleba_natural_gas",
+			localised_name = {
+				"",
+				"[fluid=natural-gas] ",
+				{
+				  "entity-name.natural-gas"
+				}
+			  },
+			richness = true,
+			order = "c-a",
+			category = "resource"
+		},
+		{
+			type = "autoplace-control",
+			name = "vulcanus_geothermal",
+			localised_name = {
+				"",
+				"[fluid=steam] ",
+				{
+				  "entity-name.geothermal-vent"
+				}
+			  },
+			richness = true,
+			order = "b-c",
+			category = "resource"
+		},
+		-- {
+			-- type = "autoplace-control",
+			-- name = "vulcanus_bauxite",
+			-- localised_name = {
+				-- "",
+				-- "[item=bauxite-ore] ",
+				-- {
+				  -- "entity-name.bauxite-ore"
+				-- }
+			  -- },
+			-- richness = true,
+			-- order = "b-c",
+			-- category = "resource"
+		-- },
+			
+	})
  end
 
 

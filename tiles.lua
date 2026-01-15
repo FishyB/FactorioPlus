@@ -487,6 +487,7 @@ data.raw["tile"]["water"].walking_sound = tile_sounds.walking.shallow_water
 data.raw["tile"]["water"].driving_sound = tile_sounds.driving.shallow_water
 data.raw["tile"]["water"].trigger_effect = tile_trigger_effects.water_trigger_effect()
 data.raw["tile"]["water"].destroys_dropped_items = false
+
 data.raw["tile"]["water"].collision_mask = 
 {layers={
 	  water_tile=true,
@@ -510,6 +511,10 @@ data.raw["tile"]["water-green"].collision_mask =
 	  floor=true
 }}
 
+--data.raw["tile"]["water"].is_foundation = false
+--data.raw["tile"]["water-green"].is_foundation = false
+---data.raw["tile"]["deepwater"].is_foundation = false
+--data.raw["tile"]["deepwater-green"].is_foundation = false
 
 ---------------------------------- SHALLOW WATER ------------------------------------
 

@@ -24,6 +24,78 @@ for t,l in pairs(containers) do
   end
 end
 
+-- HEATING
+-- Heat pipe radius override for space age.
+data.raw["heat-pipe"]["heat-pipe"].heating_radius = settings.startup["settings-spaceage-aquilo-heatpipe-radius"].value
+
+-- Heating values
+
+data.raw["transport-belt"]["basic-transport-belt"].heating_energy = "10kW"
+data.raw["underground-belt"]["basic-underground-belt"].heating_energy = "50kW"
+data.raw["splitter"]["basic-splitter"].heating_energy = "40kW"
+data.raw["loader"]["basic-loader"].heating_energy = "40kW"
+
+data.raw["loader"]["loader"].heating_energy = "40kW"
+data.raw["loader"]["fast-loader"].heating_energy = "40kW"
+data.raw["loader"]["express-loader"].heating_energy = "40kW"
+
+data.raw["transport-belt"]["turbo-transport-belt"].heating_energy = "10kW"
+data.raw["underground-belt"]["turbo-underground-belt"].heating_energy = "50kW"
+data.raw["splitter"]["turbo-splitter"].heating_energy = "40kW"
+data.raw["loader"]["turbo-loader"].heating_energy = "40kW"
+
+data.raw["transport-belt"]["supersonic-transport-belt"].heating_energy = "10kW"
+data.raw["underground-belt"]["supersonic-underground-belt"].heating_energy = "50kW"
+data.raw["splitter"]["supersonic-splitter"].heating_energy = "40kW"
+data.raw["loader"]["supersonic-loader"].heating_energy = "40kW"
+
+data.raw["assembling-machine"]["mini-assembling-machine-1"].heating_energy = "50kW"
+data.raw["storage-tank"]["storage-tank-large"].heating_energy = "50kW"
+data.raw["assembling-machine"]["factory-large"].heating_energy = "200kW"
+data.raw["assembling-machine"]["metal-press-machine"].heating_energy = "80kW"
+data.raw["assembling-machine"]["compressor"].heating_energy = "50kW"
+data.raw["furnace"]["electric-foundry"].heating_energy = "50kW"
+data.raw["furnace"]["heatpipe-furnace"].heating_energy = "90kW"
+data.raw["furnace"]["mini-electric-furnace"].heating_energy = "30kW"
+data.raw["furnace"]["basic-electric-furnace"].heating_energy = "50kW"
+
+data.raw["inserter"]["very-long-handed-inserter"].heating_energy = "50kW"
+
+data.raw["roboport"]["mini-roboport"].heating_energy = "100kW"
+data.raw["roboport"]["roboport-major"].heating_energy = "600kW"
+
+data.raw["lab"]["basic-lab"].heating_energy = "40kW"
+data.raw["lab"]["lab-large"].heating_energy = "200kW"
+
+--
+
+data.raw["assembling-machine"]["mini-assembling-machine-1"].crafting_categories = {"crafting", "basic-crafting", "advanced-crafting", "electronics", "pressing"}
+data.raw["assembling-machine"]["factory-large"].crafting_categories = {"crafting", "basic-crafting", "advanced-crafting", "electronics", "pressing"}
+
+data.raw.recipe["basic-transport-belt"].category = "pressing"
+data.raw.recipe["basic-underground-belt"].category = "pressing"
+data.raw.recipe["basic-splitter"].category = "pressing"
+
+data.raw.recipe["transport-belt"].category = "pressing"
+data.raw.recipe["underground-belt"].category = "pressing"
+data.raw.recipe["splitter"].category = "pressing"
+
+data.raw.recipe["fast-transport-belt"].category = "pressing"
+data.raw.recipe["fast-underground-belt"].category = "pressing"
+data.raw.recipe["fast-splitter"].category = "pressing"
+
+data.raw.recipe["express-transport-belt"].category = "crafting-with-fluid-or-metallurgy"
+data.raw.recipe["express-underground-belt"].category = "crafting-with-fluid-or-metallurgy"
+data.raw.recipe["express-splitter"].category = "crafting-with-fluid-or-metallurgy"
+
+data.raw.recipe["turbo-transport-belt"].category = "crafting-with-fluid-or-metallurgy"
+data.raw.recipe["turbo-underground-belt"].category = "crafting-with-fluid-or-metallurgy"
+data.raw.recipe["turbo-splitter"].category = "crafting-with-fluid-or-metallurgy"
+
+data.raw.recipe["supersonic-transport-belt"].category = "crafting-with-fluid-or-metallurgy"
+data.raw.recipe["supersonic-underground-belt"].category = "crafting-with-fluid-or-metallurgy"
+data.raw.recipe["supersonic-splitter"].category = "crafting-with-fluid-or-metallurgy"
+
 data.extend({
 {
     type = "assembling-machine",

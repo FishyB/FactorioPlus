@@ -633,10 +633,6 @@ data.extend({
 },
 })
 
--- update mini assembler to use SA crafting categories.
-if (mods["space-age"]) then  
-	data.raw["assembling-machine"]["assembling-machine-1"].crafting_categories = {"crafting", "basic-crafting", "advanced-crafting", "electronics", "pressing"}
-end
 
 data.extend({
 

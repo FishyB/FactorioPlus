@@ -527,7 +527,7 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
     type = "recipe",
     name = "firearm-magazine",
     energy_required = 1,
-    ingredients = {{type="item", name="iron-plate", amount=4}},
+    ingredients = {{type="item", name="iron-plate", amount=10}},
     results = {{type="item", name="firearm-magazine", amount=1}},
   },
     ----------------------------- PIERCING BULLETS -----------------------------
@@ -600,8 +600,8 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
     ingredients =
     {
       {type="item", name="firearm-magazine", amount=1},
-      {type="item", name="steel-plate", amount=1},
-      {type="item", name="copper-plate", amount=5}
+      {type="item", name="steel-plate", amount=2},
+      {type="item", name="copper-plate", amount=10}
     },
     results = {{type="item", name="piercing-rounds-magazine", amount=1}},
   },
@@ -678,7 +678,7 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
     ingredients =
     {
       {type="item", name="firearm-magazine", amount=1},
-      {type="item", name="aluminium-plate", amount=4},
+      {type="item", name="aluminium-plate", amount=8},
     },
     results = {{type="item", name="longrange-rounds-magazine", amount=1}},
   },

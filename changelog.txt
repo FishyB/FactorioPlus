@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.6.4
+Date: 2026.01.10
+  Balance:
+    - Increased Basic explosive recipe requirement of coal from 4 -> 6.
+    - Increased Explosives recipe requirement of Basic explosive from 3 -> 8.
+    - Reduced all firearm magazine sizes by about 10.
+    - Reduced all shotgun magazine sizes from 10 -> 8.
+    - Increased Laser damage from 6 -> 10. 
+    - Reduced Laser attack speed from 3/s -> 2/s. 
+  Localization:
+    - Updated German (DE) translation (by CarstenG)
+---------------------------------------------------------------------------------------------------
 Version: 2.6.3
 Date: 2025.12.30
   Space Age:

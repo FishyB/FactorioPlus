@@ -42,6 +42,7 @@ require("item-sa")
 require("technology-sa")
 require("entities-sa")
 require("buildings-sa")
+require("planets-sa")
 end
 
 -- Anything to blanket update the data in this mod specifically.

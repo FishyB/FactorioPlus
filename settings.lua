@@ -1,18 +1,116 @@
 -- This exists already in the game 
 
 if (mods["space-age"]) then
+
 	-- Spoilage percent multiplier
--- data:extend({
-	-- {
-        -- type = "int-setting",
-        -- name = "settings-spoilage-multiplier",
-        -- setting_type = "startup",
-		-- allowed_values = {50, 100, 200, 500, 1000},
-        -- default_value = 100,
-    -- },
--- })
-else
-	--	Base game Rocket Recipe
+	-- data:extend({
+		-- {
+			-- type = "int-setting",
+			-- name = "settings-spoilage-multiplier",
+			-- setting_type = "startup",
+			-- allowed_values = {50, 100, 200, 500, 1000},
+			-- default_value = 100,
+		-- },
+	-- })
+
+	data:extend({
+	
+
+	-- VULCANUS SETTINGS --
+	
+		-- Daynight Cycle
+		{
+			type = "string-setting",
+			name = "settings-spaceage-vulcanus-daynightcycle",
+			order = "s[daynight]-b[gleba]",
+			setting_type = "startup",
+			default_value = "normal",
+			allowed_values = {"short", "normal", "long"},
+		},
+		
+	-- GLEBA SETTINGS --
+	
+		-- Daynight Cycle
+		{
+			type = "string-setting",
+			name = "settings-spaceage-gleba-daynightcycle",
+			order = "s[daynight]-c[vulcanus]",
+			setting_type = "startup",
+			default_value = "normal",
+			allowed_values = {"short", "normal", "long"},
+		},
+		
+		
+	-- FULGORA SETTINGS --
+	
+		-- Daynight Cycle
+		{
+			type = "string-setting",
+			name = "settings-spaceage-fulgora-daynightcycle",
+			order = "s[daynight]-d[fulgora]",
+			setting_type = "startup",
+			default_value = "normal",
+			allowed_values = {"short", "normal", "long"},
+		},
+	
+	-- Lightning Frequency
+		{
+			type = "string-setting",
+			name = "settings-spaceage-fulgora-lightning-hitfrequency",
+			order = "s[spaceage]-aquilo[heatpipe]",
+			setting_type = "startup",
+			default_value = "normal",
+			allowed_values = {"short", "normal", "long"},
+		},
+
+	-- Lightning power
+		{
+			type = "string-setting",
+			name = "settings-spaceage-fulgora-lightning-power",
+			order = "s[spaceage]-aquilo[heatpipe]",
+			setting_type = "startup",
+			default_value = "normal",
+			allowed_values = {"easy", "normal", "hard", "extreme", "insane"},
+		},
+	
+	-- Lightning Damage
+		{
+			type = "string-setting",
+			name = "settings-spaceage-fulgora-lightning-damage",
+			order = "s[spaceage]-aquilo[heatpipe]",
+			setting_type = "startup",
+			default_value = "normal",
+			allowed_values = {"easy", "normal", "hard", "extreme", "insane"},
+		},
+	
+	-- AQUILO SETTINGS --
+	
+	-- Daynight Cycle
+		{
+			type = "string-setting",
+			name = "settings-spaceage-aquilo-daynightcycle",
+			order = "s[daynight]-e[aquilo]",
+			setting_type = "startup",
+			default_value = "normal",
+			allowed_values = {"short", "normal", "long"},
+		},
+	
+	-- Heat Pipe Radius
+		{
+			type = "int-setting",
+			name = "settings-spaceage-aquilo-heatpipe-radius",
+			order = "s[spaceage]-aquilo[heatpipe]",
+			setting_type = "startup",
+			allowed_values = {1, 2, 3, 4, 5},
+			default_value = 1,
+		},
+	})
+	
+	else
+	
+	-- BASE GAME ONLY SETTINGS --
+	
+	--	Final Rocket Recipe
 	data:extend({
 		{
 			type = "int-setting",
@@ -274,8 +372,10 @@ data:extend({
 	{
         type = "string-setting",
         name = "settings-world-daynightcycle",
+		order = "s[daynight]-a[nauvis]",
         setting_type = "startup",
 		default_value = "normal",
 		allowed_values = {"short", "normal", "long"},
     },
+	
 })

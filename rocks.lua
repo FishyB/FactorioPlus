@@ -2687,7 +2687,97 @@ smallredrock.autoplace = autoplace_rock_small_red
 smallredrock.autoplace["tile_restriction"] = {"red-desert-3","red-desert-2","red-desert-1"} 
 data:extend{smallredrock}
 
+--we want to get to
+-- data.raw["simple-entity"]["lithium-iceberg-huge"].collision_box
+-- {{-1.0, -0.75}, {1.0, 0.75}}
 
 
+
+
+function scalecollision(type, t, scale, boxname) 
+	for _,u in pairs(t) do
+		scalebox( data.raw[type][u][boxname],scale)
+	end
+end
+
+function scalebox(t, scale) 
+	for k ,v in pairs(t) do
+		for l ,w in pairs(v) do		
+			t[k][l] = w * scale
+		end
+	end
+end
+
+function scaleimages(type, t, s) 
+   	for _,u in pairs(t) do
+		if data.raw[type][u].pictures.layers ~= nil then
+			for _,v in pairs( data.raw[type][u].pictures.layers ) do			
+				v.scale = v.scale * s
+				if v.shift ~= nil then
+					v.shift[2] = v.shift[2] * s
+					v.shift[1] = v.shift[1] * s
+				end
+			end
+		else 
+			for _,v in pairs( data.raw[type][u].pictures ) do			
+				v.scale = v.scale * s
+				if v.shift ~= nil then
+					v.shift[2] = v.shift[2] * s
+					v.shift[1] = v.shift[1] * (s/2)
+				end
+			end
+		end	
+	end
+end
+
+
+function scalemining(type, t, scale) 
+	for k,u in pairs(t) do
+		local dir =  data.raw[type][u].minable	
+		dir.mining_time = math.ceil(dir.mining_time * (scale ^ 2 ))
+		scaleminingresults(dir.results, scale) 
+	end
+end
+
+function scaleminingresults(t, scale) 
+	for k,v in pairs(t) do	
+		if v.amount ~= nil then
+			t[k].amount = math.ceil( (v.amount * (scale ^ 2 )) + scale )
+		else
+			t[k].amount_min = math.ceil( (v.amount_min * (scale ^ 2 )) + scale )
+			t[k].amount_max = math.ceil( (v.amount_max * (scale ^ 2 )) + scale )
+		end	
+	end
+end
+
+function scalerocks(type, t, scale)
+
+	if type == "simple-entity" then
+		scalecollision(type, t, scale, "selection_box")
+		scalemining(type, t, scale) 
+	end
+		scalecollision(type, t, scale, "collision_box")
+		scaleimages(type, t, scale)
+end
+
+-- local icebergs_to_update = {"floating-iceberg-large", "floating-iceberg-small"}
+local gleba_rocks_to_update = { "iron-stromatolite", "copper-stromatolite" }
+local huge_rocks_to_update = { "lithium-iceberg-huge", "huge-volcanic-rock"}
+local big_rocks_to_update = { "lithium-iceberg-big", "big-volcanic-rock"}
+local fulgorite_rocks_to_update = { "fulgurite-small", "fulgurite", "big-fulgora-rock" }
+local fulgorite_ruins_to_update = { "fulgoran-ruin-small", "fulgoran-ruin-medium", "fulgoran-ruin-stonehenge", "fulgoran-ruin-big", "fulgoran-ruin-huge", "fulgoran-ruin-colossal", "fulgoran-ruin-vault" }
+local vulcanus_chimneys_to_update = {"vulcanus-chimney", "vulcanus-chimney-faded", "vulcanus-chimney-cold" , "vulcanus-chimney-short", "vulcanus-chimney-truncated"}
+local decoratives_to_update = { "lithium-iceberg-medium", "lithium-iceberg-small", "lithium-iceberg-tiny", "medium-volcanic-rock", "small-volcanic-rock", "tiny-volcanic-rock", "tiny-rock-cluster", "small-sulfur-rock", "tiny-sulfur-rock", "sulfur-rock-cluster", "small-fulgora-rock", "medium-fulgora-rock", "tiny-fulgora-rock" }
+
+if (mods["space-age"]) then
+	scalerocks("simple-entity", fulgorite_rocks_to_update, 1.8)
+	scalerocks("simple-entity", fulgorite_ruins_to_update, 1.5)
+	scalerocks("simple-entity", huge_rocks_to_update, 2)
+	scalerocks("simple-entity", big_rocks_to_update, 1.75)
+	scalerocks("simple-entity", vulcanus_chimneys_to_update, 1.5)
+	scalerocks("simple-entity", gleba_rocks_to_update, 1.5)
+	scalerocks("optimized-decorative", decoratives_to_update, 0.75)
+	-- scalerocks("optimized-decorative", icebergs_to_update, 1.75)
+end
 
 

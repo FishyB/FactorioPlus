@@ -264,7 +264,7 @@ damage_modifier_uzi = 0.8
 movement_slow_down_factor_uzi = 0.2
 range_uzi = math.floor(range_smg / 1.5)
 
-bullet_magazinesize = 30
+bullet_magazinesize = 40
 bullet_stacksize = 50
 bullet_reloadtime = 1 * 60
 
@@ -273,13 +273,13 @@ bullet_regular_physical = 8
 bullet_piercing_physical = 5
 bullet_piercing_piercing = 5
 
-bullet_longrange_magazine_size = 20
+bullet_longrange_magazine_size = 30
 bullet_longrange_physical = 4
 bullet_longrange_piercing = 2
 bullet_longrange_range_modifier = 1.5
 bullet_longrange_cooldown_modifier = 2.0
 
-bullet_explosive_magazinesize = 15
+bullet_explosive_magazinesize = 25
 bullet_explosive_physical = 4
 bullet_explosive_explosive = 12
 bullet_explosive_radius = 3
@@ -291,7 +291,7 @@ bullet_uranium_physical = 8
 bullet_uranium_piercing = 12
 bullet_uranium_stacksize = 50
 
-bullet_nuke_magazinesize = 15
+bullet_nuke_magazinesize = 25
 bullet_nuke_physical = 12
 bullet_nuke_explosive = 55
 bullet_nuke_radius = 4
@@ -671,7 +671,7 @@ firerate_turret_flamethrower = 60 / 15
 range_turret_flamethrower = 28
 health_turret_flamethrower = 600
 
-firerate_turret_laser = 80 / 4 
+firerate_turret_laser = 60 / 2 
 range_turret_laser = 28
 health_turret_laser = 400
 

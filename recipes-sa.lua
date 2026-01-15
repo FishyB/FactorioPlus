@@ -1,5 +1,288 @@
 -- Space age overrides
 
+-- RECIPE DIFFICULTY
+
+if settings.startup["settings-recipe-cost"].value == "easy" then
+
+	data.raw["recipe"]["space-science-pack"].ingredients =
+	{
+		{type = "item", name = "carbon", amount = 1},
+		{type = "item", name = "ice", amount = 1}
+	}
+		
+	data.raw["recipe"]["metallurgic-science-pack"].ingredients =
+	{
+	  {type = "item", name = "tungsten-carbide", amount = 3},
+	  {type = "item", name = "tungsten-plate", amount = 2},
+	  {type = "fluid", name = "molten-lava", amount = 200},
+	}
+	
+	data.raw["recipe"]["agricultural-science-pack"].ingredients =
+	{
+		{type = "item", name = "bioflux", amount = 1},
+		{type = "item", name = "spoilage", amount = 1}
+	}
+	
+	data.raw["recipe"]["electromagnetic-science-pack"].ingredients =
+    {
+      {type = "item", name = "supercapacitor", amount = 1},
+      {type = "item", name = "accumulator", amount = 1},
+      {type = "fluid", name = "electrolyte", amount = 25},
+    }
+	
+	data.raw["recipe"]["cryogenic-science-pack"].ingredients =
+    {
+      {type = "item", name = "lithium-plate", amount = 1},
+      {type = "fluid", name = "fluoroketone-cold", amount = 6, ignored_by_stats = 3}
+    }
+	
+		data.raw["recipe"]["promethium-science-pack"].ingredients =
+    {
+      {type = "item", name = "promethium-asteroid-chunk", amount = 25},
+      {type = "item", name = "quantum-processor", amount = 1},
+    }
+		
+		
+elseif settings.startup["settings-recipe-cost"].value == "hard" then
+
+	data.raw["recipe"]["space-science-pack"].ingredients =
+	{
+		{type = "item", name = "steel-plate", amount = 1},
+		{type = "item", name = "carbon", amount = 1},
+		{type = "item", name = "ice", amount = 1}
+	}
+		
+	data.raw["recipe"]["metallurgic-science-pack"].ingredients =
+	{
+		{type = "item", name = "tungsten-carbide", amount = 3},
+		{type = "item", name = "tungsten-plate", amount = 2},
+		{type = "fluid", name = "molten-copper", amount = 200},
+		{type = "item", name = "calcite", amount = 6},
+	}
+			
+	data.raw["recipe"]["agricultural-science-pack"].ingredients =
+	{
+		{type = "item", name = "bioflux", amount = 1},
+		{type = "item", name = "pentapod-egg", amount = 1},
+		{type = "item", name = "nutrients", amount = 10},
+	}
+	
+	data.raw["recipe"]["electromagnetic-science-pack"].ingredients =
+    {
+      {type = "item", name = "supercapacitor", amount = 1},
+      {type = "item", name = "accumulator", amount = 1},
+	  {type = "item", name = "holmium-plate", amount = 1},
+      {type = "fluid", name = "electrolyte", amount = 25},
+      {type = "fluid", name = "holmium-solution", amount = 25},
+    }
+		
+	data.raw["recipe"]["cryogenic-science-pack"].ingredients =
+    {
+      {type = "item", name = "ice", amount = 3},
+      {type = "item", name = "lithium-plate", amount = 1},
+	  {type = "fluid", name = "ammonia", amount = 10},
+      {type = "fluid", name = "fluoroketone-cold", amount = 6, ignored_by_stats = 3},
+    }
+	
+	data.raw["recipe"]["promethium-science-pack"].ingredients =
+    {
+      {type = "item", name = "promethium-asteroid-chunk", amount = 25},
+      {type = "item", name = "quantum-processor", amount = 1},
+	  {type = "item", name = "supercapacitor", amount = 1},
+      {type = "item", name = "biter-egg", amount = 10}
+    }
+	
+elseif settings.startup["settings-recipe-cost"].value == "extreme" then
+	
+	data.raw["recipe"]["space-science-pack"].ingredients =
+	{
+		{type = "item", name = "steel-plate", amount = 1},
+		{type = "item", name = "carbon", amount = 1},
+		{type = "item", name = "ice", amount = 1},
+		{type = "item", name = "carbonic-asteroid-chunk", amount = 1},
+		{type = "item", name = "oxide-asteroid-chunk", amount = 1}
+	}
+	
+	data.raw["recipe"]["metallurgic-science-pack"].ingredients =
+	{
+		{type = "item", name = "tungsten-carbide", amount = 3},
+		{type = "item", name = "tungsten-plate", amount = 2},
+		{type = "fluid", name = "molten-copper", amount = 200},
+		{type = "item", name = "aluminium-plate", amount = 10},
+		{type = "item", name = "calcite", amount = 6},
+	}
+	
+		data.raw["recipe"]["agricultural-science-pack"].ingredients =
+	{
+		{type = "item", name = "bioflux", amount = 1},
+		{type = "item", name = "pentapod-egg", amount = 1},
+		{type = "item", name = "yumako-seed", amount = 1},
+		{type = "item", name = "jellynut-seed", amount = 1},
+		{type = "item", name = "nutrients", amount = 10},
+	}
+	
+		data.raw["recipe"]["electromagnetic-science-pack"].ingredients =
+    {
+      {type = "item", name = "supercapacitor", amount = 1},
+	  {type = "item", name = "superconductor", amount = 2},
+      {type = "item", name = "accumulator", amount = 1},
+	  {type = "item", name = "holmium-plate", amount = 1},
+      {type = "fluid", name = "electrolyte", amount = 25},
+      {type = "fluid", name = "holmium-solution", amount = 25},
+    }
+	
+		data.raw["recipe"]["cryogenic-science-pack"].ingredients =
+    {
+      {type = "item", name = "ice", amount = 3},
+      {type = "item", name = "lithium-plate", amount = 1},
+	  {type = "item", name = "lithium", amount = 10},
+	  {type = "fluid", name = "ammonia", amount = 10},
+      {type = "fluid", name = "fluoroketone-cold", amount = 6, ignored_by_stats = 3},
+    }
+	
+	data.raw["recipe"]["promethium-science-pack"].ingredients =
+	{
+      {type = "item", name = "promethium-asteroid-chunk", amount = 25},
+      {type = "item", name = "quantum-processor", amount = 1},
+	  {type = "item", name = "supercapacitor", amount = 1},
+	  {type = "item", name = "carbon-fiber", amount = 4},
+      {type = "item", name = "biter-egg", amount = 10}
+    }
+		
+elseif settings.startup["settings-recipe-cost"].value == "insane" then
+
+	data.raw["recipe"]["space-science-pack"].category = "crafting-with-fluid"
+	data.raw["recipe"]["space-science-pack"].ingredients =
+	{
+		{type = "item", name = "steel-plate", amount = 1},
+		{type = "item", name = "carbon", amount = 1},
+		{type = "fluid", name = "water", amount = 20},
+		{type = "item", name = "carbonic-asteroid-chunk", amount = 1},
+		{type = "item", name = "oxide-asteroid-chunk", amount = 1}
+	}
+
+	data.raw["recipe"]["metallurgic-science-pack"].ingredients =
+	{
+		{type = "item", name = "tungsten-carbide", amount = 3},
+		{type = "item", name = "tungsten-plate", amount = 2},
+		{type = "fluid", name = "molten-copper", amount = 200},
+		{type = "fluid", name = "molten-iron", amount = 200},
+		{type = "item", name = "aluminium-plate", amount = 10},
+		{type = "item", name = "calcite", amount = 6},
+	}
+	
+		data.raw["recipe"]["agricultural-science-pack"].ingredients =
+	{
+		{type = "item", name = "bioflux", amount = 1},
+		{type = "item", name = "pentapod-egg", amount = 1},
+		{type = "item", name = "artificial-yumako-soil", amount = 1},
+		{type = "item", name = "artificial-jellynut-soil", amount = 1},
+		{type = "item", name = "nutrients", amount = 10},
+	}
+	
+		data.raw["recipe"]["electromagnetic-science-pack"].ingredients =
+    {
+      {type = "item", name = "supercapacitor", amount = 1},
+	  {type = "item", name = "superconductor", amount = 2},
+      {type = "item", name = "accumulator", amount = 1},
+	  {type = "item", name = "holmium-plate", amount = 1},
+      {type = "fluid", name = "electrolyte", amount = 25},
+      {type = "fluid", name = "holmium-solution", amount = 25},
+	  {type = "item", name = "lightning-rod", amount = 1},
+    }
+	
+		data.raw["recipe"]["cryogenic-science-pack"].ingredients =
+	{
+      {type = "item", name = "ice", amount = 3},
+      {type = "item", name = "lithium-plate", amount = 1},
+	  {type = "item", name = "lithium", amount = 1},
+	  {type = "fluid", name = "lithium-brine", amount = 10},
+	  {type = "fluid", name = "ammonia", amount = 10},
+      {type = "fluid", name = "fluoroketone-cold", amount = 6, ignored_by_stats = 3},
+    }
+	
+	data.raw["recipe"]["promethium-science-pack"].ingredients =
+	{
+      {type = "item", name = "promethium-asteroid-chunk", amount = 25},
+      {type = "item", name = "quantum-processor", amount = 1},
+	  {type = "item", name = "supercapacitor", amount = 1},
+	  {type = "item", name = "carbon-fiber", amount = 4},
+	  {type = "item", name = "tungsten-plate", amount = 2},
+      {type = "item", name = "biter-egg", amount = 10}
+    }
+	
+end
+
+data.raw["recipe"]["casting-low-density-structure"].ingredients = 
+    {
+      {type = "fluid", name = "molten-iron", amount = 80},
+      {type = "fluid", name = "molten-copper", amount = 250},
+      {type = "item", name = "plastic-bar", amount = 4},
+	  {type = "item", name = "aluminium-plate", amount = 6}
+    }
+	
+data.extend({
+	{
+		type = "recipe",
+		name = "molten-aluminium-from-lava",
+		icon = "__factorioplus__/graphics/icons/molten-aluminium-from-lava.png",
+		category = "metallurgy",
+		subgroup = "vulcanus-processes",
+		order = "a[melting]-b[lava-a]",
+		auto_recycle = false,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "fluid", name = "lava", amount = 500},
+		  {type = "fluid", name = "sulfuric-acid", amount = 20},
+		  {type = "item", name = "calcite", amount = 2},
+		},
+		energy_required = 24,
+		results =
+		{
+		  {type = "fluid", name = "molten-aluminium", amount = 200},
+		  {type = "item", name = "carbon", amount = 2},
+		},
+		allow_productivity = true
+  },
+  
+	{
+		type = "fluid",
+		name = "molten-aluminium",
+		icon = "__factorioplus__/graphics/icons/molten-aluminium.png",
+		subgroup = "fluid",
+		order = "b[new-fluid]-b[vulcanus]-b[molten-aluminium]",
+		default_temperature = 2500,
+		max_temperature = 3000,
+		heat_capacity = "0.01kJ",
+		base_color = {0.34, 0.34, 0.43},
+		flow_color = {0.64, 0.68, 0.73},
+		auto_barrel = false
+	},
+
+	{
+		type = "recipe",
+		name = "casting-aluminium",
+		category = "metallurgy",
+		subgroup = "vulcanus-processes",
+		order = "b[casting]-b[casting-iron]",
+		icon = "__factorioplus__/graphics/icons/aluminium-casting.png",
+		enabled = false,
+		ingredients =
+		{
+		  {type = "fluid", name = "molten-aluminium", amount = 40, fluidbox_multiplier = 10},
+		},
+		energy_required = 4,
+		allow_decomposition = false,
+		results = {{type = "item", name = "aluminium-plate", amount = 2}},
+		allow_productivity = true
+	},
+})
+  
+-- Move pipe casting to pipe/fluid handling.
+
+data.raw["recipe"]["casting-pipe"].subgroup = "pipes"
+data.raw["recipe"]["casting-pipe-to-ground"].subgroup = "pipes"
 
 -- Add turret base requirements to new turrets.
 	
@@ -28,12 +311,12 @@ data.extend({
     ingredients =
     {
       {type = "fluid", name = "lava", amount = 500},
-      {type = "fluid", name = "steam", amount = 100},
-      {type = "item", name = "stone", amount = 10},
+      {type = "fluid", name = "steam", amount = 200},
+      {type = "item", name = "stone", amount = 20},
     },
     energy_required = 10,
     allow_decomposition = false,
-    results = {{type = "item", name = "glass-plate", amount = 4}},
+    results = {{type = "item", name = "glass-plate", amount = 10}},
     allow_productivity = true
   },
 })

@@ -12,10 +12,12 @@ elseif settings.startup["settings-world-daynightcycle"].value == "long" then
 time_scale = 2.0 
 end
 
-data.raw["planet"]["nauvis"].surface_properties =
-{
-  ["day-night-cycle"] = (12 * time_scale) * 60 * 60
-}
+-- data.raw["planet"]["nauvis"].surface_properties =
+-- {
+  -- ["day-night-cycle"] = (12 * time_scale) * 60 * 60
+-- }
+
+data.raw["planet"]["nauvis"].surface_properties["day-night-cycle"] = (12 * time_scale) * 60 * 60
 
 data.raw["map-gen-presets"]["default"]["snakey-continents-old"] = 
 {
