@@ -1,4 +1,36 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.7.0
+Date: 2026.01.15
+  Space Age:
+    - Added Day/Night settings for all planets.
+    - Added setting to increase Aquilo heat pipe melting radius. (1,2,3,4 & 5 tiles)
+    - Added/Fixed heating values for all Factorio+ buildings so they need to be heated on Aquilo.
+    - Added Fulgora setting to change lightning strike frequency during a storm.
+    - Added Fulgora setting to change how much energy is created by a lightning strike.
+    - Added Fulgora setting to change how much damage a lightning strike causes.
+    - Belts can now be casted in Foundries.
+    - Aluminium can now be created using lava in a Foundry on Vulcanus. However, can only be casted straight into aluminium pipes.
+    - Casting Low density structures require Aluminium plates.
+    - Added Easy/Hard/Extreme/Insane science pack recipes for all Space Age sciences.
+    - Increased Glass from lava recipe result amount from 4 -> 10 glass plates. Increased the input a little to compensate.
+    - Removed Bauxite from map-gen spawning on Vulcanus.
+    - All Rocks, Ruins and Icebergs have been scaled to be similar to the larger scale of Nauvis rocks. (Larger; More resources and mining time)
+  Balance:
+    - Abandonment loot and turrets scale faster over distance by around ~15%
+    - Rebalanced some weapon loot in warehouses, more likely to appear closer to the player start.
+    - Increased Firearm bullet count back to what is was before (roughly +10 ammo for most magazines around)
+    - Increased Firearm magazine recipe iron cost from 5 -> 10.
+    - Increased Piercing firearm magazine recipe cost from 1 steel, 5 copper -> 2 steel, 10 copper.
+    - Increased Long range firearm magazine recipe cost from 4 aluminium -> 8 aluminium.
+    - Rebalanced most advanced Nauvis enemy spawners to start spawning closer to the start.
+    - Increased health of most small biters.
+    - General increase of Tanker and Stinger biter health by about ~10-55%
+    - Laser resistance increases per regular Biter by another +5% per tier.
+    - Physical resistances increases per Flamer and Swarmer by another +2% per tier. 
+    - Increased Military science pack recipe result count from 2 -> 3 (As firearm magazines are now more expensive.)
+  Fixes:
+    - Fixed abandonment laser turrets damage scaling after the last update increasing the base damage.
+---------------------------------------------------------------------------------------------------
 Version: 2.6.4
 Date: 2026.01.10
   Balance:
