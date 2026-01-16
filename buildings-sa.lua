@@ -33,21 +33,25 @@ data.raw["heat-pipe"]["heat-pipe"].heating_radius = settings.startup["settings-s
 data.raw["transport-belt"]["basic-transport-belt"].heating_energy = "10kW"
 data.raw["underground-belt"]["basic-underground-belt"].heating_energy = "50kW"
 data.raw["splitter"]["basic-splitter"].heating_energy = "40kW"
-data.raw["loader"]["basic-loader"].heating_energy = "40kW"
 
-data.raw["loader"]["loader"].heating_energy = "40kW"
-data.raw["loader"]["fast-loader"].heating_energy = "40kW"
-data.raw["loader"]["express-loader"].heating_energy = "40kW"
+if settings.startup["settings-loaders-active"].value then
+	data.raw["loader"]["basic-loader"].heating_energy = "40kW"
+	data.raw["loader"]["loader"].heating_energy = "40kW"
+	data.raw["loader"]["fast-loader"].heating_energy = "40kW"
+	data.raw["loader"]["express-loader"].heating_energy = "40kW"
+	data.raw["loader"]["turbo-loader"].heating_energy = "40kW"
+	data.raw["loader"]["supersonic-loader"].heating_energy = "40kW"
+end
 
 data.raw["transport-belt"]["turbo-transport-belt"].heating_energy = "10kW"
 data.raw["underground-belt"]["turbo-underground-belt"].heating_energy = "50kW"
 data.raw["splitter"]["turbo-splitter"].heating_energy = "40kW"
-data.raw["loader"]["turbo-loader"].heating_energy = "40kW"
+
 
 data.raw["transport-belt"]["supersonic-transport-belt"].heating_energy = "10kW"
 data.raw["underground-belt"]["supersonic-underground-belt"].heating_energy = "50kW"
 data.raw["splitter"]["supersonic-splitter"].heating_energy = "40kW"
-data.raw["loader"]["supersonic-loader"].heating_energy = "40kW"
+
 
 data.raw["assembling-machine"]["mini-assembling-machine-1"].heating_energy = "50kW"
 data.raw["storage-tank"]["storage-tank-large"].heating_energy = "50kW"

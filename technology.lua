@@ -136,6 +136,19 @@ table.insert(data.raw["technology"]["productivity-module-2"].prerequisites,"chem
 table.removeentry(data.raw["technology"]["efficiency-module-2"].prerequisites, "processing-unit") 
 table.insert(data.raw["technology"]["efficiency-module-2"].prerequisites,"chemical-science-pack")
 
+
+-- EXPLOSIVE ROCKETRY OVERRIDE
+
+data.raw["technology"]["explosive-rocketry"].enabled = false
+data.raw["technology"]["explosive-rocketry"].hidden = true
+
+
+
+--table.removetablewithmatchingentry(data.raw["technology"]["oil-processing"].effects, "recipe", "solid-fuel-from-petroleum-gas")
+--table.removeentry(data.raw["technology"]["explosive-rocketry"].prerequisites, "military-3") 
+--table.insert(data.raw["technology"]["explosive-rocketry"].prerequisites,"military-4")
+--data.raw["technology"]["explosive-rocketry"].icon = "__base__/graphics/technology/explosive-rocketry.png"
+
 -- FLUID HANDLING OVERRIDE
 
 table.insert(data.raw["technology"]["fluid-handling"].effects,
@@ -234,34 +247,34 @@ data:extend
       order = "e-j-a"
     },
 	
-	{
-    type = "technology",
-    name = "explosive-rocketry",
-	enabled = false,
-    icon_size = 256, icon_mipmaps = 4,
-    icon = "__base__/graphics/technology/explosive-rocketry.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "explosive-rocket"
-      }
-    },
-    prerequisites = {"rocketry", "military-4"},
-    unit =
-    {
-      count = 100,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"military-science-pack", 1}
-      },
-      time = 30
-    },
-    order = "e-h"
-  },
+	-- {
+    -- type = "technology",
+    -- name = "explosive-rocketry",
+	-- enabled = false,
+    -- icon_size = 256, icon_mipmaps = 4,
+    -- icon = "__base__/graphics/technology/explosive-rocketry.png",
+    -- effects =
+    -- {
+      -- {
+        -- type = "unlock-recipe",
+        -- recipe = "explosive-rocket"
+      -- }
+    -- },
+    -- prerequisites = {"rocketry", "military-4"},
+    -- unit =
+    -- {
+      -- count = 100,
+      -- ingredients =
+      -- {
+        -- {"automation-science-pack", 1},
+        -- {"logistic-science-pack", 1},
+        -- {"chemical-science-pack", 1},
+        -- {"military-science-pack", 1}
+      -- },
+      -- time = 30
+    -- },
+    -- order = "e-h"
+  -- },
 	
 	{
       type = "technology",

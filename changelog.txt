@@ -1,3 +1,11 @@
+Version: 2.7.0
+Date: 2026.01.16
+  Space Age:
+    - Updated Electric Distribution 3 and Advanced Accumulators
+  Fixes:
+    - Fixed crash with Loaders turned off and Space Age turned on (due to heating properties being added to non existant loaders).
+  Other Mods:
+    - Added fix to Aircraft-Space-Age so that Jets can be unlocked with Jet Fuel instead of missing Explosive-Rocketry technology.
 ---------------------------------------------------------------------------------------------------
 Version: 2.7.0
 Date: 2026.01.15

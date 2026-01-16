@@ -284,6 +284,32 @@ data.extend({
 data.raw["recipe"]["casting-pipe"].subgroup = "pipes"
 data.raw["recipe"]["casting-pipe-to-ground"].subgroup = "pipes"
 
+-- Update turbo belt ingredients to match SA somewhat...
+
+data.raw["recipe"]["turbo-transport-belt"].ingredients = 
+{
+	{type = "item", name = "tungsten-plate", amount = 10},
+	{type = "item", name = "speed-module", amount=1},
+	{type = "item", name = "express-transport-belt", amount = 2},
+	{type = "fluid", name = "lubricant", amount = 20}
+}
+
+data.raw["recipe"]["turbo-splitter"].ingredients = 
+{
+	{type="item", name="express-splitter", amount=2},
+	{type="item", name="tungsten-plate", amount=15},
+	{type="item", name="speed-module", amount=2},
+	{type="fluid", name="lubricant", amount=120}
+}
+
+data.raw["recipe"]["turbo-underground-belt"].ingredients =
+{
+	{type="item", name="express-underground-belt", amount=2},
+	{type="item", name="tungsten-plate", amount=40},
+	{type="item", name="speed-module", amount=1},
+	{type="fluid", name="lubricant", amount=80}
+}
+	
 -- Add turret base requirements to new turrets.
 	
 data.raw["recipe"]["railgun-turret"].ingredients = {

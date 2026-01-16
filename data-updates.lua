@@ -11,8 +11,13 @@ for k, v in pairs(data.raw["wall"]) do
 end
 
 ------------------ INDIVIDUAL MODS ------------------
+
+-- Aircraft
+if (mods["Aircraft-space-age"]) then
+	data.raw["technology"]["jets"].prerequisites = {"gunships", "rocket-fuel", "military-4"}
+end
   
--- aai-industry
+-- AAI-industry
 if mods["aai-industry"] then
 	-- Do glass stuff
 	switchrecipeingredient("glass","glass-plate")

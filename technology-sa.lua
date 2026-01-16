@@ -17,6 +17,69 @@ table.insert(data.raw["technology"]["captivity"].effects,
 
 data.raw["technology"]["turbo-transport-belt"].hidden = true
 data.raw["technology"]["turbo-transport-belt"].hidden_in_factoriopedia = true
+
+-- SPACE AGE F+ TECH
+-- Update some techs that would be better suited as planet tech
+
+-- VULCANUS
+
+data.raw["technology"]["logistics-4"].unit.ingredients =
+{
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+	{"production-science-pack", 1},
+	{"space-science-pack", 1},
+	{"metallurgic-science-pack", 1}
+}
+
+data.raw["technology"]["loaders-4"].unit.ingredients =
+{
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+	{"production-science-pack", 1},
+	{"space-science-pack", 1},
+	{"metallurgic-science-pack", 1}
+}
+
+-- FULGORA
+
+data.raw["technology"]["electric-energy-distribution-3"].prerequisites = 
+{
+	"electric-energy-distribution-2", 
+	"advanced-circuit", 
+	"production-science-pack",
+	"electromagnetic-science-pack"
+}
+data.raw["technology"]["electric-energy-distribution-3"].unit.ingredients =
+{
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+	{"production-science-pack", 1},
+	{"space-science-pack", 1},
+	{"electromagnetic-science-pack", 1}
+}
+
+data.raw["technology"]["electric-energy-accumulators-3"].prerequisites = 
+{
+	"electric-energy-accumulators-2", 
+	"processing-unit", 
+	"electromagnetic-science-pack"
+}
+data.raw["technology"]["electric-energy-accumulators-3"].unit.ingredients =
+{
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+	{"production-science-pack", 1},
+	{"space-science-pack", 1},
+	{"electromagnetic-science-pack", 1}
+}
+
+
+----
 	
 data.raw["technology"]["worker-robots-speed-7"].effects =
 	{
