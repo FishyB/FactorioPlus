@@ -3499,7 +3499,7 @@ data.extend({
     energy_source =
     {
       type = "electric",
-      buffer_capacity = "180MJ",
+      buffer_capacity = "120MJ",
       usage_priority = "tertiary",
       input_flow_limit = "4800kW",
       output_flow_limit = "4800kW"

@@ -1,4 +1,23 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.7.4
+Date: 2026.01.23
+  Balance:
+    - Reduced health & inventory of Nimble explorer from 50hp -> 25hp and -20 space -> -30 space.
+    - Increased turret attack speed back to 3/s (was 2/s). (This also applies to abandonment turrets)
+    - Decreased Large solar panel output from 250kW -> 200kW.
+    - Decreased Solar array output from 1750kW -> 1200 kW.
+    - Decreased Battery charge from 60MJ -> 35MJ.
+    - Decreased Advanced battery charge from 180MJ -> 120MJ.
+    - Reduced Advanced battery recipe cost of Batterys from 4 -> 2.
+    - Rebalanced Batteries and Solar panel recipe costs.
+    - Reduced Rocket explosive max radius from 12 -> 8 (inner radius is half the amount)
+    - Reduced Micro rocket explosive max radius from 8 -> 6 (inner radius is half the amount)
+    - Reduced Heavy smg turret damage modifier from 1.5x -> 1.25x
+    - Rebalanced Weapon loot rarity values to scale higher for higher tiers. (e.g. legendary 2.1x -> 2.25x improvements)
+    - Increased overall speed of Nauvis enemies by around +25/40%
+  Fixes:
+    - Updated migration for Incinerators to also migrate Incinerator items (Only applies from initial >2.7.3 update).
+---------------------------------------------------------------------------------------------------
 Version: 2.7.3
 Date: 2026.01.18
   Fixes:

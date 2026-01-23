@@ -306,10 +306,10 @@ data.raw["character"]["character"].distance_per_frame = data.raw["character"]["c
 end
 
 if  settings.startup["settings-character-selection"].value == "nimble" then
-data.raw["character"]["character"].inventory_size = data.raw["character"]["character"].inventory_size - 20
+data.raw["character"]["character"].inventory_size = data.raw["character"]["character"].inventory_size - 30
 data.raw["character"]["character"].running_speed = data.raw["character"]["character"].running_speed * 2
 data.raw["character"]["character"].distance_per_frame = data.raw["character"]["character"].distance_per_frame * 1.5
-data.raw["character"]["character"].max_health = data.raw["character"]["character"].max_health / 2
+data.raw["character"]["character"].max_health = data.raw["character"]["character"].max_health / 4
 data.raw["character"]["character"].guns_inventory_size = 2
 
 pcs = pcs * -0.5
