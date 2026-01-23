@@ -1,7 +1,25 @@
-Version: 2.7.0
+---------------------------------------------------------------------------------------------------
+Version: 2.7.3
+Date: 2026.01.18
+  Fixes:
+    - Fixed another crash with Loaders turned off and Space Age turned on (due to Loaders-4 trying to change data without checking first if they exist).
+    - Updated Large storage tank debris graphics to use a generic one.
+  Other Mods:
+    - Cerys and Flare Stacks now work with Incinerators in F+. NOTE: Incinerators will be migrated to a new entity name.
+---------------------------------------------------------------------------------------------------
+Version: 2.7.2
+Date: 2026.01.17
+  Space Age:
+    - Fixed crash related to Space Age running easy science pack difficulty.
+    - Changed easy Metallurgic science pack to use Tungsten ore instead of Tungsten carbide.
+    - Reduced extreme & insane Fulgora lightning damage settings from (400%, 600%) -> (300%, 400%)   
+---------------------------------------------------------------------------------------------------
+Version: 2.7.1
 Date: 2026.01.16
   Space Age:
-    - Updated Electric Distribution 3 and Advanced Accumulators
+    - Electric Distribution 3 and Advanced Accumulators tech into Fulgora technology tree.
+    - Logistics-4 and Loaders-4 techs into Vulcanus technology tree.
+    - Turbo transport belts/splitters/underground now require Tungsten plates.
   Fixes:
     - Fixed crash with Loaders turned off and Space Age turned on (due to heating properties being added to non existant loaders).
   Other Mods:

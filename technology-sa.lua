@@ -33,15 +33,17 @@ data.raw["technology"]["logistics-4"].unit.ingredients =
 	{"metallurgic-science-pack", 1}
 }
 
-data.raw["technology"]["loaders-4"].unit.ingredients =
-{
-	{"automation-science-pack", 1},
-	{"logistic-science-pack", 1},
-	{"chemical-science-pack", 1},
-	{"production-science-pack", 1},
-	{"space-science-pack", 1},
-	{"metallurgic-science-pack", 1}
-}
+if  data.raw["technology"]["loaders-4"] then
+	data.raw["technology"]["loaders-4"].unit.ingredients =
+	{
+		{"automation-science-pack", 1},
+		{"logistic-science-pack", 1},
+		{"chemical-science-pack", 1},
+		{"production-science-pack", 1},
+		{"space-science-pack", 1},
+		{"metallurgic-science-pack", 1}
+	}
+end
 
 -- FULGORA
 

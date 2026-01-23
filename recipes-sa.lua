@@ -12,9 +12,9 @@ if settings.startup["settings-recipe-cost"].value == "easy" then
 		
 	data.raw["recipe"]["metallurgic-science-pack"].ingredients =
 	{
-	  {type = "item", name = "tungsten-carbide", amount = 3},
+	  {type = "item", name = "tungsten-ore", amount = 3},
 	  {type = "item", name = "tungsten-plate", amount = 2},
-	  {type = "fluid", name = "molten-lava", amount = 200},
+	  {type = "fluid", name = "lava", amount = 200},
 	}
 	
 	data.raw["recipe"]["agricultural-science-pack"].ingredients =

@@ -119,8 +119,9 @@ local incinerator_smoke =
 }
   
 local incinerator = util.copy(data.raw["furnace"]["steel-furnace"])
-incinerator.name = "incinerator"
-incinerator.minable = {mining_time = 1, result = "incinerator"}
+incinerator.name = "incinerator-fplus"
+incinerator.localised_name = {"entity-name.incinerator"}
+incinerator.minable = {mining_time = 1, result = "incinerator-fplus"}
 incinerator.collision_box = {{-1.3, -1.3}, {1.3, 1.3}}
 incinerator.selection_box = {{-1.5, -1.5}, {1.5, 1.5}}
 incinerator.fast_replaceable_group = "incinerator"
@@ -141,18 +142,20 @@ data.extend({ incinerator })
 data.extend({ 
   {
     type = "item",
-    name = "incinerator",
+    name = "incinerator-fplus",
+	localised_name = {"entity-name.incinerator"},
     icon = "__factorioplus__/graphics/icons/incinerator.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = "smelting-machine",
     order = "ca[stone-furnace]",
-    place_result = "incinerator",
+    place_result = "incinerator-fplus",
     stack_size = 25
   },
   
   {
     type = "recipe",
-    name = "incinerator",
+    name = "incinerator-fplus",
+	localised_name = {"entity-name.incinerator"},
 	energy_required = 10,
 	enabled = false,
     ingredients = {
@@ -160,7 +163,7 @@ data.extend({
 	{type="item", name="stone-brick", amount=12}, 
 	{type="item", name="steel-plate", amount=6}, 
 	},
-    results = {{type="item", name="incinerator", amount=1}},
+    results = {{type="item", name="incinerator-fplus", amount=1}},
 },
 
 {
@@ -172,7 +175,7 @@ data.extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "incinerator"
+        recipe = "incinerator-fplus"
       }
     },
     prerequisites = {"steel-processing"},

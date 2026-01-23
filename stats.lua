@@ -493,9 +493,9 @@ min_range_rocketlauncher = 6
 rocket_speed_initial = 0.15
 rocket_speed_acceleration = 0.006
 
-rocket_damage_physical = 120
+rocket_damage_physical = 60
 rocket_damage_explosive = 120
-rocket_radius = 6
+rocket_radius = 4 -- rocket radii are 2x larger, as there's an interior (1x) and exterior radius (2x).
 rocket_stacksize = 100
 
 -- micro
@@ -505,7 +505,7 @@ rocket_micro_speed_acceleration = 0.03
 
 rocket_micro_damage_physical = 35
 rocket_micro_damage_explosive = 40
-rocket_micro_radius = 4
+rocket_micro_radius = 3
 rocket_micro_cooldown_modifier = 0.25
 rocket_micro_explosive_cooldown_modifier = 0.25
 rocket_micro_stacksize = 300
@@ -625,9 +625,9 @@ cannon_shell_stacksize = 50
 -- Red Lasers
 
 laserbeam_red_damage = 10
-laserbeam_red_firerate = 60 / 2 
-laserbeam_red_damage_interval =  60 / 2
-laserbeam_red_duration =  60 / 2
+laserbeam_red_firerate = 60 / 3 
+laserbeam_red_damage_interval =  60 / 3
+laserbeam_red_duration =  60 / 3
 
 -- Big Red Laser
 
@@ -661,7 +661,7 @@ turret_heavysmg_modifier = 1.5
 firerate_turret_heavysmg = firerate_turret_smg / turret_heavysmg_modifier
 range_turret_heavysmg =  math.ceil(range_turret_smg * (turret_heavysmg_modifier - ((turret_heavysmg_modifier-1)/2)))
 health_turret_heavysmg = math.ceil(health_turret_smg * turret_heavysmg_modifier) + health_turret_medium_additional
-damagemodifier_turret_heavysmg = turret_heavysmg_modifier
+damagemodifier_turret_heavysmg = 1.25
 
 firerate_turret_shotgun = 60 / 0.75
 range_turret_shotgun = 20
@@ -671,7 +671,7 @@ firerate_turret_flamethrower = 60 / 15
 range_turret_flamethrower = 28
 health_turret_flamethrower = 600
 
-firerate_turret_laser = 60 / 2 
+firerate_turret_laser = laserbeam_red_firerate
 range_turret_laser = 28
 health_turret_laser = 400
 

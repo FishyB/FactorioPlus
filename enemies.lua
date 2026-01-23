@@ -1559,7 +1559,7 @@ function makeenemyspawner(spawnername, spawnerbasehealth, spawning_amount, spawn
 			table.insert(dte,create_entity("alien-polyp-"..enemy_default_size , 6 *spawnerscale , 0.1 , 2 + (1 * spawnertier)))
 		end
 
-		_ap.tile_restriction = {"sand-1","sand-2","sand-3","red-desert-0","red-desert-1","red-desert-2","red-desert-3"} 
+		_ap.tile_restriction = spawner_tilerestrictions_swarmer
 	elseif (string.find(spawnername, "tanker")) then	
 		hpt = hpt * 10
 		if (settings.startup["settings-chunks-probability"].value ~= 0) then
@@ -1643,9 +1643,9 @@ function makeenemyspawner(spawnername, spawnerbasehealth, spawning_amount, spawn
 		if (settings.startup["settings-chunks-probability"].value ~= 0) then
 			table.insert(dte,create_entity("alien-polyp-"..enemy_default_size , 6 *spawnerscale , 0.1 , 2 + (1 * spawnertier)) )
 		end
-		_ap.tile_restriction = {"grass-1","grass-2","grass-3","grass-4" }
+		_ap.tile_restriction =spawner_tilerestrictions_spitter
 	elseif (string.find(spawnername, "stinger")) then	
-		_ap.tile_restriction = {"grass-1","grass-2","grass-3","grass-4" }
+		_ap.tile_restriction = spawner_tilerestrictions_stinger
 		if (settings.startup["settings-chunks-probability"].value ~= 0) then
 			dte = {}
 			table.insert(dte,create_entity("alien-polyp-"..enemy_default_size , 6 *spawnerscale , 0.1 , 2 + (1 * spawnertier)) )
@@ -1713,7 +1713,7 @@ function makeenemyspawner(spawnername, spawnerbasehealth, spawning_amount, spawn
 		_gs.animations[3].layers[4].draw_as_light = true
 		_gs.animations[4].layers[4].draw_as_light = true
 		
-		_ap.tile_restriction = {"red-desert-0","red-desert-1","red-desert-2","red-desert-3"} 
+		_ap.tile_restriction = spawner_tilerestrictions_flamer
 	else if (string.find(spawnername, "biter")) then
 			if (settings.startup["settings-chunks-probability"].value ~= 0) then
 				dte = {}

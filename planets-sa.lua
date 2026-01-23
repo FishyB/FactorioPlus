@@ -51,7 +51,7 @@ table.insert(data.raw["planet"]["fulgora"].lightning_properties.priority_rules,
 
 data.raw["planet"]["fulgora"].lightning_properties.lightnings_per_chunk_per_tick = data.raw["planet"]["fulgora"].lightning_properties.lightnings_per_chunk_per_tick * length_setting("settings-spaceage-fulgora-lightning-hitfrequency", {2, 1, 0.5})
 data.raw["lightning"]["lightning"].energy = 1000 * difficult_setting("settings-spaceage-fulgora-lightning-power", {2, 1, 0.75, 0.5, 0.25}) .. "MJ"
-data.raw["lightning"]["lightning"].damage = data.raw["lightning"]["lightning"].damage * difficult_setting("settings-spaceage-fulgora-lightning-damage", {0.75, 1, 2, 4, 6})
+data.raw["lightning"]["lightning"].damage = data.raw["lightning"]["lightning"].damage * difficult_setting("settings-spaceage-fulgora-lightning-damage", {0.75, 1, 2, 3, 4})
 
 data.raw["planet"]["vulcanus"].surface_properties["day-night-cycle"] = data.raw["planet"]["vulcanus"].surface_properties["day-night-cycle"] * daynightcycle_setting("settings-spaceage-vulcanus-daynightcycle")
 data.raw["planet"]["gleba"].surface_properties["day-night-cycle"] = data.raw["planet"]["gleba"].surface_properties["day-night-cycle"] * daynightcycle_setting("settings-spaceage-gleba-daynightcycle")

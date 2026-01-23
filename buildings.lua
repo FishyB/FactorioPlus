@@ -168,7 +168,7 @@ data.extend({
     flags = {"placeable-player", "player-creation"},
     minable = {mining_time = 0.5, result = "storage-tank-large"},
     max_health = 4000,
-    corpse = "storage-tank-remnants",
+    corpse = "big-remnants",
     dying_explosion = "storage-tank-explosion",
     collision_box = {{-2.9, -2.9}, {2.9, 2.9}},
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
@@ -3053,7 +3053,7 @@ data.extend({
       }
     },
     --vehicle_impact_sound = sounds.generic_impact,
-    production = "250kW"
+    production = "200kW"
   },
   ---------------------------------------------------  SOLAR ARRAY 2  ------------------------------------------------------------
   {
@@ -3116,7 +3116,7 @@ data.extend({
       },
     },
     --vehicle_impact_sound = sounds.generic_impact,
-    production = "1750kW"
+    production = "1200kW"
   },
     ---------------------------------------------------  FLOOR LAMP  ------------------------------------------------------------
    {
@@ -3317,7 +3317,7 @@ data.extend({
     energy_source =
     {
       type = "electric",
-      buffer_capacity = "60MJ",
+      buffer_capacity = "35MJ",
       usage_priority = "tertiary",
       input_flow_limit = "1600kW",
       output_flow_limit = "1600kW"

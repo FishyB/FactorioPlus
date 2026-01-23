@@ -45,9 +45,9 @@ end
 local rarities = 
 {
 	uncommon = {name = "uncommon", color = {12,255,70,0.7}, scale = 1.2 }, -- green
-	rare = {name = "rare", color = {50,100,255,0.7}, scale = 1.4 }, -- blue
-	epic = {name = "epic", color = {255,14,158,0.7}, scale = 1.7 }, -- purple
-	legendary = {name = "legendary", color = {255,170,8,0.7}, scale = 2.1 }, -- orange/yellow
+	rare = {name = "rare", color = {50,100,255,0.7}, scale = 1.45 }, -- blue
+	epic = {name = "epic", color = {255,14,158,0.7}, scale = 1.8 }, -- purple
+	legendary = {name = "legendary", color = {255,170,8,0.7}, scale = 2.25 }, -- orange/yellow
 }
 
 function createnewrareweapon(weapon, rarity)

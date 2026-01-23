@@ -620,7 +620,7 @@ local loothutboundingbox = _warehouse_spacing_scale
 
 local powerscalingvalue = (settings.startup["settings-enemy-power-scaling"].value/100)
 
-local trvinc = 0.25
+local trvinc = 0.125
 local trvincval = 0
 local trv = 0
 
@@ -900,7 +900,7 @@ data:extend{
 		scale = 1.5,
 		masknudge_y = -0.15,
 		range_modifier = 1.4,
-		damage_modifier = 2.5,
+		damage_modifier = 3,
 		energy_consumption_modifier = 1,
 		autoplace_start_distance = autoplace_turret_laser_l,
 		loot =	
@@ -922,7 +922,7 @@ data:extend{
 		additionalhp = 1500,
 		masknudge_y = -0.31,
 		range_modifier = 1.8,
-		damage_modifier = 6,
+		damage_modifier = 10,
 		energy_consumption_modifier = 1.5,
 		autoplace_start_distance = autoplace_turret_laser_b,
 		loot =	

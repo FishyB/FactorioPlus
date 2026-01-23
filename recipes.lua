@@ -47,7 +47,7 @@ data.extend({
 data.raw["recipe"]["explosives"].ingredients =
     {
       {type = "item", name = "sulfur", amount = 1},
-      {type = "item", name = "basic-explosive", amount = 6},
+      {type = "item", name = "basic-explosive", amount = 4},
       {type = "fluid", name = "water", amount = 15}
     }
 
@@ -747,7 +747,7 @@ data:extend
     {
       {type="item", name="solar-panel", amount=2},
       {type="item", name="advanced-circuit", amount=10},
-      {type="item", name="steel-plate", amount=6}
+      {type="item", name="steel-plate", amount=10}
     },
     results = {{type="item", name="solar-array", amount=1}},
   },
@@ -760,7 +760,7 @@ data:extend
     {
       {type="item", name="solar-array", amount=4},
       {type="item", name="processing-unit", amount=10},
-      {type="item", name="aluminium-plate", amount=16}
+      {type="item", name="aluminium-plate", amount=26}
     },
     results = {{type="item", name="solar-array-2", amount=1}},
   },
@@ -951,7 +951,6 @@ data:extend
 }) 
 
  
-if (mods["space-age"]) then  
 
 data.extend({
    {
@@ -961,33 +960,14 @@ data.extend({
     energy_required = 15,
     ingredients =
     {
-      {type="item", name="accumulator", amount=8},
+      {type="item", name="accumulator", amount=4},
       {type="item", name="electronic-circuit", amount=6},
-	  {type="item", name="advanced-circuit", amount=4}
+	  {type="item", name="advanced-circuit", amount=2}
     },
     results = {{type="item", name="accumulator-battery", amount=1}},
   },
 })
 
-else
-
- data.extend({
-   {
-    type = "recipe",
-    name = "accumulator-battery",
-	enabled = false,
-    energy_required = 15,
-    ingredients =
-    {
-      {type="item", name="accumulator", amount=8},
-      {type="item", name="electronic-circuit", amount=6},
-	  {type="item", name="advanced-circuit", amount=4}
-    },
-    results = {{type="item", name="accumulator-battery", amount=1}},
-  },
-})
-
-end
 
 if (mods["space-age"]) then  
 
@@ -1000,9 +980,9 @@ data.extend({
     ingredients =
     {
       {type="item", name="accumulator-battery", amount=2},
-	  {type="item", name="supercapacitor", amount=20},
+	  {type="item", name="supercapacitor", amount=12},
 	  {type="item", name="advanced-circuit", amount=4},
-	  {type="item", name="processing-unit", amount=4},	  
+	  {type="item", name="processing-unit", amount=2},	  
     },
     results = {{type="item", name="adv-accumulator-battery", amount=1}},
   },
@@ -1018,9 +998,9 @@ data.extend({
     energy_required = 25,
     ingredients =
     {
-      {type="item", name="accumulator-battery", amount=4},
-	  {type="item", name="advanced-circuit", amount=8},
-	  {type="item", name="processing-unit", amount=4},	  
+      {type="item", name="accumulator-battery", amount=2},
+	  {type="item", name="advanced-circuit", amount=10},
+	  {type="item", name="processing-unit", amount=6},	  
     },
     results = {{type="item", name="adv-accumulator-battery", amount=1}},
   },
