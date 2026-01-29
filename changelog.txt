@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.7.5
+Date: 2026.01.29
+  Space Age:
+    - Fixed Insane Space science pack and Production science pack ingredients being unattainable without later technologies.
+  Balance:
+    - Moved Waterfill into its own technology after Landfill-2.
+  Fixes:
+    - Fixed multiple Aluminium Foundry recipe names.
+    - Overkill percent on larger Nauvis enemies increased so that turrets will stop interrupting due to health regen.
+  Other Mods:
+    - General fix to spitter-projectile issue that was present with multiple mods. (by Beomyo)
+---------------------------------------------------------------------------------------------------
 Version: 2.7.4
 Date: 2026.01.23
   Balance:
