@@ -160,6 +160,7 @@ return 0.2 + (scale * 0.2)
 end
 
 function spitter_sounds(name, scale) 
+	name = name or "small" 
 	if string.find(name, "medium") then
 	return 
 	{

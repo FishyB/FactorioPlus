@@ -156,9 +156,10 @@ elseif settings.startup["settings-recipe-cost"].value == "insane" then
 	{
 		{type = "item", name = "steel-plate", amount = 1},
 		{type = "item", name = "carbon", amount = 1},
-		{type = "fluid", name = "water", amount = 20},
+		{type = "item", name = "ice", amount = 1},
 		{type = "item", name = "carbonic-asteroid-chunk", amount = 1},
-		{type = "item", name = "oxide-asteroid-chunk", amount = 1}
+		{type = "item", name = "oxide-asteroid-chunk", amount = 1},
+		{type = "item", name = "metallic-asteroid-chunk", amount = 1}
 	}
 
 	data.raw["recipe"]["metallurgic-science-pack"].ingredients =

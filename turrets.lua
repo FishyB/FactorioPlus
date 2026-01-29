@@ -1105,6 +1105,7 @@ data:extend({
     minable = {mining_time = 1.5, result = "cannon-turret"},
     max_health = health_turret_cannon,
 	hide_resistances = false,
+	
 	resistances =
     {
       {
@@ -1380,6 +1381,7 @@ data:extend({
     minable = {mining_time = 0.25, result = "pistol-turret"},
     max_health = health_turret_pistol,
 	hide_resistances = false,
+	
 	resistances =
     {
       {
@@ -1720,9 +1722,9 @@ data:extend({
     icon_size = 64, icon_mipmaps = 4,
     flags = {"placeable-player", "placeable-enemy", "player-creation"},
     minable = {mining_time = 0.5, result = "gun-turret"},
-	-- subgroup="enemies",
     max_health = health_turret_smg,
 	hide_resistances = false,
+	
 	resistances =
     {
       {
@@ -1981,7 +1983,7 @@ data:extend({
     icon_size = 64, icon_mipmaps = 4,
     flags = {"placeable-player", "placeable-enemy", "player-creation"},
     minable = {mining_time = 0.75, result = "heavygun-turret"},
-	-- subgroup="enemies",
+	
     max_health = health_turret_heavysmg,
 	hide_resistances = false,
 	resistances =
@@ -2230,7 +2232,6 @@ data:extend({
     max_health = health_turret_shotgun,
 	
 	turret_base_has_direction = true,
-	
 	hide_resistances = false,
 	resistances =
     {
@@ -3242,6 +3243,7 @@ data:extend({
     flags = {"placeable-player", "player-creation" ,"building-direction-8-way"},
     minable = {mining_time = 1.5, result = "chaingun-turret"},
     max_health = health_turret_minigun,
+	
 	turret_base_has_direction = true,
 	can_retarget_while_starting_attack = true,
 	allow_turning_when_starting_attack = true,
@@ -3533,6 +3535,7 @@ data:extend({
     minable = {mining_time = 1, result = "rocket-turret"},
     max_health = health_turret_rocket,
 	hide_resistances = false,
+	
 	resistances =
     {
       {
@@ -3762,6 +3765,7 @@ data:extend({
     flags = {"placeable-player", "player-creation", "building-direction-8-way"},
     minable = {mining_time = 0.5, result = "mortar-turret"},
     max_health = health_turret_mortar,
+	
 	turret_base_has_direction = true,
 	  resistances =
     {
@@ -4478,6 +4482,7 @@ data:extend({
     flags = {"placeable-player", "player-creation","building-direction-8-way"},
     minable = {mining_time = 0.7, result = "sniper-turret"},
     max_health = health_turret_sniper,
+	
 	turret_base_has_direction = true,
 	resistances =
     {

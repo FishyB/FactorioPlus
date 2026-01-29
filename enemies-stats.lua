@@ -45,6 +45,8 @@ tint_2_spitter_behemoth = spitter_spawner_tint
 tint_1_spitter_boss = spitter_spawner_tint
 tint_2_spitter_boss = spitter_spawner_tint
 
+health_overkill_fraction_enemies = 0.15 -- default 0.05 
+
 --------------------------------------------------------------------------
 
 -- WORMS

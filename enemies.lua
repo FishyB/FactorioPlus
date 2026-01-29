@@ -1960,6 +1960,8 @@ function makeenemysbiter(enemyname, enemyhealth, enemyrange, enemydamage, enemys
 	if (enemyscale >= 1.5) then abt = false end
 	-- run animation
 	local ra = nil
+	-- health overkill fraction
+	local hof = health_overkill_fraction_enemies * enemyscale
 
 	local enemy_size = nil
 	if (string.find(enemyname, "small")) then
@@ -2104,6 +2106,7 @@ function makeenemysbiter(enemyname, enemyhealth, enemyrange, enemydamage, enemys
 		hpt = (hpt * 30 * enemyscale) / enemy_health_scale
 		ra =  biterrunanimation(enemyscale, enemytint, enemytint)
 		_da = _da_bite
+		hof = hof * 5
 	elseif (string.find(enemyname, "webber")) then
 		ap = makeenemyattack(enemyname, "web", enemydamage, attack_speed_webber_base , enemyscale, enemyrange, enemytint)
 		bms = movement_speed_webber_base
@@ -2182,6 +2185,7 @@ function makeenemysbiter(enemyname, enemyhealth, enemyrange, enemydamage, enemys
 			dying_trigger_effect = dte,
 			light = lt,
 			hide_resistances = false,
+			overkill_fraction = hof
 		  },
 	  },
 	  {_da},

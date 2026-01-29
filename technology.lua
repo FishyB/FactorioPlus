@@ -1929,16 +1929,43 @@ data.extend({
     },
     order = "a-d-d"
 	},
-	------------------------------------------ LANDFILL 2 ------------------------------------------
+	------------------------------------------ LANDFILL 2 & WATERFILL ------------------------------------------
 	 {
     type = "technology",
     name = "landfill-2",
     icon_size = 128,
     icon = "__factorioplus__/graphics/technology/landfill-2.png",
-    prerequisites = {"landfill","cliff-explosives","chemical-science-pack","concrete"},
+    prerequisites = {"landfill", "chemical-science-pack","concrete"},
     unit =
     {
       count = 300,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+		{"chemical-science-pack", 1},
+      },
+      time = 45
+    },
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "landfill-deep"
+      }
+    },
+    order = "b-d"
+  },
+  
+   {
+    type = "technology",
+    name = "waterfill",
+    icon_size = 128,
+    icon = "__factorioplus__/graphics/technology/waterfill.png",
+    prerequisites = {"landfill-2","cliff-explosives"},
+    unit =
+    {
+      count = 150,
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -1953,10 +1980,6 @@ data.extend({
         type = "unlock-recipe",
         recipe = "waterfill-barrel"
       },
-	  {
-        type = "unlock-recipe",
-        recipe = "landfill-deep"
-      }
     },
     order = "b-d"
   },
@@ -3870,7 +3893,7 @@ data:extend
         recipe = "lab"
       },
     },
-	prerequisites = {"research-speed-2", "advanced-circuit"},
+	prerequisites = {"research-speed-2", "advanced-circuit", "logistics-2"},
     unit =
     {
       count = 200,
