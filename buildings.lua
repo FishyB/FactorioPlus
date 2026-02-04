@@ -644,15 +644,15 @@ data.extend({
     icon_size = 64, icon_mipmaps = 4,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 0.5, result = "metal-press-machine"},
-    max_health = 240,
+    max_health = 350,
     corpse = "assembling-machine-1-remnants",
     dying_explosion = "assembling-machine-1-explosion",
 	
-	effect_receiver = {
-		base_effect = {
-			productivity = 1,
-		}
-	},
+	-- effect_receiver = {
+		-- base_effect = {
+			-- productivity = 1,
+		-- }
+	-- },
 	
 	scale_entity_info_icon = true,
     resistances =
@@ -990,7 +990,7 @@ data.extend({
     -- damaged_trigger_effect = hit_effects.rock(),
     crafting_categories = {"smelting"},
     result_inventory_size = 1,
-    energy_usage = "175kW",
+    energy_usage = "195kW",
     crafting_speed = 4.0,
     source_inventory_size = 1,
     energy_source =
@@ -1131,8 +1131,8 @@ data.extend({
     -- damaged_trigger_effect = hit_effects.rock(),
     crafting_categories = {"smelting"},
     result_inventory_size = 1,
-    energy_usage = "365kW",
-    crafting_speed = 8,
+    energy_usage = "455kW",
+    crafting_speed = 10,
     source_inventory_size = 1,
     energy_source =
     {
@@ -1165,7 +1165,7 @@ data.extend({
           width = 256,
           height = 320,
           frame_count = 1,
-          shift = util.by_pixel(0, -20),
+          shift = util.by_pixel(0, -20+6),
 		  scale = 0.5,
         },
         {
@@ -1175,7 +1175,7 @@ data.extend({
           height = 320,
           frame_count = 1,
           draw_as_shadow = true,
-          shift = util.by_pixel(40, -18),
+          shift = util.by_pixel(40, -18+6),
 		  scale = 0.5,
         }
       }
@@ -1197,7 +1197,7 @@ data.extend({
           frame_count = 4,
           axially_symmetrical = false,
           direction_count = 1,
-          shift = util.by_pixel(0, -20),
+          shift = util.by_pixel(0, -20+6),
 		  scale = 0.5,
 		  animation_speed = electric_drill_animation_speed/2
         },
@@ -1219,7 +1219,7 @@ data.extend({
           height = 316,
           repeat_count = 4,
 		  scale = 0.5,
-          shift = util.by_pixel(0, -20),
+          shift = util.by_pixel(0, -20+6),
         },
       },
     },
@@ -6411,9 +6411,13 @@ data.extend({
   },
   })
   ------------------------------------------------------------------------------------------------------
---------------------------------------------------- OVERRIDES ------------------------------------------------------------
+--------------------------------------------------- OTHER OVERRIDES ------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
  -- table.insert(data.raw["technology"]["advanced-circuit"].effects,{type = "unlock-recipe",recipe = "silicon-wafer"})
+  
+  -- STEEL FURNACE
+  -- Increase power requirements to scale with other furnaces.
+  data.raw["furnace"]["steel-furnace"].energy_usage = "120kW",
   
   table.insert( data.raw["lab"]["lab"].inputs, "bio-science-pack")
  

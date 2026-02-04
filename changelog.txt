@@ -8,6 +8,7 @@ Date: 2026.01.29
   Fixes:
     - Fixed multiple Aluminium Foundry recipe names.
     - Overkill percent on larger Nauvis enemies increased so that turrets will stop interrupting due to health regen.
+    - Lab technology requires Logistics-2
   Other Mods:
     - General fix to spitter-projectile issue that was present with multiple mods. (by Beomyo)
 ---------------------------------------------------------------------------------------------------

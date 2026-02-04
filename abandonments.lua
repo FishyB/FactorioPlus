@@ -1769,17 +1769,17 @@ generate_storage_hut ("transport-2", loothutboundingbox, 3.42,
 	{item = "dozer", probability = 1, count_min = 1, count_max = 1},
 
 }),
-generate_storage_hut ("transport-2", loothutboundingbox, 4.62,
+generate_storage_hut ("transport-2a", loothutboundingbox, 4.62,
 {
 	{item = "apc-base", probability = 1, count_min = 1, count_max = 1},
 
 }),
-generate_storage_hut ("transport-2", loothutboundingbox, 5.62,
+generate_storage_hut ("transport-2b", loothutboundingbox, 5.62,
 {
 	{item = "apc-twinsmg", probability = 1, count_min = 1, count_max = 1},
 
 }),
-generate_storage_hut ("transport-2", loothutboundingbox, 5.72,
+generate_storage_hut ("transport-2c", loothutboundingbox, 5.72,
 {
 	{item = "apc-autoshotgun", probability = 1, count_min = 1, count_max = 1},
 
@@ -2000,7 +2000,7 @@ generate_storage_hut ("weapons4-uzi", loothutboundingbox, 5.53,
 	{item = "uranium-rounds-magazine", probability = 0.5, count_min = 10, count_max = 15},
 	{item = "weapon-forge", probability = weaponforge_chance, count_min = 1, count_max = 1},
 }),
-generate_storage_hut ("weapons0-shotgun", loothutboundingbox, 2.04,
+generate_storage_hut ("weapons0-shotgun", loothutboundingbox, 1.54,
 {
 	{item = "shotgun", probability = 1, count_min = 1, count_max = 1},
 	{item = "shotgun-shell", probability = 1, count_min = 15, count_max = 30},
@@ -2036,7 +2036,7 @@ generate_storage_hut ("weapons4-shotgun", loothutboundingbox, 6.04,
 	{item = "weapon-forge", probability = weaponforge_chance, count_min = 1, count_max = 1},
 }),
 
-generate_storage_hut ("weapons0-blunderbuss", loothutboundingbox, 2.55,
+generate_storage_hut ("weapons0-blunderbuss", loothutboundingbox, 2.75,
 {
 	{item = "blunderbuss", probability = 0.8, count_min = 1, count_max = 1},
 	{item = "shotgun-shell", probability = 1, count_min = 15, count_max = 30},
@@ -2050,7 +2050,7 @@ generate_storage_hut ("weapons1-blunderbuss", loothutboundingbox, 3.55,
 	{item = "shotgun-shell", probability = 0.5, count_min = 5, count_max = 25},
 	{item = "weapon-forge", probability = weaponforge_chance, count_min = 1, count_max = 1},
 }),
-generate_storage_hut ("weapons2-blunderbuss", loothutboundingbox, 5.55,
+generate_storage_hut ("weapons2-blunderbuss", loothutboundingbox, 5.65,
 {
 	{item = "blunderbuss-rare", probability = 0.4, count_min = 1, count_max = 1},
 	{item = "piercing-shotgun-shell", probability = 1,  count_min = 15, count_max = 30},

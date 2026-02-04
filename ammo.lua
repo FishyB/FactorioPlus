@@ -2557,8 +2557,8 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
     energy_required = 12,
     ingredients =
     {
-      {type="item", name="explosive-shotgun-shell", amount=3},
-      {type="item", name="explosives", amount=8},
+      {type="item", name="explosive-shotgun-shell", amount=2},
+      {type="item", name="explosives", amount=6},
 	  {type="item", name="uranium-235", amount=2}
     },
     results = {{type="item", name="nuke-shotgun-shell", amount=2}},
@@ -3960,7 +3960,7 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
     ingredients =
     {
       --{type="item", name="electronic-circuit", amount=1},
-      {type="item", name="explosives", amount=4},
+      {type="item", name="explosives", amount=2},
       {type="item", name="iron-plate", amount=2}
     },
     results = {{type="item", name="rocket", amount=1}},
@@ -4209,8 +4209,8 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
     energy_required = 20,
     ingredients =
     {
-      {type="item", name="rocket", amount=1},
-      {type="item", name="explosives", amount=14}
+      {type="item", name="rocket", amount=2},
+      {type="item", name="explosives", amount=8}
     },
     results = {{type="item", name="explosive-rocket", amount=1}},
   },
@@ -5062,8 +5062,8 @@ firestickerutil.makefiresticker("napalm-fire-sticker", mortar_napalm_firesticker
     energy_required = 20,
     ingredients =
     {
-	  {type="item", name="cannon-shell", amount=1},
-	  {type="item", name="explosives", amount=18}
+	  {type="item", name="cannon-shell", amount=2},
+	  {type="item", name="explosives", amount=8}
     },
     results = {{type="item", name="explosive-cannon-shell", amount=1}},
   },

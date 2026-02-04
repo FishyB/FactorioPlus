@@ -1912,6 +1912,18 @@ data.extend({
       },
 	  {
         type = "unlock-recipe",
+        recipe = "machinepress-iron-gear-wheel"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "machinepress-iron-stick"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "machinepress-copper-cable"
+      },
+	  {
+        type = "unlock-recipe",
         recipe = "stone-crushing"
       }
     },
@@ -4383,7 +4395,7 @@ data.raw["technology"]["laser-shooting-speed-1"].effects =
 	 {
         type = "gun-speed",
         ammo_category = "laser",
-        modifier = 0.2
+        modifier = 0.1
       }
  }
  
@@ -4392,7 +4404,7 @@ data.raw["technology"]["laser-shooting-speed-1"].effects =
 	 {
         type = "gun-speed",
         ammo_category = "laser",
-        modifier = 0.2
+        modifier = 0.1
       }
  }
  
@@ -4401,7 +4413,7 @@ data.raw["technology"]["laser-shooting-speed-1"].effects =
 	 {
         type = "gun-speed",
         ammo_category = "laser",
-        modifier = 0.2
+        modifier = 0.1
       },
 	  
  }
@@ -4411,17 +4423,17 @@ data.raw["technology"]["laser-shooting-speed-1"].effects =
 	 {
         type = "gun-speed",
         ammo_category = "laser",
-        modifier = 0.2
+        modifier = 0.1
       },
 	    {
         type = "gun-speed",
         ammo_category = "plasma-cell",
-        modifier = 0.2
+        modifier = 0.1
       },
 	  {
         type = "gun-speed",
         ammo_category = "beam",
-        modifier = 0.2
+        modifier = 0.1
       }
  }
  
@@ -4430,17 +4442,17 @@ data.raw["technology"]["laser-shooting-speed-1"].effects =
 	 {
         type = "gun-speed",
         ammo_category = "laser",
-        modifier = 0.2
+        modifier = 0.1
       },
 	    {
         type = "gun-speed",
         ammo_category = "plasma-cell",
-        modifier = 0.2
+        modifier = 0.1
       },
 	  {
         type = "gun-speed",
         ammo_category = "beam",
-        modifier = 0.2
+        modifier = 0.1
       }
  }
  
@@ -4449,17 +4461,17 @@ data.raw["technology"]["laser-shooting-speed-1"].effects =
 	 {
         type = "gun-speed",
         ammo_category = "laser",
-        modifier = 0.2
+        modifier = 0.1
       },
 	    {
         type = "gun-speed",
         ammo_category = "plasma-cell",
-        modifier = 0.2
+        modifier = 0.1
       },
 	  {
         type = "gun-speed",
         ammo_category = "beam",
-        modifier = 0.2
+        modifier = 0.1
       }
  }
 
@@ -4468,17 +4480,17 @@ data.raw["technology"]["laser-shooting-speed-1"].effects =
 	 {
         type = "gun-speed",
         ammo_category = "laser",
-        modifier = 0.2
+        modifier = 0.1
       },
 	    {
         type = "gun-speed",
         ammo_category = "plasma-cell",
-        modifier = 0.2
+        modifier = 0.1
       },
 	  {
         type = "gun-speed",
         ammo_category = "beam",
-        modifier = 0.2
+        modifier = 0.1
       }
  }
  
@@ -4490,7 +4502,7 @@ data.raw.technology["stronger-explosives-1"].effects =
 	{
 	  type = "ammo-damage",
 	  ammo_category = "grenade",
-	  modifier = 0.2
+	  modifier = 0.1
 	}
 }
 
@@ -4499,12 +4511,12 @@ data.raw.technology["stronger-explosives-2"].effects =
   {
 	type = "ammo-damage",
 	ammo_category = "grenade",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "landmine",
-	modifier = 0.2
+	modifier = 0.1
   }
 }
 
@@ -4513,22 +4525,22 @@ data.raw.technology["stronger-explosives-3"].effects =
   {
 	type = "ammo-damage",
 	ammo_category = "rocket",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "grenade",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "grenade-shell",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "landmine",
-	modifier = 0.2
+	modifier = 0.1
   }
 }
 
@@ -4537,27 +4549,27 @@ data.raw.technology["stronger-explosives-4"].effects =
   {
 	type = "ammo-damage",
 	ammo_category = "rocket",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "grenade",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "grenade-shell",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "landmine",
-	modifier = 0.2
+	modifier = 0.1
   },
    {
 	type = "ammo-damage",
 	ammo_category = "cannon-shell",
-	modifier = 0.2
+	modifier = 0.1
   },
 }
  
@@ -4566,27 +4578,27 @@ data.raw.technology["stronger-explosives-5"].effects =
   {
 	type = "ammo-damage",
 	ammo_category = "rocket",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "grenade",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "grenade-shell",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "landmine",
-	modifier = 0.2
+	modifier = 0.1
   },
    {
 	type = "ammo-damage",
 	ammo_category = "cannon-shell",
-	modifier = 0.2
+	modifier = 0.1
   },
 }
 
@@ -4595,27 +4607,27 @@ data.raw.technology["stronger-explosives-6"].effects =
   {
 	type = "ammo-damage",
 	ammo_category = "rocket",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "grenade",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "grenade-shell",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "landmine",
-	modifier = 0.2
+	modifier = 0.1
   },
    {
 	type = "ammo-damage",
 	ammo_category = "cannon-shell",
-	modifier = 0.2
+	modifier = 0.1
   },
 }
 
@@ -4624,27 +4636,27 @@ data.raw.technology["stronger-explosives-7"].effects =
   {
 	type = "ammo-damage",
 	ammo_category = "rocket",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "grenade",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "grenade-shell",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "landmine",
-	modifier = 0.2
+	modifier = 0.1
   },
    {
 	type = "ammo-damage",
 	ammo_category = "cannon-shell",
-	modifier = 0.2
+	modifier = 0.1
   },
 }
 
@@ -4655,12 +4667,12 @@ data.raw.technology["refined-flammables-1"].effects =
 	{
 	type = "ammo-damage",
 	ammo_category = "flamethrower",
-	modifier = 0.2
+	modifier = 0.1
 	},
 	{
 	type = "turret-attack",
 	turret_id = "flamethrower-turret",
-	modifier = 0.2
+	modifier = 0.1
 	}
 }
 
@@ -4669,12 +4681,12 @@ data.raw.technology["refined-flammables-2"].effects =
 	{
 	type = "ammo-damage",
 	ammo_category = "flamethrower",
-	modifier = 0.2
+	modifier = 0.1
 	},
 	{
 	type = "turret-attack",
 	turret_id = "flamethrower-turret",
-	modifier = 0.2
+	modifier = 0.1
 	}
 }
 
@@ -4683,12 +4695,12 @@ data.raw.technology["refined-flammables-3"].effects =
 	{
 	type = "ammo-damage",
 	ammo_category = "flamethrower",
-	modifier = 0.2
+	modifier = 0.1
 	},
 	{
 	type = "turret-attack",
 	turret_id = "flamethrower-turret",
-	modifier = 0.2
+	modifier = 0.1
 	},
 		{
 	type = "unlock-recipe",
@@ -4705,12 +4717,12 @@ data.raw.technology["refined-flammables-4"].effects =
 	{
 	type = "ammo-damage",
 	ammo_category = "flamethrower",
-	modifier = 0.2
+	modifier = 0.1
 	},
 	{
 	type = "turret-attack",
 	turret_id = "flamethrower-turret",
-	modifier = 0.2
+	modifier = 0.1
 	},
 
 }
@@ -4720,12 +4732,12 @@ data.raw.technology["refined-flammables-5"].effects =
 	{
 	type = "ammo-damage",
 	ammo_category = "flamethrower",
-	modifier = 0.2
+	modifier = 0.1
 	},
 	{
 	type = "turret-attack",
 	turret_id = "flamethrower-turret",
-	modifier = 0.2
+	modifier = 0.1
 	},
 }
 
@@ -4734,12 +4746,12 @@ data.raw.technology["refined-flammables-6"].effects =
 	{
 	type = "ammo-damage",
 	ammo_category = "flamethrower",
-	modifier = 0.2
+	modifier = 0.1
 	},
 	{
 	type = "turret-attack",
 	turret_id = "flamethrower-turret",
-	modifier = 0.2
+	modifier = 0.1
 	},
 }
 
@@ -4748,12 +4760,12 @@ data.raw.technology["refined-flammables-7"].effects =
 	{
 	type = "ammo-damage",
 	ammo_category = "flamethrower",
-	modifier = 0.2
+	modifier = 0.1
 	},
 	{
 	type = "turret-attack",
 	turret_id = "flamethrower-turret",
-	modifier = 0.2
+	modifier = 0.1
 	},
 }
 
@@ -4765,12 +4777,12 @@ data.raw.technology["physical-projectile-damage-1"].effects =
   {
 	type = "ammo-damage",
 	ammo_category = "bullet",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "shotgun-shell",
-	modifier = 0.2
+	modifier = 0.1
   }
 }
 
@@ -4779,12 +4791,12 @@ data.raw.technology["physical-projectile-damage-2"].effects =
   {
 	type = "ammo-damage",
 	ammo_category = "bullet",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "shotgun-shell",
-	modifier = 0.2
+	modifier = 0.1
   }
 }
 
@@ -4793,12 +4805,12 @@ data.raw.technology["physical-projectile-damage-3"].effects =
   {
 	type = "ammo-damage",
 	ammo_category = "bullet",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "shotgun-shell",
-	modifier = 0.2
+	modifier = 0.1
   }
 }
 
@@ -4807,12 +4819,12 @@ data.raw.technology["physical-projectile-damage-4"].effects =
   {
 	type = "ammo-damage",
 	ammo_category = "bullet",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "shotgun-shell",
-	modifier = 0.2
+	modifier = 0.1
   }
 }
 
@@ -4821,17 +4833,17 @@ data.raw.technology["physical-projectile-damage-5"].effects =
   {
 	type = "ammo-damage",
 	ammo_category = "bullet",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "shotgun-shell",
-	modifier = 0.2
+	modifier = 0.1
   },
   {
 	type = "ammo-damage",
 	ammo_category = "sniper-shell",
-	modifier = 0.2
+	modifier = 0.1
   },
 }
 
@@ -4840,22 +4852,22 @@ data.raw.technology["physical-projectile-damage-6"].effects =
 	{
 	type = "ammo-damage",
 	ammo_category = "bullet",
-	modifier = 0.2
+	modifier = 0.1
 	},
 	{
 	type = "ammo-damage",
 	ammo_category = "shotgun-shell",
-	modifier = 0.2
+	modifier = 0.1
 	},
 	{
 	type = "ammo-damage",
 	ammo_category = "sniper-shell",
-	modifier = 0.2
+	modifier = 0.1
 	},
 	{
 	type = "ammo-damage",
 	ammo_category = "beltfed-bullet",
-	modifier = 0.2
+	modifier = 0.1
 	},
 }
 
@@ -4864,22 +4876,22 @@ data.raw.technology["physical-projectile-damage-7"].effects =
 	{
 	type = "ammo-damage",
 	ammo_category = "bullet",
-	modifier = 0.2
+	modifier = 0.1
 	},
 	{
 	type = "ammo-damage",
 	ammo_category = "shotgun-shell",
-	modifier = 0.2
+	modifier = 0.1
 	},
 	{
 	type = "ammo-damage",
 	ammo_category = "sniper-shell",
-	modifier = 0.2
+	modifier = 0.1
 	},
 	{
 	type = "ammo-damage",
 	ammo_category = "beltfed-bullet",
-	modifier = 0.2
+	modifier = 0.1
 	},
 }
 

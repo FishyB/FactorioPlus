@@ -1170,7 +1170,7 @@ data:extend({
     ingredients =
     {
       {type="item", name="grenade", amount=4},
-      {type="item", name="explosives", amount=4},
+      {type="item", name="explosives", amount=2},
       {type="item", name="steel-plate", amount=2}
     },
 	results = {{type="item", name="cluster-grenade", amount=1}},
@@ -1307,7 +1307,7 @@ data:extend({
     energy_required = 12,
     ingredients =
     {
-      {type="item", name="grenade", amount=2},
+      {type="item", name="grenade", amount=3},
       {type="item", name="piercing-shotgun-shell", amount=3}
     },
 	results = {{type="item", name="flak-grenade", amount=1}},
@@ -1658,7 +1658,7 @@ data:extend({
     ingredients =
     {
       {type="item", name="cluster-grenade", amount=6},
-      {type="item", name="explosives", amount=12},
+      {type="item", name="explosives", amount=4},
       {type="item", name="low-density-structure", amount=1}
     },
 	results = {{type="item", name="mirv-grenade", amount=1}},

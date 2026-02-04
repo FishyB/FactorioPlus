@@ -87,7 +87,7 @@ tint_worm_behemoth   = spitter_spawner_tint
 
 	--Attacks
 
-worm_attack_speed_base = 100
+worm_attack_speed_base = 80
 
 damage_modifier_worm_small    = 20
 damage_modifier_worm_medium   = 40
@@ -210,8 +210,8 @@ spawning_time_scalar_hatcher = 2.0
 	
 health_small_biter    = 50
 health_medium_biter   = 150
-health_big_biter      = 500
-health_behemoth_biter = 1500
+health_big_biter      = 600
+health_behemoth_biter = 1800
 health_boss_biter     = 6000
 
 	-- Resistances
@@ -263,11 +263,11 @@ movement_speed_biter 			=  0.0275
 	
 attack_speed_biter_base = 30
 
-damage_modifier_biter_small    = 10
+damage_modifier_biter_small    = 15
 damage_modifier_biter_medium   = 30
-damage_modifier_biter_big      = 60
-damage_modifier_biter_behemoth = 120
-damage_modifier_biter_boss     = 250
+damage_modifier_biter_big      = 70
+damage_modifier_biter_behemoth = 130
+damage_modifier_biter_boss     = 260
 
 ------------------
 
@@ -399,11 +399,11 @@ movement_speed_swarmer 			=  0.05
 
 attack_speed_swarmer_base = 15
 	
-damage_modifier_swarmer_small    = 4
-damage_modifier_swarmer_medium   = 8
-damage_modifier_swarmer_big      = 14
-damage_modifier_swarmer_behemoth = 22
-damage_modifier_swarmer_boss     = 32
+damage_modifier_swarmer_small    = 5
+damage_modifier_swarmer_medium   = 10
+damage_modifier_swarmer_big      = 15
+damage_modifier_swarmer_behemoth = 25
+damage_modifier_swarmer_boss     = 35
 
 ------------------
 
@@ -411,49 +411,49 @@ damage_modifier_swarmer_boss     = 32
 
 	-- Health
 	
-health_small_tanker    	= 450
-health_medium_tanker  	= 800
-health_big_tanker		= 1400
-health_behemoth_tanker 	= 1900
-health_boss_tanker     	= 3200
+health_small_tanker    	= 200
+health_medium_tanker  	= 400
+health_big_tanker		= 800
+health_behemoth_tanker 	= 1600
+health_boss_tanker     	= 2800
 
 	-- Resistances
 function tankerresistances(v)
 	local ntv = v
-	local dinc = {3,8}
-	local pinc = {2,8}
-	local einc = {0,6}
+	local dinc = {2,8}
+	local pinc = {1,6}
+	local einc = {0,4}
 	return 
 	{
 		{
 		type = "physical",
 		decrease = 2 + ( ntv * dinc[1] ) ,
-		percent = 50 + ( ntv * dinc[2] ) ,
+		percent = 40 + ( ntv * dinc[2] ) ,
 		},
 		{
 		type = "piercing",
 		decrease = 1 + ( ntv * pinc[1] ),
-		percent = 40 + ( ntv * pinc[2] ),
+		percent = 20 + ( ntv * pinc[2] ),
 		},
 		{
 		type = "explosion",
 		decrease = 0 + ( ntv * einc[1] ), 
-		percent = 15 + ( ntv * einc[2] ),
+		percent = 4 + ( ntv * einc[2] ),
 		},
 	}
 end
 
 	-- Scale
 	
-small_tanker_scale    = 0.9
-medium_tanker_scale   = 1.2
+small_tanker_scale    = 0.8
+medium_tanker_scale   = 1.1
 big_tanker_scale      = 1.5
 behemoth_tanker_scale = 1.9
 boss_tanker_scale     = 2.3
 
 	-- Movement
 	
-movement_speed_tanker_base 		=  0.07
+movement_speed_tanker_base 		=  0.08
 movement_speed_tanker 			=  0.02
 
 	-- Attacks
@@ -578,7 +578,7 @@ boss_blaster_scale  	= 2.0
 
 movement_blaster_movement_scalar   = 1
 	
-movement_speed_blaster_base 	=  0.05
+movement_speed_blaster_base 	=  0.06
 movement_speed_blaster 			=  0.015
 
 	-- Attacks
@@ -608,11 +608,11 @@ damage_radius_blaster_boss			= 12
 
 	-- Health
 
-health_small_flamer    = 70
-health_medium_flamer  = 250
-health_big_flamer      = 400
-health_behemoth_flamer = 700
-health_boss_flamer     = 1800
+health_small_flamer    = 100
+health_medium_flamer  = 300
+health_big_flamer      = 600
+health_behemoth_flamer = 1200
+health_boss_flamer     = 2600
 
 	-- Resistances
 function flamerresistances(v)
@@ -650,23 +650,23 @@ movement_speed_flamer			=  0.02
 attack_speed_flamer_base = 200
 
 damage_modifier_flamer_small    = 16
-damage_modifier_flamer_medium   = 20
-damage_modifier_flamer_big      = 24
-damage_modifier_flamer_behemoth = 28
-damage_modifier_flamer_boss     = 34
+damage_modifier_flamer_medium   = 20+2
+damage_modifier_flamer_big      = 24+4
+damage_modifier_flamer_behemoth = 28+6
+damage_modifier_flamer_boss     = 34+8
 
 cluster_amount_flamer_small    = 6
-cluster_amount_flamer_medium   = 10
-cluster_amount_flamer_big      = 14
-cluster_amount_flamer_behemoth = 24
-cluster_amount_flamer_boss     = 38
+cluster_amount_flamer_medium   = 10+2
+cluster_amount_flamer_big      = 14+4
+cluster_amount_flamer_behemoth = 24+8
+cluster_amount_flamer_boss     = 38+16
 
 damage_dps_flamer_small    	= damage_modifier_flamer_small / 60
 damage_dps_flamer_medium   	= damage_modifier_flamer_medium / 60 
 damage_dps_flamer_big      	= damage_modifier_flamer_big / 60 
 damage_dps_flamer_behemoth 	= damage_modifier_flamer_behemoth / 60 
 damage_dps_flamer_boss 		= damage_modifier_flamer_boss / 60 
-damage_dps_maxstackamount_flamer = 6
+damage_dps_maxstackamount_flamer = 4
 
 stream_radius_flamer_small    = 1.0
 stream_radius_flamer_medium   = 1.2
@@ -681,14 +681,14 @@ stream_blastradius_flamer_behemoth = 3.5
 stream_blastradius_flamer_boss 	= 4.5
 
 flamer_hit_splash_radius_modifier = 3.0
-flamer_sticker_duration = 10
+flamer_sticker_duration = 14
 flamer_ground_patch_duration = 10
 flamer_ground_patch_scale_modifier = 1.5
 
-range_flamer_small    = 18 -4
-range_flamer_medium   = 24 -4
-range_flamer_big      = 32 -4
-range_flamer_behemoth = 42 -4
+range_flamer_small    = 18 -0
+range_flamer_medium   = 24 -1
+range_flamer_big      = 32 -2
+range_flamer_behemoth = 42 -3
 range_flamer_boss 	  = 54 -4
 
 ------------------
@@ -737,7 +737,7 @@ boss_stinger_scale      = 1.8
 
 	-- Movement
 
-movement_speed_stinger_base 		=  0.14
+movement_speed_stinger_base 		=  0.15
 movement_speed_stinger 				=  0.015 
 
 	-- Attacks
@@ -758,9 +758,9 @@ slow_movement_time_stinger = 10 -- Includes damage over time poison
 	
 health_small_hatcher   	= 100
 health_medium_hatcher  	= 100 * 2
-health_big_hatcher   	= 100 * 5
-health_behemoth_hatcher = 100 * 10
-health_boss_hatcher    	= 100 * 30
+health_big_hatcher   	= 100 * 6
+health_behemoth_hatcher = 100 * 12
+health_boss_hatcher    	= 100 * 32
 
 hatcher_egg_health_base = 250
 

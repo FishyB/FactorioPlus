@@ -57,11 +57,6 @@ data.raw["recipe"]["pistol"].enabled = true
 data.raw["recipe"]["pistol"].hidden = false
 data.raw["recipe"]["pistol"].ingredients[1].amount = 2
 
--- bullets are now expensive, so give more science packs in the output.
-data.raw["recipe"]["military-science-pack"].results = 
-{
-	{type="item", name="military-science-pack", amount=3}
-}
 
  ---------------------------------------------------  INSERTER OVERRIDES  ------------------------------------------------------------
 
@@ -153,9 +148,11 @@ data:extend
     name = "machinepress-iron-gear-wheel",
 	category = "crafting-machinepress",
 	icon = "__factorioplus__/graphics/icons/double-iron-gear-wheel.png",
-  ingredients = {{type="item", name="iron-plate", amount=2}},
-  hide_from_player_crafting = true,
-  results = {{type="item", name="iron-gear-wheel", amount=1}},
+	enabled = false,
+	energy_required = 1,
+	ingredients = {{type="item", name="iron-plate", amount=2}},
+	hide_from_player_crafting = true,
+	results = {{type="item", name="iron-gear-wheel", amount=2}},
   },
    {
     type = "recipe",
@@ -163,8 +160,10 @@ data:extend
 	category = "crafting-machinepress",
 	icon = "__factorioplus__/graphics/icons/double-iron-stick.png",
 	hide_from_player_crafting = true,
+	enabled = false,
+	energy_required = 1,
     ingredients = {{type="item", name="iron-plate", amount=1}},
-    results = {{type="item", name="iron-stick", amount=2}},
+    results = {{type="item", name="iron-stick", amount=4}},
   },
   {
     type = "recipe",
@@ -172,8 +171,10 @@ data:extend
 	category = "crafting-machinepress",
 	icon = "__factorioplus__/graphics/icons/double-copper-cable.png",
 	hide_from_player_crafting = true,
+	enabled = false,
+	energy_required = 1,
     ingredients = {{type="item", name="copper-plate", amount=1}},
-    results = {{type="item", name="copper-cable", amount=2}},
+    results = {{type="item", name="copper-cable", amount=4}},
   },
    {
     type = "recipe",
@@ -185,7 +186,7 @@ data:extend
 	{
 	{type="item", name="stone", amount=1},
 	},
-    results = {{type="item", name="sand-ore", amount=2}},
+    results = {{type="item", name="sand-ore", amount=4}},
 	icon = "__factorioplus__/graphics/icons/stonetosand.png",
     icon_size = 64, icon_mipmaps = 4,
   },
@@ -889,7 +890,7 @@ data:extend
       energy_required = 10,
       ingredients =
       { 
-		{type="item", name="glass-plate", amount=5},
+		{type="item", name="glass-plate", amount=6},
         {type = "item", name = "copper-cable", amount = 8},
 		 {type="fluid", name="sulfuric-acid", amount=10},
       },
@@ -1510,8 +1511,9 @@ data.extend({
     results = {{type="item", name="supersonic-underground-belt", amount=2}},
   },
 })
-------------------------------------------- OVERRIDES ------------------------------------------- 
----- LOADERS ---
+------------------------------------------- BASE GAME OVERRIDES ------------------------------------------- 
+
+	-- LOADERS
 
 local loader_cost_mult = 1
 if settings.startup["settings-loaders-cost"].value == "expensive" then
@@ -1610,8 +1612,24 @@ data:extend
   },
 })
 end
+
+	-- SCIENCE PACKS
+	
+	-- bullets are now expensive, so give more science packs in the output.
+data.raw["recipe"]["military-science-pack"].results = 
+{
+	{type="item", name="military-science-pack", amount=3}
+}
+
+data.raw["recipe"]["chemical-science-pack"].ingredients =	
+	 {
+		  {type = "item", name = "engine-unit", amount = 2},
+		  {type = "item", name = "advanced-circuit", amount = 2},
+		  {type = "item", name = "sulfur", amount = 1},
+		}
   
-  -- OTHERS
+	-- OTHERS
+  
  data:extend
 ({ 
 {
@@ -1623,19 +1641,9 @@ end
     ingredients = {{type="item", name="iron-gear-wheel", amount=40}, {type="item", name="copper-plate", amount=20}, {type="item", name="pipe", amount=20}, {type="fluid", name="lubricant", amount=20}},
     results = {{type="item", name="steam-turbine", amount=1}},
   },
-  {
-    type = "recipe",
-    name = "basic-lab",
-	enabled = false,
-    energy_required = 3,
-    ingredients =
-    {
-      {type="item", name="electronic-circuit", amount=6},
-      {type="item", name="iron-stick", amount=8},
-      {type="item", name="basic-transport-belt", amount=12}
-    },
-    results = {{type="item", name="basic-lab", amount=1}},
-  },
+  
+  -- LABS
+  
 {
     type = "recipe",
     name = "lab",
@@ -1643,27 +1651,16 @@ end
 	enabled = false,
     ingredients =
     {
-	  {type="item", name="basic-lab", amount=1},
+	  {type="item", name="basic-lab", amount=2},
       {type="item", name="advanced-circuit", amount=8},
       {type="item", name="iron-plate", amount=12},
       {type="item", name="fast-transport-belt", amount=12}
     },
     results = {{type="item", name="lab", amount=1}},
   },
-  {
-    type = "recipe",
-    name = "lab-large",
-    energy_required = 18,
-	enabled = false,
-    ingredients =
-    {
-	  {type="item", name="lab", amount=1},
-      {type="item", name="processing-unit", amount=10},
-      {type="item", name="steel-plate", amount=16},
-      {type="item", name="express-transport-belt", amount=12}
-    },
-    results = {{type="item", name="lab-large", amount=1}},
-  },
+  
+  -- OTHER BASE OVERRIDES
+  
  {
     type = "recipe",
     name = "small-lamp",
@@ -1676,6 +1673,7 @@ end
     },
     results = {{type="item", name="small-lamp", amount=1}},
   },
+  
    {
     type = "recipe",
     name = "radar",
@@ -1689,13 +1687,7 @@ end
     },
     results = {{type="item", name="radar", amount=1}},
   },
-  -- {
-    -- type = "recipe",
-    -- name = "steel-furnace",
-    -- ingredients = {{type="item", name="steel-plate", amount=4}, {type="item", name="stone-brick", amount=6}, {type="item", name="stone-furnace", amount=1}},
-    -- results = {{type="item", name="steel-furnace", amount=1}},
-    -- enabled = false
-  -- },
+  
   {
     type = "recipe",
     name = "low-density-structure",
@@ -1712,7 +1704,6 @@ end
 	 results = {{type="item", name="low-density-structure", amount=1}},
 	 allow_productivity = true
   },
-
 	
   {
     type = "recipe",
@@ -1728,6 +1719,56 @@ end
 	results = {{type="item", name="advanced-circuit", amount=1}},
 	allow_productivity = true,
   },
+  
+    {
+    type = "recipe",
+    name = "processing-unit",
+    category = "advanced-crafting",
+
+      enabled = false,
+      energy_required = 10,
+      ingredients =
+      {
+        {type="item", name="electronic-circuit", amount=10},
+        {type="item", name="advanced-circuit", amount=1},
+		{type="item", name="silicon-wafer", amount=1},
+      },
+      results = {{type="item", name="processing-unit", amount=1}},
+	allow_productivity = true,
+   },
+  
+  -- ADDITIONAL FACTORIO+ RECIPES
+  
+    
+  {
+    type = "recipe",
+    name = "basic-lab",
+	enabled = false,
+    energy_required = 3,
+    ingredients =
+    {
+      {type="item", name="electronic-circuit", amount=6},
+      {type="item", name="iron-stick", amount=8},
+      {type="item", name="basic-transport-belt", amount=12}
+    },
+    results = {{type="item", name="basic-lab", amount=1}},
+  },
+  
+    {
+    type = "recipe",
+    name = "lab-large",
+    energy_required = 18,
+	enabled = false,
+    ingredients =
+    {
+	  {type="item", name="lab", amount=2},
+      {type="item", name="processing-unit", amount=10},
+      {type="item", name="steel-plate", amount=16},
+      {type="item", name="express-transport-belt", amount=12}
+    },
+    results = {{type="item", name="lab-large", amount=1}},
+  },
+  
  {
     type = "recipe",
     name = "bio-science-pack",
@@ -1756,22 +1797,7 @@ end
     results = {{type="item", name="meaty-chunks", amount=10}},
 	allow_productivity = true,
   },
-  {
-    type = "recipe",
-    name = "processing-unit",
-    category = "advanced-crafting",
 
-      enabled = false,
-      energy_required = 10,
-      ingredients =
-      {
-        {type="item", name="electronic-circuit", amount=10},
-        {type="item", name="advanced-circuit", amount=1},
-		{type="item", name="silicon-wafer", amount=1},
-      },
-      results = {{type="item", name="processing-unit", amount=1}},
-	allow_productivity = true,
-   },
    {
     type = "recipe",
     name = "cpu-item",
@@ -1826,34 +1852,6 @@ end
     },
     results = {{type="item", name="huge-electric-pole", amount=1}},
   },
-   -- {
-    -- type = "recipe",
-    -- name = "railgun",
-    -- energy_required = 18,
-	-- enabled = false,
-    -- ingredients =
-    -- {
-      -- {type="item", name="steel-plate", amount=15},
-      -- {type="item", name="copper-plate", amount=15},
-      -- {type="item", name="electronic-circuit", amount=10},
-      -- {type="item", name="advanced-circuit", amount=5}
-    -- },
-    -- results = {{type="item", name="railgun", amount=1}},
-  -- },
-  
-       -- {
-    -- type = "recipe",
-    -- name = "laser-gun",
-	-- enabled = false,
-    -- energy_required = 15,
-    -- ingredients =
-    -- {
-      -- {type="item", name="steel-plate", amount=5},
-	  -- {type="item", name="laser", amount=1},
-      -- {type="item", name="battery", amount=2},
-    -- },
-    -- results = {{type="item", name="laser-gun", amount=1}},
-  -- },
   
    {
     type = "recipe",
@@ -2079,7 +2077,7 @@ end
   },
 })
 
- ---------------------------------------------------  OVERRIDES  ------------------------------------------------------------
+ ---------------------------------------------------  EQUIPMENT OVERRIDES  ------------------------------------------------------------
  
 data:extend({
  {
@@ -2137,25 +2135,6 @@ else
 		  {type="item", name="true-rocket-fuel", amount=5*settings.startup["settings-rocket-recipe"].value }
 	}
 end
-
-
-  
-  -- {
-    -- type = "recipe",
-    -- name = "rocket-part",
-    -- energy_required = settings.startup["settings-rocket-recipe-energy"].value,
-    -- enabled = false,
-    -- hidden = true,
-	-- allow_productivity = true,
-    -- category = "rocket-building",
-    -- ingredients =
-    -- {
-      -- {type="item", name="processing-unit", amount=settings.startup["settings-rocket-recipe"].value},
-      -- {type="item", name="low-density-structure", amount=settings.startup["settings-rocket-recipe"].value},
-      -- {type="item", name="true-rocket-fuel", amount=math.floor( settings.startup["settings-rocket-recipe"].value/2 ) }
-    -- },
-	-- results = {{type="item", name="rocket-part", amount=1}},
-  -- },
   
 data.extend({
   {
@@ -2506,7 +2485,7 @@ elseif settings.startup["settings-recipe-cost"].value == "hard" then
 	data.raw["recipe"]["chemical-science-pack"].ingredients =	
 	 {
 		  {type = "item", name = "engine-unit", amount = 2},
-		  {type = "item", name = "advanced-circuit", amount = 3},
+		  {type = "item", name = "advanced-circuit", amount = 2},
 		  {type = "item", name = "explosives", amount = 1},
 		}
 	data.raw["recipe"]["production-science-pack"].ingredients =	
@@ -2556,7 +2535,7 @@ elseif settings.startup["settings-recipe-cost"].value == "extreme" then
 	data.raw["recipe"]["chemical-science-pack"].ingredients =	
 	 {
 		  {type = "item", name = "engine-unit", amount = 2},
-		  {type = "item", name = "advanced-circuit", amount = 3},
+		  {type = "item", name = "advanced-circuit", amount = 2},
 		  {type = "item", name = "explosives", amount = 1},
 		  {type = "item", name = "silicon-wafer", amount = 2}
 		}
@@ -2614,7 +2593,7 @@ elseif settings.startup["settings-recipe-cost"].value == "insane" then
 	data.raw["recipe"]["chemical-science-pack"].ingredients =	
 	 {
 		  {type = "item", name = "engine-unit", amount = 2},
-		  {type = "item", name = "advanced-circuit", amount = 3},
+		  {type = "item", name = "advanced-circuit", amount = 2},
 		  {type = "item", name = "silicon-wafer", amount = 2},
 		  {type = "item", name = "explosives", amount = 1},
 		  {type = "item", name = "battery", amount = 1},
