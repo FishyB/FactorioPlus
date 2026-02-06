@@ -713,6 +713,8 @@ newpole.name = "abandonment".."-"..newpole.name
 newpole.maximum_wire_distance = 12
 newpole.supply_area_distance = 10
 newpole.flags = {"placeable-off-grid"}
+newpole.fast_replaceable_group = nil
+newpole.next_upgrade = nil
 -- newpole.light = 
 -- {
 	-- intensity = 0.5, 
@@ -1011,6 +1013,8 @@ newsolarpanel.energy_source =
 		render_no_network_icon = false 
 	}
 newsolarpanel.flags = {"placeable-off-grid",  "player-creation"}
+newsolarpanel.fast_replaceable_group = nil
+newsolarpanel.next_upgrade = nil
 newsolarpanel.picture = building_solararray_abandoned_1
 newsolarpanel.overlay = nil
 newsolarpanel.collision_box = solarpanel1_scale
@@ -1045,6 +1049,8 @@ newsolarpanel2.energy_source =
 		render_no_network_icon = false 
 	}
 newsolarpanel2.flags = {"placeable-off-grid",  "player-creation"}
+newsolarpanel2.fast_replaceable_group = nil
+newsolarpanel2.next_upgrade = nil
 newsolarpanel2.picture = building_solararray_abandoned_2
 newsolarpanel2.overlay = nil
 newsolarpanel2.collision_box = solarpanel2_scale
@@ -1078,6 +1084,8 @@ newsolarpanel3.energy_source =
 		render_no_network_icon = false 
 	}
 newsolarpanel3.flags = {"placeable-off-grid",  "player-creation"}
+newsolarpanel3.fast_replaceable_group = nil
+newsolarpanel3.next_upgrade = nil
 newsolarpanel3.picture = building_solararray_abandoned_3
 newsolarpanel3.overlay = nil
 newsolarpanel3.collision_box = solarpanel3_scale
@@ -1103,7 +1111,9 @@ local newsaccumulator = util.copy(data.raw["accumulator"]["accumulator"])
 newsaccumulator.icon = "__factorioplus__/graphics/icons/abandonment-accumulator.png"
 newsaccumulator.localised_name = {"",abandonment_loc, " ", {"entity-name." .. newsaccumulator.name}}
 newsaccumulator.name = "abandonment".."-"..newsaccumulator.name  
-newsaccumulator.flags = {"placeable-off-grid", "player-creation"}
+newsaccumulator.flags = {"placeable-off-grid",  "player-creation"}
+newsaccumulator.fast_replaceable_group = nil
+newsaccumulator.next_upgrade = nil
 newsaccumulator.collision_box = {{-1.45, -1.45}, {1.45, 1.45}}
 newsaccumulator.selection_box = {{-1.5, -1.5}, {1.5, 1.5}}
 newsaccumulator.chargable_graphics.picture = building_accumulator_abandoned

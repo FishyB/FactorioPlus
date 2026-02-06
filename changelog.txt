@@ -1,4 +1,44 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.7.7
+Date: 2026.02.06
+  Balance:
+    - Increased enemy base frequency in Authors pick map preset from 200% -> 300%
+    - Decreased Goblin ore patch size and increased their richness in the Goblin mode map preset.
+  Fixes:
+    - Changed High powered machine press recipes that were mistakenly set to 1s craft time are now the 0.5s default
+  Other Mods:
+    - Fixed an issue with Abandonment structures getting in the way of upgrade paths from other mods.
+---------------------------------------------------------------------------------------------------
+Version: 2.7.6
+Date: 2026.02.04
+  Balance:
+    - Reduced explosive ingredient amounts from most explosive ammo recipes.
+    - High powered machine press recipes now output double the amount, and the production effect removed. (Still the same)
+    - Increased Steel furnace energy usage from 90kW -> 120kW.
+    - Increased Big stone furnace energy usage from 175kW -> 195kW.
+    - Increased Steel forge furnace energy usage from 365kW -> 455kW.
+    - Increased Steel forge crafting speed from 8 -> 10.
+    - All Worms base attack speed is now faster 100 ticks -> 80 ticks.
+    - Increased health of big and behemoth Biters by +20%.
+    - Increased damage of most Biters by +5 / +10.
+    - Increased damage of Swarmers by +10%.
+    - Rescaled Tanker biter health from 450 -> 3200 to 200 -> 2800.
+    - Reduced Tanker resistances to physical, piercing and explosive damage by about -1/0%, -1/-2% and 0/-2% per tier respectively.
+    - Base Tanker movement speed increased by roughly +15%.
+    - Base Blaster movement speed increased by +20%.
+    - Increased all Flamer overall health by about +30/50%
+    - Increased Flamer fire amount by around +40%
+    - Base Stinger movement speed increasd by +10%.
+    - Increased Hatcher health of Big/Behemoth/Boss by around +10%.
+    - Chemical science packs Advanced circuit ingredient cost reduced from 3 -> 2.
+    - Lab recipe now requires 2 basic labs (was 1).
+    - All ammo speed/damage upgrades all aligned to the same +10% per tech level.
+  Fixes:
+    - Added missing loot tables from Abandonment warehouses.
+    - Moved Steel forge sprite lower so it fits the selection/bounding box better.
+  Localization:
+    - Updated Polish(PL) translation (by GPDiwka)
+---------------------------------------------------------------------------------------------------
 Version: 2.7.5
 Date: 2026.01.29
   Space Age:
