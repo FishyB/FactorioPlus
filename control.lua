@@ -315,7 +315,34 @@ function InsertItemsStack(items, object)
 	end
 end
 
+-- Scripted scenarios (e.g. the base game tutorial) call force.disable_all_prototypes() and then
+-- enable a hardcoded list of vanilla recipes, bypassing research. Our "transport-belt" recipe needs
+-- "basic-transport-belt" as an ingredient, which such scripts don't know about, so the vanilla belt
+-- ends up craftable while its ingredient is not. In normal play the basic belt recipe is enabled from
+-- the start, so "transport-belt enabled but basic belt disabled" only happens in that situation.
+function EnsureBasicBeltUnlocked()
+	for _, force in pairs(game.forces) do
+		local recipes = force.recipes
+		local basic = recipes["basic-transport-belt"]
+		local vanilla = recipes["transport-belt"]
+		if basic and vanilla and vanilla.enabled and not basic.enabled then
+			basic.enabled = true
+		end
+	end
+end
+
+-- The scenario's own on_player_created handler may run after ours, so also re-check shortly afterwards.
+script.on_nth_tick(10, function()
+	if storage.beltUnlockCheckPending then
+		storage.beltUnlockCheckPending = nil
+		EnsureBasicBeltUnlocked()
+	end
+end)
+
 function OnPlayerCreated()
+	EnsureBasicBeltUnlocked()
+	storage.beltUnlockCheckPending = true
+
 	if ( remote.interfaces["freeplay"] and  settings.startup["settings-crashsite"].value == true and storage.crashsiteplaced == nil) then
 		PlaceShipParts() 
 		if settings.startup["settings-crashsite-bonus-scrap"].value ~= "normal" then
